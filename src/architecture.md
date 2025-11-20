@@ -1,7 +1,1 @@
 # Architecture
-
-blablabla
-
-## Bla
-
-blablabla
