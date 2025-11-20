@@ -37,7 +37,7 @@ jobs:
 
             - name: Install mdBook and plugins
               run: |
-                  cargo install mdbook --version 0.4.40 || true
+                  cargo install mdbook --version 0.5.1 || true
                   # Temporarily disabled until font/parsing issues are resolved
                   # cargo install mdbook-mermaid --version 0.14.0 || true
                   # cargo install mdbook-alerts --version 0.6.9 || true
