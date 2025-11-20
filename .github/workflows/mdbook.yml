@@ -2,7 +2,7 @@ name: Deploy mdBook to GitHub Pages
 
 on:
     push:
-        branches: ["main", "users/wcamargo/documentation"]
+        branches: ["main"]
     workflow_dispatch:
 
 permissions:
