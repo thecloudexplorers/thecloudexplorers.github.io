@@ -59,17 +59,7 @@ jobs:
             - name: Build with mdBook
               run: |
                   export PATH="$HOME/.cargo/bin:$PATH"
-                  echo "Current directory: $(pwd)"
-                  echo "book.toml exists: $(test -f book.toml && echo yes || echo no)"
-                  echo "src/SUMMARY.md exists: $(test -f src/SUMMARY.md && echo yes || echo no)"
-                  echo "Contents of src/SUMMARY.md:"
-                  cat src/SUMMARY.md
-                  mdbook --version
                   mdbook build
-                  echo "Generated files in book/:"
-                  ls -la book/ | head -20
-                  echo "Checking for cloud-reference-architecture folder:"
-                  ls -la book/cloud-reference-architecture/ 2>/dev/null || echo "Folder not found"
 
             - name: Upload artifact
               uses: actions/upload-pages-artifact@v3
