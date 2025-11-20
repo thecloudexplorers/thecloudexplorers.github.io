@@ -3,7 +3,7 @@
 [The Cloud Explorers](the-cloud-explorers.md)
 
 - [Architecture](architecture.md)
-  - [Cloud Reference Architecture](cloud-reference-architecture.md)
+  - [Cloud Reference Architecture](cloud-reference-architecture/README.md)
     - [Introduction](cloud-reference-architecture/introduction.md)
     - [Architectural Overview](cloud-reference-architecture/architectural-overview.md)
     - [Core Architectural Components](cloud-reference-architecture/core-architectural-components.md)
