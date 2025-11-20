@@ -1,0 +1,22 @@
+[book]
+authors = ["The Cloud Explorers"]
+language = "en"
+#multilingual = false
+src = "src"
+title = "The Cloud Explorers Documentation"
+
+[output.html]
+edit-url-template = "https://github.com/thecloudexplorers/thecloudexplorers.github.io/edit/main/{path}"
+git-repository-url = "https://github.com/thecloudexplorers/thecloudexplorers.github.io"
+# Temporarily disabled git-repository-icon due to font issues
+# git-repository-icon = "fa-github"
+# Temporarily disabled mermaid due to font rendering issues
+# additional-js = ["mermaid.min.js", "mermaid-init.js"]
+
+# Github-flavoured markdown alerts - temporarily disabled due to parsing errors
+# [preprocessor.alerts]
+
+# mermaid graph rendering, you need mdbook-mermaid
+# Temporarily disabled due to font issues
+# [preprocessor.mermaid]
+# command = "mdbook-mermaid"
