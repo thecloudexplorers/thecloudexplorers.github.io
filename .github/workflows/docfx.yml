@@ -35,12 +35,15 @@ jobs:
       - name: Install wkhtmltopdf
         run: sudo apt-get update && sudo apt-get install -y wkhtmltopdf
 
-      - name: Build with DocFX
-        run: docfx build docfx.json
+      - name: Install Draw.io CLI
+        run: |
+          wget https://github.com/jgraph/drawio-desktop/releases/download/v24.7.17/drawio-amd64-24.7.17.deb
+          sudo apt-get install -y ./drawio-amd64-24.7.17.deb
+          rm drawio-amd64-24.7.17.deb
 
-      - name: Run Export Docs Script
+      - name: Run Build Script
         shell: pwsh
-        run: ./.github/workflows/scripts/export-docs.ps1 -MarkdownRoot docs -OutputRoot _site
+        run: ./.github/workflows/scripts/build.ps1 -MarkdownRoot docs -OutputRoot _site -DocfxConfig docfx.json
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
