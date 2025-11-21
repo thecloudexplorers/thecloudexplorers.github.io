@@ -37,13 +37,16 @@ This repository contains the documentation for The Cloud Explorers, built with [
 
 ## Theme
 
-The documentation uses DocFX's modern template, which provides:
-- Responsive design
-- Dark/light theme toggle
-- Collapsible navigation menus
-- Breadcrumb navigation
+The documentation uses the [SingulinkFX](https://github.com/Singulink/SingulinkFX) theme (v3.0.4), which provides:
+
+- Fully responsive design for all device sizes
+- Clean, modern interface familiar to Microsoft .NET documentation users
+- Collapsible navigation with support for 4 levels of hierarchy
+- Efficient table rendering (empty columns are automatically removed)
 - Search functionality
 - Mobile-friendly layout
+- Bootstrap Icons integration
+- Configurable colors and layout options
 
 ## Contributing
 
@@ -58,4 +61,4 @@ The site will automatically rebuild and deploy via GitHub Actions.
 
 ## License
 
-© 2024 The Cloud Explorers. All rights reserved.
+© 2025 The Cloud Explorers. All rights reserved.

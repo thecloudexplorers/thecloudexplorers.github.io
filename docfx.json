@@ -22,12 +22,15 @@
 
     "template": [
       "default",
-      "modern"
+      "templates/singulinkfx",
+      "templates/custom"
     ],
     "globalMetadata": {
       "_appTitle": "The Cloud Explorers",
       "_appName": "The Cloud Explorers",
-      "_appFooter": "© 2024 The Cloud Explorers. All rights reserved.",
+      "_appLogoPath": "images/logo.png",
+      "_appFaviconPath": "images/favicon.png",
+      "_appFooter": "© 2025 The Cloud Explorers. All rights reserved.",
       "_enableSearch": true,
       "_gitContribute": {
         "repo": "https://github.com/thecloudexplorers/thecloudexplorers.github.io",
