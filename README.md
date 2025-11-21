@@ -8,6 +8,9 @@ This repository contains the documentation for The Cloud Explorers, built with [
 
 - [.NET SDK 8.0 or later](https://dotnet.microsoft.com/download)
 - DocFX (installed automatically via dotnet tool)
+- [Node.js 18+](https://nodejs.org/) (required for Mermaid diagram rendering in PDF/Word exports)
+- Pandoc (for PDF/Word export)
+- wkhtmltopdf (for PDF generation)
 
 ### Build Instructions
 
@@ -27,6 +30,63 @@ This repository contains the documentation for The Cloud Explorers, built with [
    ```
 
 4. Open your browser to http://localhost:8080
+
+### Generating PDF and Word Documents with Mermaid Diagrams
+
+The build process automatically generates PDF and Word documents from markdown files that have `pdf: true` in their `toc.yml` file. Mermaid diagrams are automatically converted to images during this process.
+
+#### Local Setup for PDF/Word Export
+
+1. Install Pandoc:
+   ```bash
+   # macOS
+   brew install pandoc
+   
+   # Ubuntu/Debian
+   sudo apt-get install pandoc
+   
+   # Windows
+   choco install pandoc
+   ```
+
+2. Install wkhtmltopdf:
+   ```bash
+   # macOS
+   brew install wkhtmltopdf
+   
+   # Ubuntu/Debian
+   sudo apt-get install wkhtmltopdf
+   
+   # Windows
+   choco install wkhtmltopdf
+   ```
+
+3. Install Mermaid CLI:
+   ```bash
+   npm install -g @mermaid-js/mermaid-cli
+   ```
+
+4. Run the build script:
+   ```bash
+   # PowerShell
+   ./.github/workflows/scripts/build.ps1 -MarkdownRoot docs -OutputRoot _site -DocfxConfig docfx.json
+   ```
+
+#### Using Mermaid Diagrams
+
+To add Mermaid diagrams to your documentation, use the standard Mermaid code block syntax:
+
+````markdown
+```mermaid
+graph TB
+    A[Start] --> B[Process]
+    B --> C[End]
+```
+````
+
+The diagrams will:
+- Render in the DocFX website using the Mermaid JavaScript library
+- Be automatically converted to images when exporting to PDF or Word formats
 
 ## Documentation Structure
 
