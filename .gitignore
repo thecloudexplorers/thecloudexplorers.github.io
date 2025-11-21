@@ -1,1 +1,8 @@
-book
+# DocFX build output
+_site/
+obj/
+.docfx/
+
+# Temporary files
+*.tmp
+.DS_Store

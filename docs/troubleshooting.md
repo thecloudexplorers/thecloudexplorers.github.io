@@ -19,7 +19,45 @@ curl https://idm.example.com:8443/status
 This is similar to what you _should_ see:
 
 ```shell
-{{#rustdoc_include troubleshooting/curl_connection_test.txt}}
+*   Trying 10.0.0.14:8443...
+* Connected to idm.example.com (10.0.0.14) port 8443 (#0)
+* ALPN, offering h2
+* ALPN, offering http/1.1
+* successfully set certificate verify locations:
+*   CAfile: /etc/ssl/certs/ca-certificates.crt
+* TLSv1.3 (OUT), TLS handshake, Client hello (1):
+* TLSv1.3 (IN), TLS handshake, Server hello (2):
+* TLSv1.3 (IN), TLS handshake, Encrypted Extensions (8):
+* TLSv1.3 (IN), TLS handshake, Certificate (11):
+* TLSv1.3 (IN), TLS handshake, CERT verify (15):
+* TLSv1.3 (IN), TLS handshake, Finished (20):
+* TLSv1.3 (OUT), TLS change cipher, Change cipher spec (1):
+* TLSv1.3 (OUT), TLS handshake, Finished (20):
+* SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384
+* ALPN, server accepted to use h2
+* Server certificate:
+*  subject: CN=idm.example.com
+*  start date: Jan  1 00:00:00 2024 GMT
+*  expire date: Dec 31 23:59:59 2025 GMT
+*  subjectAltName: host "idm.example.com" matched cert's "idm.example.com"
+*  issuer: CN=idm.example.com
+* Using HTTP2, server supports multi-use
+* Connection state changed (HTTP/2 confirmed)
+* Copying HTTP/2 data in stream buffer to connection buffer after upgrade: len=0
+* Using Stream ID: 1 (easy handle 0x5600c1c3e2e0)
+> GET /status HTTP/2
+> Host: idm.example.com:8443
+> user-agent: curl/7.74.0
+> accept: */*
+* TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+* Connection state changed (MAX_CONCURRENT_STREAMS == 100)!
+< HTTP/2 200
+< content-type: application/json
+< content-length: 4
+< date: Thu, 01 Jan 2024 12:00:00 GMT
+<
+* Connection #0 to host idm.example.com left intact
+true
 ```
 
 This means:
