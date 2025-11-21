@@ -210,7 +210,9 @@ foreach ($toc in $tocs) {
         $outputDocx = Join-Path $outputDir $docxName
 
         # Create temp directory for modified markdown files with absolute image paths
-        $tempDir = Join-Path $env:TEMP "pandoc-temp-$([guid]::NewGuid())"
+        # Use cross-platform temp directory
+        $tempBase = if ($env:TEMP) { $env:TEMP } elseif ($env:TMPDIR) { $env:TMPDIR } else { "/tmp" }
+        $tempDir = Join-Path $tempBase "pandoc-temp-$([guid]::NewGuid())"
         New-Item -ItemType Directory -Force -Path $tempDir | Out-Null
         $tempFiles = @()
 
