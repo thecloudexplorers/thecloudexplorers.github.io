@@ -1,7 +1,9 @@
 - name: The Cloud Explorers
-  href: the-cloud-explorers.md
+  href: index.md
 - name: Architecture
   href: architecture/
+- name: GitHub Repository
+  href: https://github.com/thecloudexplorers/
 
     
       # href: cloud-reference-architecture/README.md
