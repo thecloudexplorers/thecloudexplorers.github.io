@@ -170,7 +170,7 @@ Serverless enables running code without managing servers, with automatic scaling
 
 **Serverless Architecture:**
 
-![Function as a Service (FaaS)](diagrams/images/application-architecture-function-as-a-service-(faas)-10.png)
+![Function as a Service (FaaS)](diagrams/images/application-architecture-function-as-a-service--faas--10.png)
 
 
 **FaaS Platform Comparison:**
@@ -250,7 +250,7 @@ public static async Task<IActionResult> Run(
 
 **BaaS Components:**
 
-![Backend as a Service (BaaS)](diagrams/images/application-architecture-backend-as-a-service-(baas)-12.png)
+![Backend as a Service (BaaS)](diagrams/images/application-architecture-backend-as-a-service--baas--12.png)
 
 
 **BaaS vs FaaS:**
@@ -652,7 +652,7 @@ spec:
 
 **IaC Benefits:**
 
-![Infrastructure as Code (IaC)](diagrams/images/application-architecture-infrastructure-as-code-(iac)-19.png)
+![Infrastructure as Code (IaC)](diagrams/images/application-architecture-infrastructure-as-code--iac--19.png)
 
 
 **Terraform Example:**

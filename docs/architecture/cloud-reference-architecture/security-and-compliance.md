@@ -183,7 +183,7 @@ DLP policies prevent unauthorized data exfiltration and enforce compliance requi
 
 **DLP Policy Workflow:**
 
-![Data Loss Prevention (DLP)](diagrams/images/security-and-compliance-data-loss-prevention-(dlp)-8.png)
+![Data Loss Prevention (DLP)](diagrams/images/security-and-compliance-data-loss-prevention--dlp--8.png)
 
 
 **DLP Scenarios:**

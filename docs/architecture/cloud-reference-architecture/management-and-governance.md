@@ -90,7 +90,7 @@ az reservations reservation-order purchase \
 
 **Spot Instance Architecture:**
 
-![Purchase 3-year RI for Standard_D4s_v3 in East US](diagrams/images/management-and-governance-purchase-3-year-ri-for-standard_d4s_v3-in-east-us-6.png)
+![Purchase 3-year RI for Standard_D4s_v3 in East US](diagrams/images/management-and-governance-purchase-3-year-ri-for-standard-d4s-v3-in-east-us-6.png)
 
 
 **AKS Spot Node Pool:**
@@ -158,7 +158,7 @@ az aks nodepool add \
 
 **Database Optimization:**
 
-![Purchase 3-year RI for Standard_D4s_v3 in East US](diagrams/images/management-and-governance-purchase-3-year-ri-for-standard_d4s_v3-in-east-us-7.png)
+![Purchase 3-year RI for Standard_D4s_v3 in East US](diagrams/images/management-and-governance-purchase-3-year-ri-for-standard-d4s-v3-in-east-us-7.png)
 
 
 > [!TIP]

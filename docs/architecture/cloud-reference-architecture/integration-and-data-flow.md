@@ -92,7 +92,7 @@ CDC tracks and replicates data changes from source to target systems in real-tim
 
 **CDC Architecture:**
 
-![Change Data Capture (CDC)](diagrams/images/integration-and-data-flow-change-data-capture-(cdc)-4.png)
+![Change Data Capture (CDC)](diagrams/images/integration-and-data-flow-change-data-capture--cdc--4.png)
 
 
 **CDC vs Batch:**
@@ -507,7 +507,7 @@ CQRS separates read and write models for optimized performance and scalability.
 
 **CQRS Architecture:**
 
-![CQRS (Command Query Responsibility Segregation)](diagrams/images/integration-and-data-flow-cqrs-(command-query-responsibility-segregation)-18.png)
+![CQRS (Command Query Responsibility Segregation)](diagrams/images/integration-and-data-flow-cqrs--command-query-responsibility-segregation--18.png)
 
 
 **CQRS Benefits:**

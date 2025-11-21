@@ -31,7 +31,7 @@ Virtual machines provide Infrastructure as a Service (IaaS) with full control ov
 
 **Architecture Pattern:**
 
-![Virtual Machines (VMs)](diagrams/images/core-architectural-components-virtual-machines-(vms)-2.png)
+![Virtual Machines (VMs)](diagrams/images/core-architectural-components-virtual-machines--vms--2.png)
 
 
 **Real-World Example:**
@@ -200,7 +200,7 @@ Virtual networks provide isolated network environments in the cloud with customi
 
 **Network Segmentation Example:**
 
-![Virtual Networks (VNet/VPC)](diagrams/images/core-architectural-components-virtual-networks-(vnet-vpc)-9.png)
+![Virtual Networks (VNet/VPC)](diagrams/images/core-architectural-components-virtual-networks--vnet-vpc--9.png)
 
 
 **Best Practices:**
@@ -248,7 +248,7 @@ CDNs cache content at edge locations globally, reducing latency and improving us
 
 **CDN Architecture:**
 
-![Content Delivery Network (CDN)](diagrams/images/core-architectural-components-content-delivery-network-(cdn)-11.png)
+![Content Delivery Network (CDN)](diagrams/images/core-architectural-components-content-delivery-network--cdn--11.png)
 
 
 **Real-World Example:**
@@ -279,7 +279,7 @@ Hybrid connectivity options enable secure connections between on-premises infras
 
 IAM controls who can access resources and what actions they can perform, forming the foundation of cloud security.
 
-![Identity and Access Management (IAM)](diagrams/images/core-architectural-components-identity-and-access-management-(iam)-13.png)
+![Identity and Access Management (IAM)](diagrams/images/core-architectural-components-identity-and-access-management--iam--13.png)
 
 
 ### Identity Providers
@@ -460,7 +460,7 @@ The control plane provides unified management, monitoring, and governance across
 
 **IaC Workflow:**
 
-![Infrastructure as Code (IaC)](diagrams/images/core-architectural-components-infrastructure-as-code-(iac)-22.png)
+![Infrastructure as Code (IaC)](diagrams/images/core-architectural-components-infrastructure-as-code--iac--22.png)
 
 
 > [!IMPORTANT]

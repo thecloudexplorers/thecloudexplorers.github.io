@@ -23,7 +23,7 @@ Real-world case studies demonstrate cloud architecture patterns in production en
 
 **Architecture Overview:**
 
-![Case Study 1: Global Payment Processing Platform (Finance)](diagrams/images/case-studies-and-use-cases-case-study-1--global-payment-processing-platform-(-2.png)
+![Case Study 1: Global Payment Processing Platform (Finance)](diagrams/images/case-studies-and-use-cases-case-study-1--global-payment-processing-platform---2.png)
 
 
 **Technology Stack:**
@@ -39,7 +39,7 @@ Real-world case studies demonstrate cloud architecture patterns in production en
 
 **1. Multi-Region Active-Active Architecture:**
 
-![Case Study 1: Global Payment Processing Platform (Finance)](diagrams/images/case-studies-and-use-cases-case-study-1--global-payment-processing-platform-(-3.png)
+![Case Study 1: Global Payment Processing Platform (Finance)](diagrams/images/case-studies-and-use-cases-case-study-1--global-payment-processing-platform---3.png)
 
 
 **Why**: Reduce latency for global users, achieve 99.99% SLA through regional redundancy.
@@ -77,7 +77,7 @@ All payment requests include idempotency keys to prevent duplicate charges durin
 
 **Security Implementation:**
 
-![Case Study 1: Global Payment Processing Platform (Finance)](diagrams/images/case-studies-and-use-cases-case-study-1--global-payment-processing-platform-(-4.png)
+![Case Study 1: Global Payment Processing Platform (Finance)](diagrams/images/case-studies-and-use-cases-case-study-1--global-payment-processing-platform---4.png)
 
 
 **Performance Optimizations:**
@@ -146,7 +146,7 @@ spec:
 
 **Architecture Overview:**
 
-![Case Study 2: Patient Data Management System (Healthcare)](diagrams/images/case-studies-and-use-cases-case-study-2--patient-data-management-system-(heal-5.png)
+![Case Study 2: Patient Data Management System (Healthcare)](diagrams/images/case-studies-and-use-cases-case-study-2--patient-data-management-system--heal-5.png)
 
 
 **Technology Stack:**
@@ -161,7 +161,7 @@ spec:
 
 **Security Architecture:**
 
-![Case Study 2: Patient Data Management System (Healthcare)](diagrams/images/case-studies-and-use-cases-case-study-2--patient-data-management-system-(heal-6.png)
+![Case Study 2: Patient Data Management System (Healthcare)](diagrams/images/case-studies-and-use-cases-case-study-2--patient-data-management-system--heal-6.png)
 
 
 **Key Design Decisions:**
@@ -309,7 +309,7 @@ public async Task<Patient> GetPatientAsync(int patientId, User currentUser)
 
 **Architecture Overview:**
 
-![Case Study 3: E-Commerce Platform (Retail)](diagrams/images/case-studies-and-use-cases-case-study-3--e-commerce-platform-(retail)-8.png)
+![Case Study 3: E-Commerce Platform (Retail)](diagrams/images/case-studies-and-use-cases-case-study-3--e-commerce-platform--retail--8.png)
 
 
 **Technology Stack:**
@@ -325,14 +325,14 @@ public async Task<Patient> GetPatientAsync(int patientId, User currentUser)
 
 **1. CQRS for Product Catalog:**
 
-![Case Study 3: E-Commerce Platform (Retail)](diagrams/images/case-studies-and-use-cases-case-study-3--e-commerce-platform-(retail)-9.png)
+![Case Study 3: E-Commerce Platform (Retail)](diagrams/images/case-studies-and-use-cases-case-study-3--e-commerce-platform--retail--9.png)
 
 
 **Why**: Admin updates require strong consistency (SQL), but public reads require low latency (Cosmos DB).
 
 **2. Event-Driven Order Processing:**
 
-![Case Study 3: E-Commerce Platform (Retail)](diagrams/images/case-studies-and-use-cases-case-study-3--e-commerce-platform-(retail)-10.png)
+![Case Study 3: E-Commerce Platform (Retail)](diagrams/images/case-studies-and-use-cases-case-study-3--e-commerce-platform--retail--10.png)
 
 
 **Benefits**:
@@ -343,7 +343,7 @@ public async Task<Patient> GetPatientAsync(int patientId, User currentUser)
 
 **3. Multi-Layer Caching:**
 
-![Case Study 3: E-Commerce Platform (Retail)](diagrams/images/case-studies-and-use-cases-case-study-3--e-commerce-platform-(retail)-11.png)
+![Case Study 3: E-Commerce Platform (Retail)](diagrams/images/case-studies-and-use-cases-case-study-3--e-commerce-platform--retail--11.png)
 
 
 **Caching Strategy:**
