@@ -3,36 +3,8 @@
 items:
   - name: Architecture
     href: architecture/
+    topicHref: architecture/README.md
 
     expanded: true
   - name: GitHub Repository
     href: https://github.com/thecloudexplorers/
-
-    
-      # href: cloud-reference-architecture/README.md
-      # items:
-      #   - name: Introduction
-      #     href: cloud-reference-architecture/introduction.md
-      #   - name: Architectural Overview
-      #     href: cloud-reference-architecture/architectural-overview.md
-      #   - name: Core Architectural Components
-      #     href: cloud-reference-architecture/core-architectural-components.md
-      #   - name: Security and Compliance
-      #     href: cloud-reference-architecture/security-and-compliance.md
-      #   - name: Operations and Reliability
-      #     href: cloud-reference-architecture/operations-and-reliability.md
-      #   - name: Integration and Data Flow
-      #     href: cloud-reference-architecture/integration-and-data-flow.md
-      #   - name: Application Architecture
-      #     href: cloud-reference-architecture/application-architecture.md
-      #   - name: Management and Governance
-      #     href: cloud-reference-architecture/management-and-governance.md
-      #   - name: Scalability and Performance
-      #     href: cloud-reference-architecture/scalability-and-performance.md
-      #   - name: Best Practices and Design Patterns
-      #     href: cloud-reference-architecture/best-practices-and-design-patterns.md
-      #   - name: Case Studies and Use Cases
-      #     href: cloud-reference-architecture/case-studies-and-use-cases.md
-      #   - name: Appendices and Supporting Documents
-      #     href: cloud-reference-architecture/appendices-and-supporting-documents.md
-

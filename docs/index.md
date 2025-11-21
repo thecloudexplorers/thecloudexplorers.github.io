@@ -5,5 +5,5 @@ Welcome to The Cloud Explorers!
 ## Contents
 
 - [Architecture](architecture.md)
-  - [Cloud Reference Architecture](architecture/cloud-reference-architecture/README.md)
-  - [Cloud Center of Excellence](architecture/cloud-center-of-excellence/cloud-center-of-excellence.md)
+  - [Cloud Reference Architecture](architecture/cloud-reference-architecture/introduction.md)
+  - [Cloud Center of Excellence](architecture/cloud-center-of-excellence/introduction.md)

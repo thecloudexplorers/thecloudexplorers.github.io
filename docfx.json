@@ -53,5 +53,24 @@
         "tasklists"
       ]
     }
+  },
+  "pdf": {
+    "content": [
+      {
+        "files": [
+          "**/*.md"
+        ],
+        "src": "docs"
+      }
+    ],
+    "dest": "_site/pdf",
+    "wkhtmltopdf": {
+      "path": "wkhtmltopdf",
+      "additionalArguments": [
+        "--no-header-line",
+        "--no-footer-line"
+      ]
+    },
+    "template": "templates/custom-pdf"
   }
 }
