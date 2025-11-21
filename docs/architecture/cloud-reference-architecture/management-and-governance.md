@@ -2,18 +2,8 @@
 
 Cloud governance establishes policies, controls, and practices to manage cloud resources effectively while ensuring compliance, security, and cost optimization.
 
-```mermaid
-graph TB
-    A[Management & Governance] --> B[Cost Optimization]
-    A --> C[Resource Organization]
-    A --> D[Policy Enforcement]
-    A --> E[Compliance]
-    
-    B --> F[Cost Allocation]
-    C --> G[Tagging Strategy]
-    D --> H[Azure Policy/AWS Config]
-    E --> I[Audit Reporting]
-```
+![Management and Governance](diagrams/images/management-and-governance-management-and-governance-1.png)
+
 
 ## Cost Management and Optimization
 
@@ -25,16 +15,8 @@ Financial Operations (FinOps) is a cultural practice that brings financial accou
 
 **FinOps Lifecycle:**
 
-```mermaid
-graph LR
-    A[Inform] --> B[Optimize]
-    B --> C[Operate]
-    C --> A
-    
-    A --> D[Visibility<br/>Allocation<br/>Benchmarking]
-    B --> E[Right-sizing<br/>Reserved Capacity<br/>Spot Instances]
-    C --> F[Policies<br/>Automation<br/>Continuous Improvement]
-```
+![FinOps Framework](diagrams/images/management-and-governance-finops-framework-2.png)
+
 
 **FinOps Principles:**
 
@@ -54,33 +36,13 @@ graph LR
 
 **Cost Allocation Hierarchy:**
 
-```mermaid
-graph TB
-    A[Organization<br/>$500K/month] --> B[Department: Engineering<br/>$300K]
-    A --> C[Department: Sales<br/>$150K]
-    A --> D[Department: Marketing<br/>$50K]
-    
-    B --> E[Team: Platform<br/>$120K]
-    B --> F[Team: Product A<br/>$100K]
-    B --> G[Team: Product B<br/>$80K]
-    
-    E --> H[Environment: Production<br/>$80K]
-    E --> I[Environment: Dev/Test<br/>$40K]
-```
+![Cost Visibility and Allocation](diagrams/images/management-and-governance-cost-visibility-and-allocation-3.png)
+
 
 **Azure Cost Management Dashboard:**
 
-```mermaid
-graph TB
-    subgraph "Cost Breakdown"
-        A[Total: $500K/month]
-        A --> B[Compute: $250K 50%]
-        A --> C[Storage: $100K 20%]
-        A --> D[Networking: $75K 15%]
-        A --> E[Database: $50K 10%]
-        A --> F[Other: $25K 5%]
-    end
-```
+![Cost Visibility and Allocation](diagrams/images/management-and-governance-cost-visibility-and-allocation-4.png)
+
 
 **Cost Allocation Tags:**
 
@@ -110,11 +72,8 @@ graph TB
 
 **Reserved Instance Example:**
 
-```mermaid
-graph LR
-    A[On-Demand<br/>Standard_D4s_v3<br/>$175/month] --> B[1-Year RI<br/>$102/month<br/>42% savings]
-    A --> C[3-Year RI<br/>$70/month<br/>60% savings]
-```
+![Cost Optimization Strategies](diagrams/images/management-and-governance-cost-optimization-strategies-5.png)
+
 
 **Azure Reserved VM Instances:**
 
@@ -131,15 +90,8 @@ az reservations reservation-order purchase \
 
 **Spot Instance Architecture:**
 
-```mermaid
-graph TB
-    A[Kubernetes Cluster] --> B[On-Demand Node Pool<br/>Critical Services<br/>3 nodes min]
-    A --> C[Spot Node Pool<br/>Batch Processing<br/>0-20 nodes]
-    
-    C --> D{Spot Eviction?}
-    D -->|Yes| E[Reschedule Pod<br/>to On-Demand]
-    D -->|No| F[Continue Processing]
-```
+![Purchase 3-year RI for Standard_D4s_v3 in East US](diagrams/images/management-and-governance-purchase-3-year-ri-for-standard_d4s_v3-in-east-us-6.png)
+
 
 **AKS Spot Node Pool:**
 
@@ -206,21 +158,8 @@ az aks nodepool add \
 
 **Database Optimization:**
 
-```mermaid
-graph TB
-    A[Database Costs] --> B[Compute Tier]
-    A --> C[Storage]
-    A --> D[Backup Retention]
-    
-    B --> E[Right-size DTU/vCore]
-    B --> F[Auto-pause Serverless]
-    B --> G[Reserved Capacity]
-    
-    C --> H[Enable Compression]
-    C --> I[Optimize Indexes]
-    
-    D --> J[Adjust Retention<br/>7-35 days]
-```
+![Purchase 3-year RI for Standard_D4s_v3 in East US](diagrams/images/management-and-governance-purchase-3-year-ri-for-standard_d4s_v3-in-east-us-7.png)
+
 
 > [!TIP]
 > Azure SQL Database serverless automatically pauses during inactivity, charging only for storage. Ideal for dev/test and intermittent workloads (70-90% savings).
@@ -240,17 +179,8 @@ A company reduced cloud costs by 45% through:
 
 **Anomaly Detection:**
 
-```mermaid
-graph LR
-    A[Cost Data] --> B[ML Model]
-    B --> C{Anomaly?}
-    C -->|Yes| D[Alert<br/>Email/Slack]
-    C -->|No| E[Continue Monitoring]
-    D --> F[Investigate<br/>Resource Tags]
-    F --> G{Legitimate?}
-    G -->|No| H[Terminate Resource]
-    G -->|Yes| I[Update Budget]
-```
+![Cost Anomaly Detection](diagrams/images/management-and-governance-cost-anomaly-detection-8.png)
+
 
 **Azure Cost Anomaly Alert:**
 
@@ -283,18 +213,8 @@ Resource organization enables governance, cost allocation, and automation.
 
 **Tag Taxonomy:**
 
-```mermaid
-graph TB
-    A[Tag Categories] --> B[Technical]
-    A --> C[Business]
-    A --> D[Automation]
-    A --> E[Security]
-    
-    B --> F[Environment<br/>Owner<br/>Application]
-    C --> G[CostCenter<br/>Project<br/>Department]
-    D --> H[Backup<br/>ShutdownSchedule<br/>PatchGroup]
-    E --> I[DataClassification<br/>Compliance]
-```
+![Tagging Strategy](diagrams/images/management-and-governance-tagging-strategy-9.png)
+
 
 **Required Tags:**
 
@@ -374,20 +294,8 @@ graph TB
 
 **Azure Management Group Hierarchy:**
 
-```mermaid
-graph TB
-    A[Root Management Group<br/>Tenant Root] --> B[Production]
-    A --> C[Non-Production]
-    A --> D[Sandbox]
-    
-    B --> E[Subscription: Prod-EastUS]
-    B --> F[Subscription: Prod-WestEurope]
-    
-    C --> G[Subscription: Staging]
-    C --> H[Subscription: Dev-Test]
-    
-    D --> I[Subscription: Innovation]
-```
+![Management Groups](diagrams/images/management-and-governance-management-groups-10.png)
+
 
 **Management Group Benefits:**
 
@@ -400,20 +308,8 @@ graph TB
 
 **AWS Organization Structure:**
 
-```mermaid
-graph TB
-    A[Organization Root] --> B[Production OU]
-    A --> C[Development OU]
-    A --> D[Security OU]
-    
-    B --> E[Account: Prod-App1]
-    B --> F[Account: Prod-App2]
-    
-    C --> G[Account: Dev-Shared]
-    
-    D --> H[Account: Logging]
-    D --> I[Account: Security-Tools]
-```
+![Management Groups](diagrams/images/management-and-governance-management-groups-11.png)
+
 
 **Service Control Policies (SCP):**
 
@@ -463,16 +359,8 @@ Cloud policies enforce organizational standards for security, compliance, and co
 
 **Policy Assignment Scope:**
 
-```mermaid
-graph TB
-    A[Management Group] --> B[Subscription]
-    B --> C[Resource Group]
-    C --> D[Resource]
-    
-    E[Policy] -.Assign.-> A
-    E -.Assign.-> B
-    E -.Assign.-> C
-```
+![Azure Policy](diagrams/images/management-and-governance-azure-policy-12.png)
+
 
 **Example Policies:**
 
@@ -708,21 +596,8 @@ A governance framework defines roles, responsibilities, and processes for cloud 
 
 **Governance Structure:**
 
-```mermaid
-graph TB
-    A[Cloud Governance Board] --> B[Cloud Center of Excellence]
-    B --> C[Architecture Team]
-    B --> D[Security Team]
-    B --> E[FinOps Team]
-    
-    C --> F[Reference Architectures]
-    D --> G[Security Baselines]
-    E --> H[Cost Optimization]
-    
-    F --> I[Application Teams]
-    G --> I
-    H --> I
-```
+![Cloud Governance Model](diagrams/images/management-and-governance-cloud-governance-model-13.png)
+
 
 **Governance Disciplines:**
 
@@ -738,15 +613,8 @@ graph TB
 
 **Microsoft Cloud Adoption Framework Phases:**
 
-```mermaid
-graph LR
-    A[Define Strategy] --> B[Plan]
-    B --> C[Ready]
-    C --> D[Adopt]
-    D --> E[Govern]
-    E --> F[Manage]
-    F --> D
-```
+![Cloud Adoption Framework](diagrams/images/management-and-governance-cloud-adoption-framework-14.png)
+
 
 **CAF Governance Pillars:**
 
@@ -776,19 +644,8 @@ graph LR
 
 **Azure Landing Zone Architecture:**
 
-```mermaid
-graph TB
-    A[Management Group Root] --> B[Platform]
-    A --> C[Landing Zones]
-    
-    B --> D[Management<br/>Monitoring, Automation]
-    B --> E[Connectivity<br/>Hub VNet, Firewall]
-    B --> F[Identity<br/>AD, DNS]
-    
-    C --> G[Corp Landing Zone<br/>Internal Apps]
-    C --> H[Online Landing Zone<br/>External Apps]
-    C --> I[SAP Landing Zone<br/>SAP Workloads]
-```
+![Landing Zones](diagrams/images/management-and-governance-landing-zones-15.png)
+
 
 **Landing Zone Components:**
 
@@ -811,14 +668,8 @@ Audit and compliance reporting demonstrates adherence to regulatory requirements
 
 **Regulatory Requirements:**
 
-```mermaid
-graph TB
-    A[Compliance Frameworks] --> B[Data Protection<br/>GDPR, CCPA]
-    A --> C[Healthcare<br/>HIPAA, HITRUST]
-    A --> D[Financial<br/>PCI DSS, SOX]
-    A --> E[Government<br/>FedRAMP, ITAR]
-    A --> F[Standards<br/>ISO 27001, SOC 2]
-```
+![Compliance Frameworks](diagrams/images/management-and-governance-compliance-frameworks-16.png)
+
 
 **Cloud Provider Compliance:**
 
@@ -838,15 +689,8 @@ graph TB
 
 **Azure Activity Log:**
 
-```mermaid
-graph LR
-    A[Azure Resources] --> B[Activity Log]
-    B --> C[Log Analytics]
-    C --> D[Queries & Alerts]
-    
-    B --> E[Storage Account<br/>Long-term Archive]
-    B --> F[Event Hub<br/>SIEM Integration]
-```
+![Audit Logging](diagrams/images/management-and-governance-audit-logging-17.png)
+
 
 **Critical Events to Log:**
 
@@ -902,16 +746,8 @@ AzureActivity
 
 **Azure Compliance Dashboard:**
 
-```mermaid
-graph TB
-    A[Microsoft Defender for Cloud] --> B[Regulatory Compliance]
-    
-    B --> C[PCI DSS 3.2.1<br/>85% Compliant]
-    B --> D[ISO 27001<br/>92% Compliant]
-    B --> E[HIPAA<br/>78% Compliant]
-    
-    C --> F[15% Non-Compliant<br/>- Storage encryption<br/>- Firewall rules]
-```
+![Compliance Dashboards](diagrams/images/management-and-governance-compliance-dashboards-18.png)
+
 
 **Compliance Report Structure:**
 

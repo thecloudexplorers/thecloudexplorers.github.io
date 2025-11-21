@@ -2,18 +2,8 @@
 
 This section details the fundamental building blocks of cloud architecture that form the foundation of any cloud solution.
 
-```mermaid
-graph TB
-    subgraph "Cloud Infrastructure"
-        A[Compute Resources] --> G[Control Plane]
-        B[Storage Services] --> G
-        C[Networking] --> G
-        D[Identity & Access Management] --> G
-        E[Database Services] --> G
-        F[Monitoring & Logging] --> G
-        G --> H[Unified Management]
-    end
-```
+![Core Architectural Components](diagrams/images/core-architectural-components-core-architectural-components-1.png)
+
 
 ## Computing Resources
 
@@ -41,17 +31,8 @@ Virtual machines provide Infrastructure as a Service (IaaS) with full control ov
 
 **Architecture Pattern:**
 
-```mermaid
-graph LR
-    A[Load Balancer] --> B[VM Scale Set]
-    B --> C[VM Instance 1]
-    B --> D[VM Instance 2]
-    B --> E[VM Instance N]
-    C --> F[Managed Disk]
-    D --> G[Managed Disk]
-    E --> H[Managed Disk]
-    B --> I[Auto-scaling Rules]
-```
+![Virtual Machines (VMs)](diagrams/images/core-architectural-components-virtual-machines-(vms)-2.png)
+
 
 **Real-World Example:**
 
@@ -74,22 +55,8 @@ Containers provide lightweight, portable application packaging that includes dep
 
 **Kubernetes Architecture:**
 
-```mermaid
-graph TB
-    subgraph "Kubernetes Cluster"
-        A[Ingress Controller] --> B[Service]
-        B --> C[Pod 1]
-        B --> D[Pod 2]
-        B --> E[Pod 3]
-        C --> F[Container]
-        D --> G[Container]
-        E --> H[Container]
-        I[Horizontal Pod Autoscaler] --> B
-        J[Persistent Volume] --> C
-        J --> D
-        J --> E
-    end
-```
+![Containers](diagrams/images/core-architectural-components-containers-3.png)
+
 
 **Real-World Example:**
 
@@ -112,16 +79,8 @@ Serverless computing allows you to run code without managing infrastructure, pay
 
 **Serverless Architecture Pattern:**
 
-```mermaid
-graph LR
-    A[API Gateway] --> B[Azure Functions]
-    C[Event Grid] --> B
-    D[Storage Queue] --> B
-    E[Timer Trigger] --> B
-    B --> F[Cosmos DB]
-    B --> G[Blob Storage]
-    B --> H[SendGrid Email]
-```
+![Serverless Computing](diagrams/images/core-architectural-components-serverless-computing-4.png)
+
 
 **Cost Comparison Example:**
 
@@ -142,17 +101,8 @@ An image processing service uses AWS Lambda triggered by S3 uploads to generate 
 
 Cloud storage services provide scalable, durable, and highly available data storage for various use cases.
 
-```mermaid
-graph TD
-    A[Storage Services] --> B[Object Storage]
-    A --> C[Block Storage]
-    A --> D[File Storage]
-    A --> E[Archive Storage]
-    B --> F[Unstructured Data<br/>Media, Backups]
-    C --> G[VM Disks<br/>Databases]
-    D --> H[Shared Files<br/>NFS/SMB]
-    E --> I[Long-term<br/>Compliance]
-```
+![Storage Services](diagrams/images/core-architectural-components-storage-services-5.png)
+
 
 ### Object Storage
 
@@ -176,15 +126,8 @@ Object storage is designed for unstructured data with unlimited scalability and 
 
 **Object Storage Architecture:**
 
-```mermaid
-graph LR
-    A[Applications] --> B[CDN]
-    B --> C[Azure Blob Storage]
-    C --> D[Hot Tier<br/>Active Data]
-    C --> E[Cool Tier<br/>Backups]
-    C --> F[Archive Tier<br/>Compliance]
-    G[Lifecycle Policy] --> C
-```
+![Object Storage](diagrams/images/core-architectural-components-object-storage-6.png)
+
 
 **Real-World Example:**
 
@@ -228,15 +171,8 @@ File storage provides fully managed file shares accessible via SMB/NFS protocols
 
 **File Storage Architecture:**
 
-```mermaid
-graph TB
-    A[On-Premises Servers] --> B[Azure Files]
-    C[Azure VMs] --> B
-    D[Azure Kubernetes Service] --> B
-    E[Azure Container Apps] --> B
-    B --> F[File Sync Agent]
-    F --> G[On-Premises File Server]
-```
+![File Storage](diagrams/images/core-architectural-components-file-storage-7.png)
+
 
 **Real-World Example:**
 
@@ -246,20 +182,8 @@ An enterprise uses Azure Files Premium with Azure File Sync to enable hybrid fil
 
 Cloud networking enables secure, reliable connectivity between resources, users, and on-premises infrastructure.
 
-```mermaid
-graph TB
-    subgraph "Cloud Network Architecture"
-        A[Virtual Network] --> B[Subnets]
-        B --> C[Public Subnet<br/>Web Tier]
-        B --> D[Private Subnet<br/>App Tier]
-        B --> E[Data Subnet<br/>Database Tier]
-        F[Load Balancer] --> C
-        G[Application Gateway] --> C
-        H[VPN Gateway] --> A
-        I[NAT Gateway] --> D
-        J[Network Security Groups] --> A
-    end
-```
+![Networking](diagrams/images/core-architectural-components-networking-8.png)
+
 
 ### Virtual Networks (VNet/VPC)
 
@@ -276,29 +200,8 @@ Virtual networks provide isolated network environments in the cloud with customi
 
 **Network Segmentation Example:**
 
-```mermaid
-graph TB
-    subgraph "Virtual Network: 10.0.0.0/16"
-        subgraph "Public Subnet: 10.0.1.0/24"
-            A[Load Balancer]
-            B[Web Servers]
-        end
-        
-        subgraph "App Subnet: 10.0.2.0/24"
-            C[App Servers]
-            D[API Services]
-        end
-        
-        subgraph "Data Subnet: 10.0.3.0/24"
-            E[Database Primary]
-            F[Database Replica]
-        end
-        
-        A --> B
-        B --> C
-        C --> E
-    end
-```
+![Virtual Networks (VNet/VPC)](diagrams/images/core-architectural-components-virtual-networks-(vnet-vpc)-9.png)
+
 
 **Best Practices:**
 
@@ -324,20 +227,8 @@ Load balancers distribute traffic across multiple instances for high availabilit
 
 **Load Balancing Architecture:**
 
-```mermaid
-graph TB
-    A[Users] --> B[Global Load Balancer<br/>Azure Front Door]
-    B --> C[Region 1: West US]
-    B --> D[Region 2: East US]
-    C --> E[Application Gateway]
-    D --> F[Application Gateway]
-    E --> G[Backend Pool]
-    F --> H[Backend Pool]
-    G --> I[VM 1]
-    G --> J[VM 2]
-    H --> K[VM 3]
-    H --> L[VM 4]
-```
+![Load Balancing](diagrams/images/core-architectural-components-load-balancing-10.png)
+
 
 > [!TIP]
 > Use Application Load Balancers (L7) for HTTP/HTTPS traffic to leverage advanced features like SSL offloading, path-based routing, and Web Application Firewall (WAF) integration.
@@ -357,15 +248,8 @@ CDNs cache content at edge locations globally, reducing latency and improving us
 
 **CDN Architecture:**
 
-```mermaid
-graph TB
-    A[Users Worldwide] --> B[CDN Edge Locations]
-    B --> C{Cache Hit?}
-    C -->|Yes| D[Serve from Edge]
-    C -->|No| E[Origin Server]
-    E --> F[Cache at Edge]
-    F --> D
-```
+![Content Delivery Network (CDN)](diagrams/images/core-architectural-components-content-delivery-network-(cdn)-11.png)
+
 
 **Real-World Example:**
 
@@ -385,25 +269,8 @@ Hybrid connectivity options enable secure connections between on-premises infras
 
 **Hybrid Network Architecture:**
 
-```mermaid
-graph TB
-    subgraph "On-Premises"
-        A[Corporate Network]
-        B[VPN Device/ExpressRoute]
-    end
-    
-    subgraph "Azure"
-        C[VPN Gateway/ExpressRoute Gateway]
-        D[Virtual Network]
-        E[Subnets]
-        F[Cloud Resources]
-    end
-    
-    B -->|Encrypted Tunnel| C
-    C --> D
-    D --> E
-    E --> F
-```
+![Hybrid Connectivity](diagrams/images/core-architectural-components-hybrid-connectivity-12.png)
+
 
 > [!IMPORTANT]
 > For production workloads requiring consistent performance and SLAs, use dedicated connections (ExpressRoute/Direct Connect) instead of VPN over the internet.
@@ -412,16 +279,8 @@ graph TB
 
 IAM controls who can access resources and what actions they can perform, forming the foundation of cloud security.
 
-```mermaid
-graph TB
-    A[User/Application] --> B[Authentication]
-    B --> C{Valid Credentials?}
-    C -->|Yes| D[Authorization]
-    C -->|No| E[Access Denied]
-    D --> F{Has Permission?}
-    F -->|Yes| G[Access Granted]
-    F -->|No| E
-```
+![Identity and Access Management (IAM)](diagrams/images/core-architectural-components-identity-and-access-management-(iam)-13.png)
+
 
 ### Identity Providers
 
@@ -437,17 +296,8 @@ graph TB
 
 **Multi-Factor Authentication (MFA):**
 
-```mermaid
-graph LR
-    A[User Login] --> B[Username + Password]
-    B --> C[MFA Challenge]
-    C --> D[Authenticator App]
-    C --> E[SMS Code]
-    C --> F[Hardware Token]
-    D --> G[Access Granted]
-    E --> G
-    F --> G
-```
+![Authentication Methods](diagrams/images/core-architectural-components-authentication-methods-14.png)
+
 
 **Supported MFA Methods:**
 
@@ -471,16 +321,8 @@ graph LR
 
 **RBAC Assignment Pattern:**
 
-```mermaid
-graph TD
-    A[Security Principal] --> B[Role Assignment]
-    C[Role Definition] --> B
-    D[Scope] --> B
-    
-    A --> E[User/Group/Service Principal]
-    C --> F[Permissions]
-    D --> G[Management Group/Subscription/<br/>Resource Group/Resource]
-```
+![Authorization Models](diagrams/images/core-architectural-components-authorization-models-15.png)
+
 
 **Best Practices:**
 
@@ -496,14 +338,8 @@ graph TD
 
 **Managed Identities (Azure) / IAM Roles (AWS):**
 
-```mermaid
-graph LR
-    A[Azure Function] --> B[Managed Identity]
-    B --> C[Azure Key Vault]
-    B --> D[Azure SQL Database]
-    B --> E[Azure Storage]
-    F[No Credentials in Code] --> B
-```
+![Service Identities](diagrams/images/core-architectural-components-service-identities-16.png)
+
 
 **Types:**
 
@@ -521,20 +357,8 @@ An Azure Function uses system-assigned managed identity to access Azure Key Vaul
 
 Cloud providers offer a wide range of managed database services for relational, NoSQL, and specialized workloads.
 
-```mermaid
-graph TB
-    A[Database Services] --> B[Relational<br/>SQL]
-    A --> C[NoSQL]
-    A --> D[In-Memory]
-    A --> E[Data Warehouse]
-    A --> F[Time-Series]
-    
-    B --> G[Azure SQL<br/>RDS<br/>Cloud SQL]
-    C --> H[Cosmos DB<br/>DynamoDB<br/>Firestore]
-    D --> I[Redis Cache<br/>ElastiCache<br/>Memorystore]
-    E --> J[Synapse<br/>Redshift<br/>BigQuery]
-    F --> K[Time Series Insights<br/>Timestream]
-```
+![Database Services](diagrams/images/core-architectural-components-database-services-17.png)
+
 
 ### Relational Databases
 
@@ -549,13 +373,8 @@ graph TB
 
 **High Availability Architecture:**
 
-```mermaid
-graph TB
-    A[Applications] --> B[Primary Database<br/>Zone 1]
-    B -->|Synchronous Replication| C[Standby Replica<br/>Zone 2]
-    B -->|Asynchronous Replication| D[Read Replica<br/>Zone 3]
-    E[Automatic Failover] --> C
-```
+![Relational Databases](diagrams/images/core-architectural-components-relational-databases-18.png)
+
 
 **Real-World Example:**
 
@@ -576,14 +395,8 @@ An e-commerce platform uses Azure SQL Database with zone-redundant configuration
 
 **Cosmos DB Multi-Model:**
 
-```mermaid
-graph TB
-    A[Cosmos DB Account] --> B[SQL API<br/>Document]
-    A --> C[MongoDB API<br/>Document]
-    A --> D[Cassandra API<br/>Column]
-    A --> E[Gremlin API<br/>Graph]
-    A --> F[Table API<br/>Key-Value]
-```
+![NoSQL Databases](diagrams/images/core-architectural-components-nosql-databases-19.png)
+
 
 **Use Cases by Data Model:**
 
@@ -607,14 +420,8 @@ graph TB
 
 **Caching Architecture Pattern:**
 
-```mermaid
-graph LR
-    A[Application] --> B{Cache Hit?}
-    B -->|Yes| C[Return from Cache]
-    B -->|No| D[Query Database]
-    D --> E[Store in Cache]
-    E --> C
-```
+![Caching Services](diagrams/images/core-architectural-components-caching-services-20.png)
+
 
 **Real-World Example:**
 
@@ -624,18 +431,8 @@ A news website uses Azure Cache for Redis to store article content and user sess
 
 The control plane provides unified management, monitoring, and governance across all cloud resources.
 
-```mermaid
-graph TB
-    subgraph "Control Plane"
-        A[Azure Portal/AWS Console] --> B[Resource Management]
-        C[CLI/PowerShell/API] --> B
-        D[Infrastructure as Code] --> B
-        B --> E[Provisioning]
-        B --> F[Configuration]
-        B --> G[Monitoring]
-        B --> H[Security]
-    end
-```
+![Control Plane](diagrams/images/core-architectural-components-control-plane-21.png)
+
 
 ### Management Tools
 
@@ -663,15 +460,8 @@ graph TB
 
 **IaC Workflow:**
 
-```mermaid
-graph LR
-    A[Define Infrastructure<br/>Code] --> B[Version Control<br/>Git]
-    B --> C[CI/CD Pipeline]
-    C --> D[Terraform Plan]
-    D --> E[Review Changes]
-    E --> F[Terraform Apply]
-    F --> G[Deployed Resources]
-```
+![Infrastructure as Code (IaC)](diagrams/images/core-architectural-components-infrastructure-as-code-(iac)-22.png)
+
 
 > [!IMPORTANT]
 > Always use Infrastructure as Code for production environments. Store IaC files in version control, implement code reviews, and use CI/CD pipelines for deployments.
@@ -688,18 +478,8 @@ graph LR
 
 **Observability Stack:**
 
-```mermaid
-graph TB
-    A[Applications] --> B[Metrics]
-    A --> C[Logs]
-    A --> D[Traces]
-    B --> E[Azure Monitor]
-    C --> E
-    D --> E
-    E --> F[Dashboards]
-    E --> G[Alerts]
-    E --> H[Analytics]
-```
+![Monitoring and Observability](diagrams/images/core-architectural-components-monitoring-and-observability-23.png)
+
 
 **Key Metrics to Monitor:**
 

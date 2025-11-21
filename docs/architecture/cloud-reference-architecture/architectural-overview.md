@@ -4,15 +4,8 @@
 
 Cloud service models define the level of control and responsibility shared between the cloud provider and the customer. Understanding these models is crucial for selecting the right services for your workloads.
 
-```mermaid
-graph TD
-    A[Cloud Service Models] --> B[IaaS]
-    A --> C[PaaS]
-    A --> D[SaaS]
-    B --> E[Virtual Machines<br/>Storage<br/>Networks]
-    C --> F[App Services<br/>Databases<br/>Containers]
-    D --> G[Office 365<br/>Salesforce<br/>Gmail]
-```
+![Cloud Service Models (IaaS, PaaS, SaaS)](diagrams/images/architectural-overview-cloud-service-models-(iaas,-paas,-saas)-1.png)
+
 
 ### Infrastructure as a Service (IaaS)
 
@@ -35,14 +28,8 @@ IaaS provides virtualized computing resources over the internet, offering the hi
 | **AWS** | S3 (Simple Storage Service) | Scalable object storage for data lakes and content distribution |
 
 **Real-World Scenario:**
-```mermaid
-graph LR
-    A[On-Premises Legacy App] --> B[Lift & Shift]
-    B --> C[Azure Virtual Machines]
-    C --> D[Minimal Code Changes]
-    C --> E[Full OS Control]
-    C --> F[Custom Configurations]
-```
+![Infrastructure as a Service (IaaS)](diagrams/images/architectural-overview-infrastructure-as-a-service-(iaas)-2.png)
+
 
 A financial services company migrates its legacy trading platform to Azure Virtual Machines, maintaining full control over the application stack while benefiting from cloud elasticity and disaster recovery capabilities.
 
@@ -71,16 +58,8 @@ PaaS provides a complete development and deployment environment in the cloud, el
 | **Azure** | Container Apps | Serverless containers with built-in scaling and networking |
 
 **Architecture Pattern:**
-```mermaid
-graph TD
-    A[Developer] --> B[Azure App Service]
-    B --> C[Azure SQL Database]
-    B --> D[Azure Key Vault]
-    B --> E[Azure Storage]
-    C --> F[Automatic Backups]
-    C --> G[Auto-scaling]
-    D --> H[Secrets Management]
-```
+![Platform as a Service (PaaS)](diagrams/images/architectural-overview-platform-as-a-service-(paas)-3.png)
+
 
 **Real-World Scenario:**
 
@@ -112,15 +91,8 @@ SaaS delivers fully functional software applications over the internet on a subs
 | **Marketing** | HubSpot | Marketing automation and CRM |
 
 **SaaS Architecture:**
-```mermaid
-graph LR
-    A[Users] --> B[Web Browser]
-    B --> C[Load Balancer]
-    C --> D[SaaS Application]
-    D --> E[Multi-tenant Database]
-    D --> F[Shared Infrastructure]
-    F --> G[Provider Manages Everything]
-```
+![Software as a Service (SaaS)](diagrams/images/architectural-overview-software-as-a-service-(saas)-4.png)
+
 
 **Real-World Scenario:**
 
@@ -131,23 +103,8 @@ A mid-sized company adopts Microsoft 365 for all employees, providing email, Sha
 
 ### Comparison Matrix
 
-```mermaid
-graph TB
-    subgraph "IaaS"
-        A1[Customer Manages:<br/>Applications<br/>Data<br/>Runtime<br/>Middleware<br/>OS]
-        A2[Provider Manages:<br/>Virtualization<br/>Servers<br/>Storage<br/>Networking]
-    end
-    
-    subgraph "PaaS"
-        B1[Customer Manages:<br/>Applications<br/>Data]
-        B2[Provider Manages:<br/>Runtime<br/>Middleware<br/>OS<br/>Virtualization<br/>Infrastructure]
-    end
-    
-    subgraph "SaaS"
-        C1[Customer Manages:<br/>Data<br/>Configuration]
-        C2[Provider Manages:<br/>Everything Else]
-    end
-```
+![Comparison Matrix](diagrams/images/architectural-overview-comparison-matrix-5.png)
+
 
 | Aspect | IaaS | PaaS | SaaS |
 |--------|------|------|------|
@@ -162,17 +119,8 @@ graph TB
 
 Cloud deployment models define where cloud infrastructure is deployed and who manages it. The choice impacts security, compliance, cost, and operational complexity.
 
-```mermaid
-graph TD
-    A[Cloud Deployment Models] --> B[Public Cloud]
-    A --> C[Private Cloud]
-    A --> D[Hybrid Cloud]
-    A --> E[Multi-cloud]
-    B --> F[Shared Infrastructure<br/>Internet-accessible]
-    C --> G[Dedicated Infrastructure<br/>On-premises/Hosted]
-    D --> H[Public + Private<br/>Integrated]
-    E --> I[Multiple Public Providers]
-```
+![Cloud Deployment Models (Public, Private, Hybrid, Multi-cloud)](diagrams/images/architectural-overview-cloud-deployment-models-(public,-private,-hybrid,--6.png)
+
 
 ### Public Cloud
 
@@ -196,19 +144,8 @@ Public cloud services are delivered over the public internet and shared across m
 | **IBM Cloud** | 60+ datacenters | Watson AI, Cloud Foundry, Bare Metal |
 
 **Architecture Example:**
-```mermaid
-graph LR
-    A[Users Worldwide] --> B[Azure Front Door]
-    B --> C[West US Region]
-    B --> D[East US Region]
-    B --> E[Europe Region]
-    C --> F[App Service]
-    D --> G[App Service]
-    E --> H[App Service]
-    F --> I[Azure SQL Database]
-    G --> J[Azure SQL Database]
-    H --> K[Azure SQL Database]
-```
+![Public Cloud](diagrams/images/architectural-overview-public-cloud-7.png)
+
 
 **Real-World Scenario:**
 
@@ -237,18 +174,8 @@ Private cloud infrastructure is dedicated to a single organization, either hoste
 | **Virtual Private Cloud** | Isolated section of public cloud | Azure VNet, AWS VPC, Google VPC |
 
 **Architecture Example:**
-```mermaid
-graph TD
-    A[Corporate Users] --> B[Private Network/VPN]
-    B --> C[On-Premises Private Cloud]
-    C --> D[VMware vSphere]
-    D --> E[Compute Cluster]
-    D --> F[Storage Array]
-    D --> G[Network Infrastructure]
-    E --> H[Business Applications]
-    F --> H
-    G --> H
-```
+![Private Cloud](diagrams/images/architectural-overview-private-cloud-8.png)
+
 
 **Real-World Scenario:**
 
@@ -278,30 +205,8 @@ Hybrid cloud combines public and private clouds with orchestration between them,
 | **VMware Cloud** | Hybrid cloud infrastructure | Seamless workload migration between environments |
 
 **Hybrid Architecture Pattern:**
-```mermaid
-graph TB
-    subgraph "Public Cloud - Azure"
-        A[Web Tier<br/>Azure App Service]
-        B[API Tier<br/>Azure Functions]
-        C[Dev/Test<br/>Environments]
-    end
-    
-    subgraph "Private Cloud - On-Premises"
-        D[Database Tier<br/>SQL Server]
-        E[Legacy Applications]
-        F[Sensitive Data Storage]
-    end
-    
-    subgraph "Hybrid Connectivity"
-        G[Azure ExpressRoute<br/>VPN Gateway]
-    end
-    
-    A --> G
-    B --> G
-    G --> D
-    G --> E
-    C --> G
-```
+![Hybrid Cloud](diagrams/images/architectural-overview-hybrid-cloud-9.png)
+
 
 **Real-World Scenario:**
 
@@ -329,28 +234,8 @@ Multi-cloud strategy involves using services from multiple public cloud provider
 - Requires cloud-agnostic tools and practices
 
 **Multi-cloud Architecture:**
-```mermaid
-graph TB
-    A[Users] --> B[Global Load Balancer]
-    B --> C[Azure]
-    B --> D[AWS]
-    B --> E[Google Cloud]
-    
-    subgraph "Azure"
-        C --> F[AI/ML Services<br/>Cognitive Services]
-        C --> G[Enterprise Apps<br/>Active Directory]
-    end
-    
-    subgraph "AWS"
-        D --> H[Compute<br/>EC2 Instances]
-        D --> I[Storage<br/>S3 Buckets]
-    end
-    
-    subgraph "Google Cloud"
-        E --> J[Data Analytics<br/>BigQuery]
-        E --> K[Kubernetes<br/>GKE]
-    end
-```
+![Multi-cloud](diagrams/images/architectural-overview-multi-cloud-10.png)
+
 
 **Multi-cloud Strategy Examples:**
 
@@ -388,14 +273,8 @@ This approach lets them leverage AWS's CDN capabilities, Google's data analytics
 
 ### Deployment Model Comparison
 
-```mermaid
-graph LR
-    A[Deployment Model Selection] --> B{Requirements}
-    B -->|Cost-Effective<br/>Rapid Scale| C[Public Cloud]
-    B -->|Regulatory<br/>Security| D[Private Cloud]
-    B -->|Compliance + Flexibility| E[Hybrid Cloud]
-    B -->|Avoid Lock-in<br/>Best-of-Breed| F[Multi-cloud]
-```
+![Deployment Model Comparison](diagrams/images/architectural-overview-deployment-model-comparison-11.png)
+
 
 | Criteria | Public Cloud | Private Cloud | Hybrid Cloud | Multi-cloud |
 |----------|--------------|---------------|--------------|-------------|

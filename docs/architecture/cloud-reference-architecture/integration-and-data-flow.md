@@ -2,18 +2,8 @@
 
 Integration and data flow patterns enable communication between services, systems, and data sources. This section covers API design, messaging, event-driven architectures, and data pipelines.
 
-```mermaid
-graph TB
-    A[Integration & Data Flow] --> B[Synchronous<br/>APIs/REST]
-    A --> C[Asynchronous<br/>Messaging]
-    A --> D[Event-Driven]
-    A --> E[Data Pipelines]
-    
-    B --> F[Request-Response]
-    C --> G[Queues/Topics]
-    D --> H[Event Streams]
-    E --> I[ETL/ELT]
-```
+![Integration and Data Flow](diagrams/images/integration-and-data-flow-integration-and-data-flow-1.png)
+
 
 ## Data Integration Patterns
 
@@ -23,24 +13,13 @@ Data integration moves data between systems for analytics, synchronization, and 
 
 **ETL (Extract, Transform, Load):**
 
-```mermaid
-graph LR
-    A[Source Systems] --> B[Extract]
-    B --> C[Transform<br/>Cleanse, Enrich]
-    C --> D[Load]
-    D --> E[Data Warehouse]
-```
+![ETL vs ELT](diagrams/images/integration-and-data-flow-etl-vs-elt-2.png)
+
 
 **ELT (Extract, Load, Transform):**
 
-```mermaid
-graph LR
-    A[Source Systems] --> B[Extract]
-    B --> C[Load<br/>Raw Data]
-    C --> D[Data Lake]
-    D --> E[Transform<br/>In Warehouse]
-    E --> F[Analytics]
-```
+![ETL vs ELT](diagrams/images/integration-and-data-flow-etl-vs-elt-3.png)
+
 
 **ETL vs ELT Comparison:**
 
@@ -113,16 +92,8 @@ CDC tracks and replicates data changes from source to target systems in real-tim
 
 **CDC Architecture:**
 
-```mermaid
-graph LR
-    A[Source Database] --> B[CDC Agent<br/>Read Transaction Log]
-    B --> C[Change Events]
-    C --> D[Kafka / Event Hub]
-    D --> E[Consumer]
-    E --> F[Target Database]
-    E --> G[Data Lake]
-    E --> H[Search Index]
-```
+![Change Data Capture (CDC)](diagrams/images/integration-and-data-flow-change-data-capture-(cdc)-4.png)
+
 
 **CDC vs Batch:**
 
@@ -159,18 +130,8 @@ An e-commerce platform uses Debezium for CDC:
 
 **Replication Patterns:**
 
-```mermaid
-graph TB
-    A[Replication Strategies] --> B[Master-Slave]
-    A --> C[Multi-Master]
-    A --> D[Snapshot]
-    A --> E[Transactional]
-    
-    B --> F[One-Way Replication<br/>Read Scaling]
-    C --> G[Bi-Directional<br/>Active-Active]
-    D --> H[Periodic Full Copy<br/>Historical Data]
-    E --> I[ACID Guarantees<br/>Distributed Transactions]
-```
+![Data Replication Strategies](diagrams/images/integration-and-data-flow-data-replication-strategies-5.png)
+
 
 **Replication Comparison:**
 
@@ -191,18 +152,8 @@ Service integration enables communication between microservices and external sys
 
 **Common Patterns:**
 
-```mermaid
-graph TB
-    A[Integration Patterns] --> B[Point-to-Point]
-    A --> C[Pub/Sub]
-    A --> D[Request-Reply]
-    A --> E[Saga]
-    
-    B --> F[Direct API Calls<br/>Simple, Tight Coupling]
-    C --> G[Event Bus<br/>Loose Coupling]
-    D --> H[Synchronous<br/>Immediate Response]
-    E --> I[Distributed Transactions<br/>Eventual Consistency]
-```
+![Integration Patterns](diagrams/images/integration-and-data-flow-integration-patterns-6.png)
+
 
 **Pattern Comparison:**
 
@@ -217,20 +168,8 @@ graph TB
 
 **Queue vs Topic:**
 
-```mermaid
-graph TB
-    subgraph "Queue (Point-to-Point)"
-        A[Producer] --> B[Queue]
-        B --> C[Consumer 1]
-    end
-    
-    subgraph "Topic (Pub/Sub)"
-        D[Publisher] --> E[Topic]
-        E --> F[Subscriber 1]
-        E --> G[Subscriber 2]
-        E --> H[Subscriber 3]
-    end
-```
+![Messaging Patterns](diagrams/images/integration-and-data-flow-messaging-patterns-7.png)
+
 
 **Messaging Services:**
 
@@ -257,24 +196,8 @@ graph TB
 
 **Queue Processing Pattern:**
 
-```mermaid
-graph LR
-    A[Producer] --> B[Message Queue]
-    B --> C[Consumer 1]
-    B --> D[Consumer 2]
-    B --> E[Consumer 3]
-    
-    C --> F{Success?}
-    D --> G{Success?}
-    E --> H{Success?}
-    
-    F -->|Yes| I[Delete Message]
-    F -->|No| J[Retry/Dead Letter]
-    G -->|Yes| I
-    G -->|No| J
-    H -->|Yes| I
-    H -->|No| J
-```
+![Messaging Patterns](diagrams/images/integration-and-data-flow-messaging-patterns-8.png)
+
 
 **Example: Azure Service Bus Consumer:**
 
@@ -314,19 +237,8 @@ Dead letter queues handle messages that fail processing after multiple retries.
 
 **DLQ Pattern:**
 
-```mermaid
-graph LR
-    A[Message Queue] --> B[Consumer]
-    B --> C{Success?}
-    C -->|Yes| D[Process]
-    C -->|No, Retry 1| B
-    B --> E{Success?}
-    E -->|No, Retry 2| B
-    B --> F{Success?}
-    F -->|No, Max Retries| G[Dead Letter Queue]
-    G --> H[Manual Review]
-    G --> I[Alert Operations]
-```
+![Dead Letter Queues](diagrams/images/integration-and-data-flow-dead-letter-queues-9.png)
+
 
 **DLQ Configuration:**
 
@@ -346,45 +258,13 @@ Sagas manage distributed transactions across microservices using compensating tr
 
 **Choreography-Based Saga:**
 
-```mermaid
-sequenceDiagram
-    participant OrderService
-    participant PaymentService
-    participant InventoryService
-    participant ShippingService
-    
-    OrderService->>PaymentService: OrderCreated
-    PaymentService->>PaymentService: Process Payment
-    PaymentService->>InventoryService: PaymentCompleted
-    InventoryService->>InventoryService: Reserve Items
-    InventoryService->>ShippingService: ItemsReserved
-    ShippingService->>ShippingService: Create Shipment
-    ShippingService->>OrderService: ShipmentCreated
-    
-    Note over OrderService: Order Fulfilled
-```
+![Saga Pattern](diagrams/images/integration-and-data-flow-saga-pattern-10.png)
+
 
 **Compensation (Rollback) Flow:**
 
-```mermaid
-sequenceDiagram
-    participant OrderService
-    participant PaymentService
-    participant InventoryService
-    participant ShippingService
-    
-    OrderService->>PaymentService: OrderCreated
-    PaymentService->>InventoryService: PaymentCompleted
-    InventoryService->>ShippingService: ItemsReserved
-    ShippingService->>ShippingService: ❌ Shipping Failed
-    ShippingService->>InventoryService: ShippingFailed (Compensate)
-    InventoryService->>InventoryService: Release Items
-    InventoryService->>PaymentService: ItemsReleased (Compensate)
-    PaymentService->>PaymentService: Refund Payment
-    PaymentService->>OrderService: PaymentRefunded (Compensate)
-    
-    Note over OrderService: Order Cancelled
-```
+![Saga Pattern](diagrams/images/integration-and-data-flow-saga-pattern-11.png)
+
 
 **Saga Orchestration vs Choreography:**
 
@@ -404,15 +284,8 @@ API management provides a gateway for securing, monitoring, and scaling APIs.
 
 **Gateway Responsibilities:**
 
-```mermaid
-graph TB
-    A[API Gateway] --> B[Authentication<br/>JWT Validation]
-    A --> C[Rate Limiting<br/>Throttling]
-    A --> D[Request Routing<br/>Load Balancing]
-    A --> E[Response Caching]
-    A --> F[Monitoring & Logging]
-    A --> G[Protocol Translation<br/>HTTP→gRPC]
-```
+![API Gateway Pattern](diagrams/images/integration-and-data-flow-api-gateway-pattern-12.png)
+
 
 **API Gateway Products:**
 
@@ -426,22 +299,8 @@ graph TB
 
 **API Management Architecture:**
 
-```mermaid
-graph TB
-    A[External Clients] --> B[API Gateway<br/>Azure APIM]
-    C[Internal Apps] --> B
-    
-    B --> D[Policy Engine]
-    D --> E[Rate Limiting]
-    D --> F[Caching]
-    D --> G[Transformation]
-    
-    B --> H[Backend API 1]
-    B --> I[Backend API 2]
-    B --> J[Backend API 3]
-    
-    B --> K[Analytics & Monitoring]
-```
+![API Gateway Pattern](diagrams/images/integration-and-data-flow-api-gateway-pattern-13.png)
+
 
 ### API Security
 
@@ -456,24 +315,8 @@ graph TB
 
 **OAuth 2.0 Flow:**
 
-```mermaid
-sequenceDiagram
-    participant User
-    participant Client App
-    participant Auth Server
-    participant API
-    
-    User->>Client App: Login
-    Client App->>Auth Server: Authorization Request
-    Auth Server->>User: Login Prompt
-    User->>Auth Server: Credentials
-    Auth Server->>Client App: Authorization Code
-    Client App->>Auth Server: Exchange Code for Token
-    Auth Server->>Client App: Access Token
-    Client App->>API: API Call + Access Token
-    API->>API: Validate Token
-    API->>Client App: Protected Resource
-```
+![API Security](diagrams/images/integration-and-data-flow-api-security-14.png)
+
 
 **Azure API Management Policy:**
 
@@ -526,14 +369,8 @@ sequenceDiagram
 
 **Token Bucket Algorithm:**
 
-```mermaid
-graph TD
-    A[Bucket<br/>Max: 100 tokens] --> B[Refill: 10 tokens/second]
-    C[Request Arrives] --> D{Tokens Available?}
-    D -->|Yes| E[Remove 1 Token]
-    D -->|No| F[Reject: 429 Too Many Requests]
-    E --> G[Process Request]
-```
+![Rate Limiting and Throttling](diagrams/images/integration-and-data-flow-rate-limiting-and-throttling-15.png)
+
 
 **Rate Limit Headers:**
 
@@ -593,22 +430,8 @@ Event sourcing stores state as a sequence of events rather than current state.
 
 **Traditional vs Event Sourcing:**
 
-```mermaid
-graph TB
-    subgraph "Traditional (State-Based)"
-        A1[Update] --> B1[Current State<br/>Balance: 100]
-    end
-    
-    subgraph "Event Sourcing"
-        A2[Deposit 50] --> B2[Event 1]
-        A3[Withdraw 20] --> C2[Event 2]
-        A4[Deposit 70] --> D2[Event 3]
-        B2 --> E2[Event Stream]
-        C2 --> E2
-        D2 --> E2
-        E2 --> F2[Rebuild State<br/>Balance: 100]
-    end
-```
+![Event Sourcing](diagrams/images/integration-and-data-flow-event-sourcing-16.png)
+
 
 **Event Sourcing Benefits:**
 
@@ -622,16 +445,8 @@ graph TB
 
 **Event Store:**
 
-```mermaid
-graph LR
-    A[Command] --> B[Aggregate]
-    B --> C[Generate Event]
-    C --> D[Event Store<br/>Immutable Log]
-    D --> E[Event Bus]
-    E --> F[Projection 1<br/>Read Model]
-    E --> G[Projection 2<br/>Analytics]
-    E --> H[Projection 3<br/>Search Index]
-```
+![Event Sourcing](diagrams/images/integration-and-data-flow-event-sourcing-17.png)
+
 
 **Example: Bank Account Events:**
 
@@ -692,18 +507,8 @@ CQRS separates read and write models for optimized performance and scalability.
 
 **CQRS Architecture:**
 
-```mermaid
-graph TB
-    A[Client] --> B{Operation Type}
-    B -->|Write| C[Command Handler]
-    B -->|Read| D[Query Handler]
-    
-    C --> E[Write Model<br/>Normalized Database]
-    E --> F[Events]
-    F --> G[Projection Engine]
-    G --> H[Read Model<br/>Denormalized]
-    D --> H
-```
+![CQRS (Command Query Responsibility Segregation)](diagrams/images/integration-and-data-flow-cqrs-(command-query-responsibility-segregation)-18.png)
+
 
 **CQRS Benefits:**
 
@@ -789,24 +594,8 @@ public async Task<ProductReadModel> GetProduct(string productId)
 
 **Kafka Architecture:**
 
-```mermaid
-graph TB
-    A[Producer 1] --> D[Kafka Cluster]
-    B[Producer 2] --> D
-    C[Producer 3] --> D
-    
-    D --> E[Topic: Orders<br/>Partition 0]
-    D --> F[Topic: Orders<br/>Partition 1]
-    D --> G[Topic: Orders<br/>Partition 2]
-    
-    E --> H[Consumer Group A<br/>Offset: 1000]
-    F --> H
-    G --> H
-    
-    E --> I[Consumer Group B<br/>Offset: 500]
-    F --> I
-    G --> I
-```
+![Event Streaming Platforms](diagrams/images/integration-and-data-flow-event-streaming-platforms-19.png)
+
 
 **Kafka vs Azure Event Hubs:**
 
@@ -836,13 +625,8 @@ Netflix uses Kafka for:
 
 **Schema Registry:**
 
-```mermaid
-graph LR
-    A[Producer] --> B[Schema Registry<br/>Validate & Store]
-    B --> C[Kafka / Event Hubs]
-    C --> D[Consumer]
-    D --> E[Schema Registry<br/>Retrieve Schema]
-```
+![Event Schema Evolution](diagrams/images/integration-and-data-flow-event-schema-evolution-20.png)
+
 
 **Schema Evolution Rules:**
 

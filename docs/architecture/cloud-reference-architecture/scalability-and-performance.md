@@ -2,18 +2,8 @@
 
 Scalability ensures systems handle growing demand while maintaining performance. This section covers scaling strategies, load balancing, caching, and performance optimization techniques.
 
-```mermaid
-graph TB
-    A[Scalability & Performance] --> B[Scaling Patterns]
-    A --> C[Load Distribution]
-    A --> D[Caching]
-    A --> E[Performance Testing]
-    
-    B --> F[Horizontal]
-    B --> G[Vertical]
-    C --> H[Load Balancers]
-    C --> I[CDNs]
-```
+![Scalability and Performance](diagrams/images/scalability-and-performance-scalability-and-performance-1.png)
+
 
 ## Elasticity and Scalability Patterns
 
@@ -21,18 +11,8 @@ Elasticity is the ability to automatically scale resources based on demand, whil
 
 ### Vertical vs Horizontal Scaling
 
-```mermaid
-graph TB
-    subgraph "Vertical Scaling (Scale Up)"
-        A[Small Server<br/>2 CPU, 4GB RAM] --> B[Large Server<br/>16 CPU, 64GB RAM]
-    end
-    
-    subgraph "Horizontal Scaling (Scale Out)"
-        C[Server 1] --> D[Server 1]
-        C --> E[Server 2]
-        C --> F[Server 3]
-    end
-```
+![Vertical vs Horizontal Scaling](diagrams/images/scalability-and-performance-vertical-vs-horizontal-scaling-2.png)
+
 
 **Scaling Comparison:**
 
@@ -52,17 +32,8 @@ graph TB
 
 **Auto-Scaling Architecture:**
 
-```mermaid
-graph LR
-    A[Metrics Collection<br/>CPU, Memory, RPS] --> B[Auto-Scaler]
-    B --> C{Threshold Exceeded?}
-    C -->|Scale Out| D[Add Instances]
-    C -->|Scale In| E[Remove Instances]
-    C -->|Within Range| F[No Action]
-    D --> G[Load Balancer]
-    E --> G
-    F --> G
-```
+![Auto-Scaling Patterns](diagrams/images/scalability-and-performance-auto-scaling-patterns-3.png)
+
 
 **Scaling Triggers:**
 
@@ -114,16 +85,8 @@ TargetTrackingScaling:
 
 **Scaling Best Practices:**
 
-```mermaid
-graph TD
-    A[Design for Failure] --> B[Stateless Design]
-    A --> C[Health Checks]
-    A --> D[Graceful Shutdown]
-    
-    B --> E[Store State Externally<br/>Redis, Database]
-    C --> F[Remove Unhealthy Instances]
-    D --> G[Drain Connections<br/>Before Termination]
-```
+![Auto-Scaling Patterns](diagrams/images/scalability-and-performance-auto-scaling-patterns-4.png)
+
 
 1. **Stateless Applications**: Store session state in Redis/DynamoDB, not in-memory
 2. **Health Checks**: Implement `/health` endpoint for load balancer probes
@@ -155,29 +118,13 @@ An e-commerce site uses predictive auto-scaling:
 
 **Read Replica Architecture:**
 
-```mermaid
-graph TB
-    A[Application] --> B{Query Type}
-    B -->|Write| C[Primary Database]
-    B -->|Read| D[Read Replica 1]
-    B -->|Read| E[Read Replica 2]
-    B -->|Read| F[Read Replica 3]
-    
-    C -.Async Replication.-> D
-    C -.Async Replication.-> E
-    C -.Async Replication.-> F
-```
+![Scaling Database Tier](diagrams/images/scalability-and-performance-scaling-database-tier-5.png)
+
 
 **Sharding (Horizontal Partitioning):**
 
-```mermaid
-graph TB
-    A[Application] --> B[Shard Router]
-    B --> C{Hash User ID}
-    C -->|0-999| D[Shard 1<br/>Users 0-999]
-    C -->|1000-1999| E[Shard 2<br/>Users 1000-1999]
-    C -->|2000-2999| F[Shard 3<br/>Users 2000-2999]
-```
+![Scaling Database Tier](diagrams/images/scalability-and-performance-scaling-database-tier-6.png)
+
 
 **Sharding Challenges:**
 
@@ -191,18 +138,8 @@ graph TB
 
 **Cosmos DB Global Distribution:**
 
-```mermaid
-graph TB
-    A[Application] --> B[Cosmos DB<br/>Multi-Master]
-    
-    B --> C[Region 1<br/>East US]
-    B --> D[Region 2<br/>West Europe]
-    B --> E[Region 3<br/>Southeast Asia]
-    
-    C <-.Replication.-> D
-    D <-.Replication.-> E
-    E <-.Replication.-> C
-```
+![Scaling Database Tier](diagrams/images/scalability-and-performance-scaling-database-tier-7.png)
+
 
 **Benefits:**
 
@@ -220,14 +157,8 @@ Serverless platforms automatically scale from zero to thousands of concurrent ex
 
 **Serverless Auto-Scaling:**
 
-```mermaid
-graph LR
-    A[0 Requests] --> B[Cold Start<br/>0→1 instance<br/>~3 seconds]
-    B --> C[Warm Pool<br/>1-5 instances]
-    C --> D[High Load<br/>5→100 instances<br/>~1 second each]
-    D --> E[Scale Down<br/>100→5 instances<br/>~5 minutes]
-    E --> F[Idle<br/>5→0 instances<br/>~10 minutes]
-```
+![Serverless Scaling](diagrams/images/scalability-and-performance-serverless-scaling-8.png)
+
 
 **Serverless Scaling Limits:**
 
@@ -268,14 +199,8 @@ Load balancers distribute traffic across multiple servers, improving availabilit
 
 ### Load Balancer Types
 
-```mermaid
-graph TB
-    A[Load Balancers] --> B[Layer 4<br/>Transport]
-    A --> C[Layer 7<br/>Application]
-    
-    B --> D[TCP/UDP<br/>Low Latency<br/>High Throughput]
-    C --> E[HTTP/HTTPS<br/>Content-Based Routing<br/>SSL Termination]
-```
+![Load Balancer Types](diagrams/images/scalability-and-performance-load-balancer-types-9.png)
+
 
 **Load Balancer Comparison:**
 
@@ -300,23 +225,13 @@ graph TB
 
 **Round Robin:**
 
-```mermaid
-graph LR
-    A[Load Balancer] --> B[Server 1<br/>Request 1, 4, 7]
-    A --> C[Server 2<br/>Request 2, 5, 8]
-    A --> D[Server 3<br/>Request 3, 6, 9]
-```
+![Load Balancing Algorithms](diagrams/images/scalability-and-performance-load-balancing-algorithms-10.png)
+
 
 **Least Connections:**
 
-```mermaid
-graph LR
-    A[Load Balancer] --> B[Server 1<br/>2 active connections]
-    A --> C[Server 2<br/>5 active connections]
-    A --> D[Server 3<br/>1 active connection]
-    
-    E[New Request] -.-> D
-```
+![Load Balancing Algorithms](diagrams/images/scalability-and-performance-load-balancing-algorithms-11.png)
+
 
 > [!NOTE]
 > Choose round robin for short-lived HTTP requests. Use least connections for WebSockets or long-polling where connection duration varies significantly.
@@ -333,17 +248,8 @@ graph LR
 
 **Health Check Endpoint:**
 
-```mermaid
-graph TD
-    A[Load Balancer] --> B[Health Check<br/>/health every 10s]
-    B --> C{HTTP 200?}
-    C -->|Yes| D[Mark Healthy]
-    C -->|No| E{Failed 3x?}
-    E -->|Yes| F[Remove from Pool]
-    E -->|No| G[Retry]
-    F --> H[Alert Operations]
-    D --> I[Route Traffic]
-```
+![Health Checks and Failover](diagrams/images/scalability-and-performance-health-checks-and-failover-12.png)
+
 
 **Example Health Check Implementation:**
 
@@ -389,17 +295,8 @@ services.AddHealthChecks()
 
 **Session Affinity (Sticky Sessions):**
 
-```mermaid
-graph LR
-    A[User 1] --> B[Load Balancer]
-    C[User 2] --> B
-    
-    B -->|Cookie: server=1| D[Server 1]
-    B -->|Cookie: server=2| E[Server 2]
-    
-    A -.All Requests.-> D
-    C -.All Requests.-> E
-```
+![Session Persistence](diagrams/images/scalability-and-performance-session-persistence-13.png)
+
 
 **Session Storage Options:**
 
@@ -412,16 +309,8 @@ graph LR
 
 **Redis Session Architecture:**
 
-```mermaid
-graph TB
-    A[Load Balancer] --> B[App Server 1]
-    A --> C[App Server 2]
-    A --> D[App Server 3]
-    
-    B --> E[Redis Cache<br/>Shared Sessions]
-    C --> E
-    D --> E
-```
+![Session Persistence](diagrams/images/scalability-and-performance-session-persistence-14.png)
+
 
 > [!TIP]
 > Avoid sticky sessions when possible - design stateless applications. Use external session storage (Redis) for true scalability and resilience.
@@ -430,18 +319,8 @@ graph TB
 
 **Traffic Splitting:**
 
-```mermaid
-graph LR
-    A[Load Balancer] --> B[90% Traffic]
-    A --> C[10% Traffic]
-    
-    B --> D[Version 1.0<br/>Stable]
-    C --> E[Version 1.1<br/>Canary]
-    
-    E --> F{Error Rate OK?}
-    F -->|Yes| G[Increase to 50%]
-    F -->|No| H[Rollback]
-```
+![Traffic Splitting and Canary Deployments](diagrams/images/scalability-and-performance-traffic-splitting-and-canary-deployments-15.png)
+
 
 **Azure Application Gateway URL Routing:**
 
@@ -489,14 +368,8 @@ Caching dramatically improves performance by serving frequently accessed data fr
 
 **How It Works:**
 
-```mermaid
-graph TD
-    A[Application] --> B{Cache Hit?}
-    B -->|Yes| C[Return from Cache]
-    B -->|No| D[Query Database]
-    D --> E[Store in Cache]
-    E --> F[Return to App]
-```
+![Cache-Aside Pattern](diagrams/images/scalability-and-performance-cache-aside-pattern-16.png)
+
 
 **Cache-Aside Implementation:**
 
@@ -541,23 +414,13 @@ public async Task<Product> GetProductAsync(int productId)
 
 **Write-Through Cache:**
 
-```mermaid
-graph LR
-    A[Application Write] --> B[Cache]
-    B --> C[Database]
-    C --> D[Write Success]
-    D --> B
-    B --> A
-```
+![Write Strategies](diagrams/images/scalability-and-performance-write-strategies-17.png)
+
 
 **Write-Behind (Write-Back) Cache:**
 
-```mermaid
-graph LR
-    A[Application Write] --> B[Cache]
-    B --> C[Immediate Success]
-    B -.Async.-> D[Database]
-```
+![Write Strategies](diagrams/images/scalability-and-performance-write-strategies-18.png)
+
 
 **Cache Strategy Comparison:**
 
@@ -585,13 +448,8 @@ graph LR
 
 **LRU Cache Behavior:**
 
-```mermaid
-graph LR
-    A[Cache Full<br/>A, B, C, D] --> B[Access B]
-    B --> C[Access E<br/>New Item]
-    C --> D[Evict A<br/>Least Recently Used]
-    D --> E[Cache: B, C, D, E]
-```
+![Cache Eviction Policies](diagrams/images/scalability-and-performance-cache-eviction-policies-19.png)
+
 
 > [!NOTE]
 > LRU is the default and works well for most scenarios. Use LFU if you have distinct hot/cold data patterns.
@@ -600,26 +458,8 @@ graph LR
 
 **Redis Architecture:**
 
-```mermaid
-graph TB
-    subgraph "Redis Cluster"
-        A[Master 1<br/>Slots 0-5460]
-        B[Master 2<br/>Slots 5461-10922]
-        C[Master 3<br/>Slots 10923-16383]
-        
-        D[Replica 1]
-        E[Replica 2]
-        F[Replica 3]
-        
-        A -.-> D
-        B -.-> E
-        C -.-> F
-    end
-    
-    G[Application] --> A
-    G --> B
-    G --> C
-```
+![Distributed Caching](diagrams/images/scalability-and-performance-distributed-caching-20.png)
+
 
 **Redis vs Memcached:**
 
@@ -660,13 +500,8 @@ A media site uses Redis for:
 
 **Event-Based Invalidation:**
 
-```mermaid
-graph LR
-    A[Update Product] --> B[Database Write]
-    B --> C[Publish Event]
-    C --> D[Cache Invalidation]
-    D --> E[Delete Cache Key]
-```
+![Cache Invalidation](diagrams/images/scalability-and-performance-cache-invalidation-21.png)
+
 
 **Example: Event-Driven Cache Invalidation:**
 
@@ -698,20 +533,8 @@ CDNs cache static content at edge locations worldwide, reducing latency and orig
 
 ### CDN Architecture
 
-```mermaid
-graph TB
-    A[User - New York] --> B[CDN Edge<br/>New York]
-    C[User - London] --> D[CDN Edge<br/>London]
-    E[User - Tokyo] --> F[CDN Edge<br/>Tokyo]
-    
-    B -.Cache Miss.-> G[Origin Server<br/>Azure/AWS]
-    D -.Cache Miss.-> G
-    F -.Cache Miss.-> G
-    
-    B -->|Cache Hit| A
-    D -->|Cache Hit| C
-    F -->|Cache Hit| E
-```
+![CDN Architecture](diagrams/images/scalability-and-performance-cdn-architecture-22.png)
+
 
 **CDN Benefits:**
 
@@ -786,20 +609,8 @@ graph TB
 
 **Cache-Control Directives:**
 
-```mermaid
-graph TB
-    A[Cache-Control] --> B[public]
-    A --> C[private]
-    A --> D[no-cache]
-    A --> E[no-store]
-    A --> F[max-age]
-    
-    B --> G[CDN + Browser Cache]
-    C --> H[Browser Only]
-    D --> I[Revalidate Every Time]
-    E --> J[Never Cache]
-    F --> K[Cache Duration]
-```
+![Cache Control Headers](diagrams/images/scalability-and-performance-cache-control-headers-23.png)
+
 
 **Best Practices by Content Type:**
 
@@ -882,18 +693,8 @@ Modern CDNs support code execution at edge locations for dynamic content.
 
 **Use Cases:**
 
-```mermaid
-graph TB
-    A[Edge Computing] --> B[A/B Testing]
-    A --> C[Personalization]
-    A --> D[Bot Detection]
-    A --> E[Image Optimization]
-    A --> F[Geo-Routing]
-    
-    B --> G[Serve different versions<br/>without origin call]
-    C --> H[Customize content by<br/>location/device]
-    D --> I[Block malicious traffic<br/>before origin]
-```
+![Edge Computing](diagrams/images/scalability-and-performance-edge-computing-24.png)
+
 
 **Example: Cloudflare Worker for A/B Testing:**
 

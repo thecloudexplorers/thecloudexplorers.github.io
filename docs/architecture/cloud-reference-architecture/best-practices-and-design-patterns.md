@@ -2,16 +2,8 @@
 
 Best practices and design patterns are proven solutions to common cloud architecture challenges, improving reliability, performance, and maintainability.
 
-```mermaid
-graph TB
-    A[Best Practices & Patterns] --> B[Cloud Design Patterns]
-    A --> C[Architecture Principles]
-    A --> D[Anti-Patterns]
-    
-    B --> E[Resilience]
-    B --> F[Scalability]
-    B --> G[Security]
-```
+![Best Practices and Design Patterns](diagrams/images/best-practices-and-design-patterns-best-practices-and-design-patterns-1.png)
+
 
 ## Architectural Best Practices
 
@@ -86,16 +78,8 @@ spec:
 
 **CAP Theorem:**
 
-```mermaid
-graph TB
-    A[CAP Theorem<br/>Pick 2 of 3] --> B[Consistency<br/>All nodes see same data]
-    A --> C[Availability<br/>System always responds]
-    A --> D[Partition Tolerance<br/>Works despite network failures]
-    
-    E[CP Systems] --> F[Strong Consistency<br/>MongoDB, HBase]
-    G[AP Systems] --> H[High Availability<br/>Cassandra, DynamoDB]
-    I[CA Systems] --> J[Not realistic<br/>in distributed systems]
-```
+![Cloud Architecture Principles](diagrams/images/best-practices-and-design-patterns-cloud-architecture-principles-2.png)
+
 
 **CAP Trade-offs:**
 
@@ -112,18 +96,8 @@ graph TB
 
 **Failure Assumption:**
 
-```mermaid
-graph LR
-    A[Assume Everything Fails] --> B[VMs/Containers]
-    A --> C[Networks]
-    A --> D[Storage]
-    A --> E[Dependencies]
-    
-    B --> F[Use Multiple Instances]
-    C --> G[Retry with Backoff]
-    D --> H[Replication & Backup]
-    E --> I[Circuit Breakers]
-```
+![Design for Failure](diagrams/images/best-practices-and-design-patterns-design-for-failure-3.png)
+
 
 **Resilience Patterns:**
 
@@ -137,18 +111,8 @@ graph LR
 
 **Circuit Breaker State Machine:**
 
-```mermaid
-stateDiagram-v2
-    [*] --> Closed
-    Closed --> Open: Failure threshold exceeded
-    Open --> HalfOpen: Timeout elapsed
-    HalfOpen --> Closed: Success threshold met
-    HalfOpen --> Open: Failure detected
-    
-    note right of Closed: Normal operation<br/>Requests pass through
-    note right of Open: Fail fast<br/>Return error immediately
-    note right of HalfOpen: Testing recovery<br/>Allow limited requests
-```
+![Design for Failure](diagrams/images/best-practices-and-design-patterns-design-for-failure-4.png)
+
 
 **Circuit Breaker Implementation (Polly):**
 
@@ -207,27 +171,8 @@ Idempotency ensures operations can be safely retried without unintended side eff
 
 **Idempotency Key Pattern:**
 
-```mermaid
-sequenceDiagram
-    participant Client
-    participant API Gateway
-    participant Order Service
-    participant Idempotency Store
-    
-    Client->>API Gateway: POST /orders (idempotency-key: abc123)
-    API Gateway->>Idempotency Store: Check key abc123
-    Idempotency Store-->>API Gateway: Not found
-    API Gateway->>Order Service: Create order
-    Order Service-->>API Gateway: Order created (order-456)
-    API Gateway->>Idempotency Store: Store key abc123 → order-456
-    API Gateway-->>Client: 201 Created (order-456)
-    
-    Note over Client: Retry due to timeout
-    Client->>API Gateway: POST /orders (idempotency-key: abc123)
-    API Gateway->>Idempotency Store: Check key abc123
-    Idempotency Store-->>API Gateway: Found → order-456
-    API Gateway-->>Client: 200 OK (order-456)
-```
+![Idempotency](diagrams/images/best-practices-and-design-patterns-idempotency-5.png)
+
 
 **Idempotency Implementation:**
 
@@ -270,14 +215,8 @@ Cloud design patterns solve recurring problems in cloud architecture.
 
 **1. Queue-Based Load Leveling:**
 
-```mermaid
-graph LR
-    A[Bursty Traffic<br/>1000 req/s spike] --> B[Message Queue]
-    B --> C[Worker Pool<br/>Processes at steady rate]
-    C --> D[Backend Service]
-    
-    E[Without Queue:<br/>Backend overwhelmed] -.X.-> D
-```
+![Scalability Patterns](diagrams/images/best-practices-and-design-patterns-scalability-patterns-6.png)
+
 
 **Use Case**: Decouple front-end from back-end to handle traffic spikes.
 
@@ -285,13 +224,8 @@ graph LR
 
 **2. Throttling Pattern:**
 
-```mermaid
-graph TD
-    A[Request] --> B{Rate Limit Check}
-    B -->|Within Limit| C[Process Request]
-    B -->|Exceeded| D[Return 429 Too Many Requests]
-    D --> E[Retry-After Header]
-```
+![Scalability Patterns](diagrams/images/best-practices-and-design-patterns-scalability-patterns-7.png)
+
 
 **Implementation**:
 
@@ -313,19 +247,8 @@ services.AddRateLimiter(options =>
 
 **3. Competing Consumers Pattern:**
 
-```mermaid
-graph TB
-    A[Producer] --> B[Queue]
-    B --> C[Consumer 1]
-    B --> D[Consumer 2]
-    B --> E[Consumer 3]
-    B --> F[Consumer N]
-    
-    C --> G[Parallel Processing]
-    D --> G
-    E --> G
-    F --> G
-```
+![Scalability Patterns](diagrams/images/best-practices-and-design-patterns-scalability-patterns-8.png)
+
 
 **Use Case**: Process messages in parallel for higher throughput.
 
@@ -333,14 +256,8 @@ graph TB
 
 **4. Sharding Pattern:**
 
-```mermaid
-graph TB
-    A[Application] --> B[Shard Router]
-    B --> C{Hash Customer ID}
-    C -->|Shard 1| D[Database 1<br/>Customers A-F]
-    C -->|Shard 2| E[Database 2<br/>Customers G-M]
-    C -->|Shard 3| F[Database 3<br/>Customers N-Z]
-```
+![Scalability Patterns](diagrams/images/best-practices-and-design-patterns-scalability-patterns-9.png)
+
 
 **Use Case**: Distribute data across multiple databases for horizontal scaling.
 
@@ -350,19 +267,8 @@ graph TB
 
 **1. Valet Key Pattern:**
 
-```mermaid
-sequenceDiagram
-    participant Client
-    participant API
-    participant Storage
-    
-    Client->>API: Request upload URL
-    API->>Storage: Generate SAS token<br/>(write-only, 1-hour expiry)
-    Storage-->>API: SAS URL
-    API-->>Client: Return SAS URL
-    Client->>Storage: Upload file directly<br/>(using SAS URL)
-    Storage-->>Client: Upload complete
-```
+![Security Patterns](diagrams/images/best-practices-and-design-patterns-security-patterns-10.png)
+
 
 **Benefits**:
 
@@ -397,13 +303,8 @@ public string GenerateUploadUrl(string blobName)
 
 **2. Gatekeeper Pattern:**
 
-```mermaid
-graph LR
-    A[External Client] --> B[Gatekeeper<br/>API Gateway]
-    B --> C{Validate & Sanitize}
-    C -->|Valid| D[Trusted Service<br/>Internal Network]
-    C -->|Invalid| E[Reject Request]
-```
+![Security Patterns](diagrams/images/best-practices-and-design-patterns-security-patterns-11.png)
+
 
 **Use Case**: Minimize attack surface by validating requests before reaching internal services.
 
@@ -411,16 +312,8 @@ graph LR
 
 **3. Federated Identity Pattern:**
 
-```mermaid
-graph TB
-    A[User] --> B[Application]
-    B --> C{Authenticated?}
-    C -->|No| D[Redirect to Identity Provider<br/>Entra ID, Okta, Auth0]
-    D --> E[User Login]
-    E --> F[Return ID Token]
-    F --> B
-    C -->|Yes| G[Access Application]
-```
+![Security Patterns](diagrams/images/best-practices-and-design-patterns-security-patterns-12.png)
+
 
 **Benefits**:
 
@@ -431,14 +324,8 @@ graph TB
 
 **4. Claim Check Pattern:**
 
-```mermaid
-graph LR
-    A[Large Message<br/>10 MB payload] --> B[Store in Blob]
-    B --> C[Generate Reference<br/>claim-check-123]
-    C --> D[Send Small Message<br/>claim-check-123]
-    D --> E[Consumer]
-    E --> F[Retrieve Large Payload<br/>using claim-check-123]
-```
+![Security Patterns](diagrams/images/best-practices-and-design-patterns-security-patterns-13.png)
+
 
 **Use Case**: Send large messages through message queues with size limits.
 
@@ -448,17 +335,8 @@ graph LR
 
 **1. Health Endpoint Monitoring:**
 
-```mermaid
-graph TD
-    A[Load Balancer] --> B[Health Probe<br/>/health every 10s]
-    B --> C{HTTP 200?}
-    C -->|Yes| D[Route Traffic]
-    C -->|No| E[Remove from Pool]
-    
-    F[Health Endpoint] --> G[Check Database]
-    F --> H[Check Cache]
-    F --> I[Check Dependencies]
-```
+![High Availability Patterns](diagrams/images/best-practices-and-design-patterns-high-availability-patterns-14.png)
+
 
 **Health Check Implementation:**
 
@@ -492,21 +370,8 @@ public class HealthCheckController : ControllerBase
 
 **2. Retry Pattern with Exponential Backoff:**
 
-```mermaid
-graph LR
-    A[Request] --> B{Success?}
-    B -->|No| C[Wait 1s]
-    C --> D{Success?}
-    D -->|No| E[Wait 2s]
-    E --> F{Success?}
-    F -->|No| G[Wait 4s]
-    G --> H{Success?}
-    H -->|No| I[Fail]
-    B -->|Yes| J[Return Result]
-    D -->|Yes| J
-    F -->|Yes| J
-    H -->|Yes| J
-```
+![High Availability Patterns](diagrams/images/best-practices-and-design-patterns-high-availability-patterns-15.png)
+
 
 **Exponential Backoff Formula:**
 
@@ -518,16 +383,8 @@ wait_time = base_delay * (2 ^ attempt) + random_jitter
 
 **3. Bulkhead Pattern:**
 
-```mermaid
-graph TB
-    A[Incoming Requests] --> B[Bulkhead Partition]
-    
-    B --> C[Thread Pool 1<br/>Critical API<br/>50 threads]
-    B --> D[Thread Pool 2<br/>Reports API<br/>20 threads]
-    B --> E[Thread Pool 3<br/>Analytics API<br/>10 threads]
-    
-    F[Reports failure<br/>doesn't affect Critical API] -.X.-> D
-```
+![High Availability Patterns](diagrams/images/best-practices-and-design-patterns-high-availability-patterns-16.png)
+
 
 **Use Case**: Isolate resources so failure in one area doesn't cascade.
 
@@ -535,25 +392,8 @@ graph TB
 
 **4. Compensating Transaction Pattern:**
 
-```mermaid
-sequenceDiagram
-    participant Order
-    participant Payment
-    participant Inventory
-    participant Shipping
-    
-    Order->>Payment: Charge credit card
-    Payment-->>Order: Success
-    Order->>Inventory: Reserve items
-    Inventory-->>Order: Success
-    Order->>Shipping: Create shipment
-    Shipping-->>Order: ❌ Failed (address invalid)
-    
-    Note over Order: Compensate failed transaction
-    Order->>Inventory: Release items
-    Order->>Payment: Refund credit card
-    Order-->>Order: Order cancelled
-```
+![High Availability Patterns](diagrams/images/best-practices-and-design-patterns-high-availability-patterns-17.png)
+
 
 **Use Case**: Undo completed operations when later steps fail in distributed transactions.
 
@@ -561,14 +401,8 @@ sequenceDiagram
 
 **5. Cache-Aside Pattern:**
 
-```mermaid
-graph TD
-    A[Application] --> B{Cache Hit?}
-    B -->|Yes| C[Return from Cache<br/>Fast: 1-10ms]
-    B -->|No| D[Query Database<br/>Slow: 50-200ms]
-    D --> E[Store in Cache<br/>TTL: 1 hour]
-    E --> F[Return to Application]
-```
+![High Availability Patterns](diagrams/images/best-practices-and-design-patterns-high-availability-patterns-18.png)
+
 
 **Implementation**:
 
@@ -600,18 +434,8 @@ public async Task<Product> GetProductAsync(int id)
 
 **6. Strangler Fig Pattern:**
 
-```mermaid
-graph TB
-    A[Users] --> B[Proxy/Gateway]
-    
-    B --> C{Route Decision}
-    C -->|Old Features 80%| D[Legacy Monolith]
-    C -->|New Features 20%| E[New Microservices]
-    
-    F[Migration Progress] --> G[Month 1: 100% → 0%]
-    G --> H[Month 6: 50% → 50%]
-    H --> I[Month 12: 0% → 100%]
-```
+![Cloud-Native Patterns](diagrams/images/best-practices-and-design-patterns-cloud-native-patterns-19.png)
+
 
 **Use Case**: Gradually migrate from legacy system to new architecture without big-bang rewrite.
 
@@ -619,17 +443,8 @@ graph TB
 
 **7. Sidecar Pattern:**
 
-```mermaid
-graph TB
-    subgraph "Pod"
-        A[Application Container] <--> B[Sidecar Container]
-    end
-    
-    B --> C[Logging]
-    B --> D[Monitoring]
-    B --> E[Security]
-    B --> F[Proxy]
-```
+![Cloud-Native Patterns](diagrams/images/best-practices-and-design-patterns-cloud-native-patterns-20.png)
+
 
 **Use Cases**:
 
@@ -640,15 +455,8 @@ graph TB
 
 **8. Ambassador Pattern:**
 
-```mermaid
-graph LR
-    A[Application] --> B[Ambassador<br/>Proxy Container]
-    B --> C[Retry Logic]
-    B --> D[Circuit Breaker]
-    B --> E[Metrics]
-    B --> F[TLS Termination]
-    F --> G[External Service]
-```
+![Cloud-Native Patterns](diagrams/images/best-practices-and-design-patterns-cloud-native-patterns-21.png)
+
 
 **Use Case**: Offload network-related concerns to separate container.
 
@@ -656,15 +464,8 @@ graph LR
 
 **9. Anti-Corruption Layer:**
 
-```mermaid
-graph LR
-    A[New System] --> B[Anti-Corruption Layer<br/>Adapter/Facade]
-    B --> C[Translation]
-    C --> D[Legacy System]
-    
-    E[Clean Domain Model] --> A
-    F[Legacy Data Model] --> D
-```
+![Cloud-Native Patterns](diagrams/images/best-practices-and-design-patterns-cloud-native-patterns-22.png)
+
 
 **Use Case**: Protect new system from complexity of legacy system during migration.
 
@@ -680,15 +481,8 @@ Anti-patterns are common but ineffective solutions that create more problems tha
 
 **Problem**: No clear architecture, everything is tightly coupled.
 
-```mermaid
-graph TB
-    A[UI] <--> B[Business Logic]
-    B <--> C[Database]
-    A <--> C
-    B <--> D[External API]
-    A <--> D
-    C <--> D
-```
+![Architecture Anti-Patterns](diagrams/images/best-practices-and-design-patterns-architecture-anti-patterns-23.png)
+
 
 **Symptoms**:
 
@@ -703,17 +497,8 @@ graph TB
 
 **Problem**: Microservices architecture but with tight coupling.
 
-```mermaid
-graph TB
-    A[Service A] --> B[Service B]
-    B --> C[Service C]
-    C --> D[Service A]
-    A --> E[Shared Database]
-    B --> E
-    C --> E
-    
-    F[Cannot deploy independently] --> G[No benefits of microservices]
-```
+![Architecture Anti-Patterns](diagrams/images/best-practices-and-design-patterns-architecture-anti-patterns-24.png)
+
 
 **Symptoms**:
 
@@ -728,16 +513,8 @@ graph TB
 
 **Problem**: Too many small, frequent calls to external services.
 
-```mermaid
-graph LR
-    A[Application] --> B[Call 1: Get User]
-    A --> C[Call 2: Get Orders]
-    A --> D[Call 3: Get Products]
-    A --> E[Call 4: Get Reviews]
-    A --> F[...100 more calls]
-    
-    G[Total Latency:<br/>100 calls × 50ms = 5 seconds]
-```
+![Architecture Anti-Patterns](diagrams/images/best-practices-and-design-patterns-architecture-anti-patterns-25.png)
+
 
 **Symptoms**:
 
@@ -756,13 +533,8 @@ graph LR
 
 **Problem**: One tenant/workload consumes excessive resources, affecting others.
 
-```mermaid
-graph TB
-    A[Shared Resources] --> B[Tenant A<br/>Normal: 10% CPU]
-    A --> C[Tenant B<br/>Runaway: 80% CPU]
-    A --> D[Tenant C<br/>Starved: 5% CPU]
-    A --> E[Tenant D<br/>Starved: 5% CPU]
-```
+![Architecture Anti-Patterns](diagrams/images/best-practices-and-design-patterns-architecture-anti-patterns-26.png)
+
 
 **Symptoms**:
 
@@ -781,12 +553,8 @@ graph TB
 
 **Problem**: Multiple clients retry failed requests simultaneously, overwhelming system.
 
-```mermaid
-graph TB
-    A[Service Outage] --> B[1000 Clients<br/>All Retry Immediately]
-    B --> C[10,000 Requests<br/>in 1 Second]
-    C --> D[Service Overwhelmed<br/>Cannot Recover]
-```
+![Architecture Anti-Patterns](diagrams/images/best-practices-and-design-patterns-architecture-anti-patterns-27.png)
+
 
 **Symptoms**:
 
@@ -805,16 +573,8 @@ graph TB
 
 **Problem**: One service handles too many responsibilities.
 
-```mermaid
-graph TB
-    A[God Service] --> B[User Management]
-    A --> C[Order Processing]
-    A --> D[Inventory]
-    A --> E[Payment]
-    A --> F[Shipping]
-    A --> G[Reporting]
-    A --> H[Notifications]
-```
+![Architecture Anti-Patterns](diagrams/images/best-practices-and-design-patterns-architecture-anti-patterns-28.png)
+
 
 **Symptoms**:
 

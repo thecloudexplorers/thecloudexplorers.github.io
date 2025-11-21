@@ -2,21 +2,8 @@
 
 Security and compliance form the foundation of trust in cloud environments. This section covers essential security controls, data protection strategies, and regulatory compliance frameworks.
 
-```mermaid
-graph TB
-    A[Security & Compliance] --> B[Defense in Depth]
-    A --> C[Zero Trust]
-    A --> D[Compliance Frameworks]
-    
-    B --> E[Network Security]
-    B --> F[Identity Security]
-    B --> G[Data Security]
-    B --> H[Application Security]
-    
-    C --> I[Verify Explicitly]
-    C --> J[Least Privilege]
-    C --> K[Assume Breach]
-```
+![Security and Compliance](diagrams/images/security-and-compliance-security-and-compliance-1.png)
+
 
 ## Security Baseline
 
@@ -26,15 +13,8 @@ A security baseline establishes the minimum security controls required for cloud
 
 Defense in depth implements multiple layers of security controls to protect against various attack vectors.
 
-```mermaid
-graph TD
-    A[Users/Attackers] --> B[Perimeter Security<br/>Firewall, DDoS Protection]
-    B --> C[Network Security<br/>NSG, WAF, Private Endpoints]
-    C --> D[Identity Security<br/>MFA, Conditional Access]
-    D --> E[Application Security<br/>Code Scanning, OWASP]
-    E --> F[Data Security<br/>Encryption, Classification]
-    F --> G[Protected Resources]
-```
+![Defense in Depth](diagrams/images/security-and-compliance-defense-in-depth-2.png)
+
 
 **Security Layers:**
 
@@ -68,17 +48,8 @@ Zero Trust assumes no implicit trust and verifies every access request regardles
 2. **Use Least Privilege Access**: Limit user access with Just-In-Time and Just-Enough-Access (JIT/JEA)
 3. **Assume Breach**: Minimize blast radius and segment access
 
-```mermaid
-graph LR
-    A[User/Device] --> B[Identity Verification]
-    B --> C[Device Health Check]
-    C --> D[Policy Evaluation]
-    D --> E{Access Decision}
-    E -->|Granted| F[Micro-Segmented Access]
-    E -->|Denied| G[Access Blocked]
-    F --> H[Continuous Monitoring]
-    H --> D
-```
+![Zero Trust Architecture](diagrams/images/security-and-compliance-zero-trust-architecture-3.png)
+
 
 **Zero Trust Implementation:**
 
@@ -92,17 +63,8 @@ graph LR
 
 **Conditional Access Policy Example:**
 
-```mermaid
-graph TD
-    A[User Login Attempt] --> B{From Trusted Location?}
-    B -->|Yes| C{Managed Device?}
-    B -->|No| D[Require MFA]
-    C -->|Yes| E[Allow Access]
-    C -->|No| D
-    D --> F{MFA Success?}
-    F -->|Yes| E
-    F -->|No| G[Block Access]
-```
+![Zero Trust Architecture](diagrams/images/security-and-compliance-zero-trust-architecture-4.png)
+
 
 > [!TIP]
 > Start Zero Trust implementation with identity (MFA, conditional access), then expand to network (micro-segmentation) and data (encryption, DLP).
@@ -140,18 +102,8 @@ Data protection ensures confidentiality, integrity, and availability of sensitiv
 
 ### Data Classification
 
-```mermaid
-graph TB
-    A[Data Classification] --> B[Public]
-    A --> C[Internal]
-    A --> D[Confidential]
-    A --> E[Restricted]
-    
-    B --> F[No Protection Required]
-    C --> G[Basic Access Controls]
-    D --> H[Encryption + Access Controls]
-    E --> I[Encryption + MFA + Audit]
-```
+![Data Classification](diagrams/images/security-and-compliance-data-classification-5.png)
+
 
 **Classification Levels:**
 
@@ -175,16 +127,8 @@ graph TB
 
 **Encryption States:**
 
-```mermaid
-graph LR
-    A[Data] --> B[At Rest]
-    A --> C[In Transit]
-    A --> D[In Use]
-    
-    B --> E[Storage Encryption<br/>AES-256]
-    C --> F[TLS 1.2/1.3]
-    D --> G[Confidential Computing<br/>SGX/SEV]
-```
+![Encryption](diagrams/images/security-and-compliance-encryption-6.png)
+
 
 **Encryption at Rest:**
 
@@ -197,14 +141,8 @@ graph LR
 
 **Key Management Hierarchy:**
 
-```mermaid
-graph TD
-    A[Root Key<br/>HSM Protected] --> B[Key Encryption Key<br/>KEK]
-    B --> C[Data Encryption Key<br/>DEK]
-    C --> D[Encrypted Data]
-    
-    E[Azure Key Vault /<br/>AWS KMS] --> A
-```
+![Encryption](diagrams/images/security-and-compliance-encryption-7.png)
+
 
 **Customer-Managed Keys (CMK) vs Platform-Managed Keys (PMK):**
 
@@ -245,19 +183,8 @@ DLP policies prevent unauthorized data exfiltration and enforce compliance requi
 
 **DLP Policy Workflow:**
 
-```mermaid
-graph LR
-    A[User Action] --> B[DLP Policy Scan]
-    B --> C{Contains Sensitive Data?}
-    C -->|No| D[Allow]
-    C -->|Yes| E{Policy Action}
-    E --> F[Block]
-    E --> G[Warn]
-    E --> H[Audit Only]
-    F --> I[Access Denied]
-    G --> J[User Override with Justification]
-    H --> K[Log Event]
-```
+![Data Loss Prevention (DLP)](diagrams/images/security-and-compliance-data-loss-prevention-(dlp)-8.png)
+
 
 **DLP Scenarios:**
 
@@ -277,16 +204,8 @@ Cloud environments must comply with various regulatory frameworks depending on i
 
 ### Major Compliance Frameworks
 
-```mermaid
-graph TB
-    A[Compliance Frameworks] --> B[General]
-    A --> C[Industry-Specific]
-    A --> D[Regional]
-    
-    B --> E[ISO 27001<br/>SOC 2]
-    C --> F[HIPAA<br/>PCI DSS]
-    D --> G[GDPR<br/>CCPA]
-```
+![Major Compliance Frameworks](diagrams/images/security-and-compliance-major-compliance-frameworks-9.png)
+
 
 **Framework Comparison:**
 
@@ -313,19 +232,8 @@ graph TB
 
 **GDPR Architecture Pattern:**
 
-```mermaid
-graph TB
-    A[User Request] --> B{Request Type}
-    B -->|Access| C[Export User Data]
-    B -->|Deletion| D[Delete User Data]
-    B -->|Consent| E[Update Consent Records]
-    
-    C --> F[Azure Blob Storage]
-    D --> G[Soft Delete<br/>30-day retention]
-    E --> H[Consent Database]
-    
-    G --> I[Hard Delete<br/>After retention]
-```
+![GDPR Compliance](diagrams/images/security-and-compliance-gdpr-compliance-10.png)
+
 
 **GDPR-Compliant Data Handling:**
 
@@ -351,19 +259,8 @@ graph TB
 
 **HIPAA-Compliant Architecture:**
 
-```mermaid
-graph TB
-    subgraph "HIPAA Compliant Zone"
-        A[Healthcare App] --> B[Private Endpoint]
-        B --> C[Azure SQL Database<br/>TDE Enabled]
-        B --> D[Blob Storage<br/>Encrypted]
-        E[Audit Logs] --> F[Log Analytics]
-        G[Azure Key Vault<br/>HSM] --> C
-        G --> D
-    end
-    
-    H[Public Internet] -.X.-|Blocked| B
-```
+![HIPAA Compliance](diagrams/images/security-and-compliance-hipaa-compliance-11.png)
+
 
 **HIPAA Controls Mapping:**
 
@@ -397,29 +294,8 @@ graph TB
 
 **PCI DSS Network Segmentation:**
 
-```mermaid
-graph TB
-    subgraph "DMZ - Public"
-        A[Web Tier]
-    end
-    
-    subgraph "CDE - Cardholder Data Environment"
-        B[Application Tier]
-        C[Payment Processing]
-        D[Encrypted Database]
-    end
-    
-    subgraph "Non-CDE"
-        E[Reporting]
-        F[Analytics]
-    end
-    
-    A --> B
-    B --> C
-    C --> D
-    D -.Tokenized Data.-> E
-    D -.Tokenized Data.-> F
-```
+![PCI DSS Compliance](diagrams/images/security-and-compliance-pci-dss-compliance-12.png)
+
 
 **Tokenization vs Encryption:**
 
@@ -448,21 +324,8 @@ Identity and access management (IAM) controls who can access resources and what 
 
 **Identity Architecture:**
 
-```mermaid
-graph TB
-    A[Users] --> B[Identity Provider]
-    C[Applications] --> B
-    D[Devices] --> B
-    
-    B --> E[Microsoft Entra ID /<br/>AWS IAM]
-    E --> F[Authentication]
-    E --> G[Authorization]
-    E --> H[Audit]
-    
-    F --> I[MFA]
-    F --> J[Passwordless]
-    F --> K[Federation]
-```
+![Identity Management](diagrams/images/security-and-compliance-identity-management-13.png)
+
 
 **Identity Types:**
 
@@ -475,19 +338,8 @@ graph TB
 
 **Passwordless Authentication:**
 
-```mermaid
-graph LR
-    A[User] --> B{Authentication Method}
-    B --> C[FIDO2 Security Key]
-    B --> D[Windows Hello]
-    B --> E[Microsoft Authenticator]
-    C --> F[Cryptographic Key Pair]
-    D --> G[Biometric + PIN]
-    E --> H[Push Notification]
-    F --> I[Access Granted]
-    G --> I
-    H --> I
-```
+![Identity Management](diagrams/images/security-and-compliance-identity-management-14.png)
+
 
 **Benefits of Passwordless:**
 
@@ -509,15 +361,8 @@ graph LR
 
 **RBAC Assignment:**
 
-```mermaid
-graph LR
-    A[User] --> B[Assigned to]
-    B --> C[Role]
-    C --> D[Has]
-    D --> E[Permissions]
-    E --> F[On]
-    F --> G[Resource Scope]
-```
+![Access Control Models](diagrams/images/security-and-compliance-access-control-models-15.png)
+
 
 **Common Cloud Roles:**
 
@@ -530,17 +375,8 @@ graph LR
 
 **Principle of Least Privilege:**
 
-```mermaid
-graph TD
-    A[Access Request] --> B{Minimum Required?}
-    B -->|Yes| C{Time-Bound?}
-    B -->|No| D[Reduce Permissions]
-    C -->|Yes| E[Grant with Expiry]
-    C -->|No| F{Should Be?}
-    F -->|Yes| G[Use JIT/PIM]
-    F -->|No| E
-    D --> C
-```
+![Access Control Models](diagrams/images/security-and-compliance-access-control-models-16.png)
+
 
 > [!IMPORTANT]
 > Always start with the minimum required permissions and add more only when necessary. Use Just-In-Time (JIT) access for privileged operations.
@@ -558,17 +394,8 @@ graph TD
 
 **PIM Workflow:**
 
-```mermaid
-graph LR
-    A[User Requests<br/>Privileged Role] --> B[Approval Required?]
-    B -->|Yes| C[Manager Approves]
-    B -->|No| D[Auto-Approve]
-    C --> E[Time-Bound Activation]
-    D --> E
-    E --> F[8-Hour Access]
-    F --> G[Auto-Revoke]
-    G --> H[Audit Log]
-```
+![Privileged Access Management](diagrams/images/security-and-compliance-privileged-access-management-17.png)
+
 
 **Real-World Example:**
 
@@ -585,18 +412,8 @@ A company implements Azure PIM requiring:
 
 **Managed Identity Benefits:**
 
-```mermaid
-graph TB
-    A[Traditional Approach] --> B[Store Credentials]
-    B --> C[Rotate Regularly]
-    C --> D[Secure Storage]
-    D --> E[Risk of Exposure]
-    
-    F[Managed Identity] --> G[No Credentials]
-    G --> H[Auto-Managed by Platform]
-    H --> I[Zero Maintenance]
-    I --> J[Secure by Default]
-```
+![Service Accounts and Managed Identities](diagrams/images/security-and-compliance-service-accounts-and-managed-identities-18.png)
+
 
 **Managed Identity Types:**
 
@@ -607,14 +424,8 @@ graph TB
 
 **Example: Azure Function accessing Key Vault:**
 
-```mermaid
-graph LR
-    A[Azure Function] --> B[System-Assigned<br/>Managed Identity]
-    B --> C[Microsoft Entra ID]
-    C --> D[Access Token]
-    D --> E[Azure Key Vault]
-    E --> F[Return Secrets]
-```
+![Service Accounts and Managed Identities](diagrams/images/security-and-compliance-service-accounts-and-managed-identities-19.png)
+
 
 **No Credentials Required:**
 - No connection strings in code

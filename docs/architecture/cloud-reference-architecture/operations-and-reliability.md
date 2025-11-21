@@ -2,21 +2,8 @@
 
 Operational excellence ensures systems run smoothly, scale effectively, and recover quickly from failures. This section covers SRE principles, monitoring, incident response, and business continuity strategies.
 
-```mermaid
-graph TB
-    A[Operations & Reliability] --> B[SRE Principles]
-    A --> C[Observability]
-    A --> D[Incident Management]
-    A --> E[Business Continuity]
-    
-    B --> F[Error Budgets]
-    B --> G[SLO/SLI]
-    B --> H[Toil Reduction]
-    
-    C --> I[Metrics]
-    C --> J[Logs]
-    C --> K[Traces]
-```
+![Operations and Reliability](diagrams/images/operations-and-reliability-operations-and-reliability-1.png)
+
 
 ## Resource Provisioning and Management
 
@@ -24,15 +11,8 @@ Infrastructure as Code (IaC) enables consistent, repeatable, and version-control
 
 ### Infrastructure as Code
 
-```mermaid
-graph LR
-    A[IaC Template] --> B[Version Control]
-    B --> C[CI/CD Pipeline]
-    C --> D[Validation]
-    D --> E[Deployment]
-    E --> F[Azure/AWS/GCP]
-    F --> G[Infrastructure]
-```
+![Infrastructure as Code](diagrams/images/operations-and-reliability-infrastructure-as-code-2.png)
+
 
 **IaC Tools Comparison:**
 
@@ -46,17 +26,8 @@ graph LR
 
 **Terraform Workflow:**
 
-```mermaid
-graph TD
-    A[Write Configuration] --> B[terraform init]
-    B --> C[terraform plan]
-    C --> D{Review Changes}
-    D -->|Approve| E[terraform apply]
-    D -->|Reject| F[Modify Configuration]
-    F --> C
-    E --> G[Infrastructure Created]
-    G --> H[terraform state]
-```
+![Infrastructure as Code](diagrams/images/operations-and-reliability-infrastructure-as-code-3.png)
+
 
 **Example: Azure Resources with Terraform:**
 
@@ -96,17 +67,8 @@ resource "azurerm_kubernetes_cluster" "example" {
 3. **Automated Delivery**: Tools sync Git state to cluster
 4. **Continuous Reconciliation**: Detect and correct drift
 
-```mermaid
-graph LR
-    A[Developer] --> B[Git Commit]
-    B --> C[Git Repository]
-    C --> D[GitOps Controller<br/>Flux/ArgoCD]
-    D --> E{Detect Drift?}
-    E -->|Yes| F[Auto-Sync]
-    E -->|No| G[Monitor]
-    F --> H[Kubernetes Cluster]
-    G --> E
-```
+![GitOps and Configuration Management](diagrams/images/operations-and-reliability-gitops-and-configuration-management-4.png)
+
 
 **GitOps Tools:**
 
@@ -134,16 +96,8 @@ A fintech company uses ArgoCD with:
 
 **Drift Detection Pattern:**
 
-```mermaid
-graph TD
-    A[Desired State<br/>Git/IaC] --> B[Compare]
-    C[Actual State<br/>Cloud Resources] --> B
-    B --> D{Drift Detected?}
-    D -->|Yes| E[Alert + Auto-Remediate]
-    D -->|No| F[Compliant]
-    E --> G[Update Resources]
-    G --> C
-```
+![Configuration Drift Detection](diagrams/images/operations-and-reliability-configuration-drift-detection-5.png)
+
 
 **Drift Detection Tools:**
 
@@ -187,16 +141,8 @@ Observability provides visibility into system health through metrics, logs, and 
 
 ### The Three Pillars of Observability
 
-```mermaid
-graph TB
-    A[Observability] --> B[Metrics]
-    A --> C[Logs]
-    A --> D[Traces]
-    
-    B --> E[Aggregated Time-Series<br/>CPU, Memory, Latency]
-    C --> F[Discrete Events<br/>Errors, Transactions]
-    D --> G[Request Flow<br/>Microservices]
-```
+![The Three Pillars of Observability](diagrams/images/operations-and-reliability-the-three-pillars-of-observability-6.png)
+
 
 **Pillar Comparison:**
 
@@ -219,18 +165,8 @@ graph TB
 
 **Metrics Architecture:**
 
-```mermaid
-graph LR
-    A[Applications] --> B[Metrics Agent]
-    C[Infrastructure] --> B
-    D[Custom Code] --> B
-    
-    B --> E[Time-Series DB]
-    E --> F[Prometheus/<br/>Azure Monitor]
-    F --> G[Query & Alert]
-    G --> H[Dashboards]
-    G --> I[PagerDuty/Slack]
-```
+![Metrics and Alerting](diagrams/images/operations-and-reliability-metrics-and-alerting-7.png)
+
 
 **Alerting Best Practices:**
 
@@ -241,16 +177,8 @@ graph LR
 
 **Alert Fatigue Prevention:**
 
-```mermaid
-graph TD
-    A[Alert Generated] --> B{Customer Impact?}
-    B -->|No| C[Log Only]
-    B -->|Yes| D{Actionable?}
-    D -->|No| E[Improve Alert]
-    D -->|Yes| F{Recurring?}
-    F -->|Yes| G[Automate Fix]
-    F -->|No| H[Page On-Call]
-```
+![Metrics and Alerting](diagrams/images/operations-and-reliability-metrics-and-alerting-8.png)
+
 
 > [!CAUTION]
 > Alert fatigue reduces response effectiveness. Only alert on customer-impacting issues that require immediate human intervention.
@@ -331,24 +259,8 @@ graph TD
 
 **Log Aggregation Architecture:**
 
-```mermaid
-graph TB
-    subgraph "Applications"
-        A1[App 1]
-        A2[App 2]
-        A3[App 3]
-    end
-    
-    A1 --> B[Log Forwarder<br/>Fluentd/Fluent Bit]
-    A2 --> B
-    A3 --> B
-    
-    B --> C[Log Storage<br/>Azure Log Analytics/<br/>AWS CloudWatch/<br/>Elasticsearch]
-    
-    C --> D[Query & Analysis<br/>Kusto/Kibana]
-    C --> E[Alerting]
-    C --> F[Long-Term Archive<br/>Blob/S3]
-```
+![Logging Strategy](diagrams/images/operations-and-reliability-logging-strategy-9.png)
+
 
 **Log Retention Strategy:**
 
@@ -368,13 +280,8 @@ Distributed tracing tracks requests across microservices, identifying bottleneck
 
 **Trace Anatomy:**
 
-```mermaid
-graph LR
-    A[API Gateway<br/>Span: 450ms] --> B[Auth Service<br/>Span: 50ms]
-    A --> C[Order Service<br/>Span: 300ms]
-    C --> D[Inventory Service<br/>Span: 100ms]
-    C --> E[Payment Service<br/>Span: 150ms]
-```
+![Distributed Tracing](diagrams/images/operations-and-reliability-distributed-tracing-10.png)
+
 
 **OpenTelemetry Trace:**
 
@@ -389,12 +296,8 @@ TraceID: abc123
 
 **Trace Context Propagation:**
 
-```mermaid
-graph LR
-    A[Service A] -->|HTTP Header:<br/>traceparent| B[Service B]
-    B -->|HTTP Header:<br/>traceparent| C[Service D]
-    B -->|HTTP Header:<br/>traceparent| D[Service C]
-```
+![Distributed Tracing](diagrams/images/operations-and-reliability-distributed-tracing-11.png)
+
 
 **Tracing Tools:**
 
@@ -432,17 +335,8 @@ An e-commerce platform uses Application Insights to discover:
 
 **Operations Dashboard Example:**
 
-```mermaid
-graph TB
-    subgraph "SRE Dashboard"
-        A[Error Rate: 0.2%]
-        B[P99 Latency: 320ms]
-        C[RPS: 12,450]
-        D[CPU: 45%]
-    end
-    
-    E{SLO Status} --> F[✅ Within Budget<br/>99.95% uptime]
-```
+![Dashboards and Visualization](diagrams/images/operations-and-reliability-dashboards-and-visualization-12.png)
+
 
 **Dashboard Best Practices:**
 
@@ -467,18 +361,8 @@ Work that is manual, repetitive, automatable, tactical, no enduring value, scale
 
 **Toil Quadrant:**
 
-```mermaid
-graph TB
-    subgraph "High Value"
-        A[Strategic Projects<br/>Architecture Design]
-        B[Automation Development<br/>Self-Healing Systems]
-    end
-    
-    subgraph "Low Value"
-        C[Tactical Work<br/>User Requests]
-        D[Toil<br/>Manual Deployments<br/>Ticket Processing]
-    end
-```
+![Reducing Toil](diagrams/images/operations-and-reliability-reducing-toil-13.png)
+
 
 **Toil Reduction Strategies:**
 
@@ -499,20 +383,8 @@ graph TB
 
 **CI/CD Stages:**
 
-```mermaid
-graph LR
-    A[Code Commit] --> B[Build]
-    B --> C[Unit Tests]
-    C --> D[Integration Tests]
-    D --> E[Security Scan]
-    E --> F[Deploy to Dev]
-    F --> G[Smoke Tests]
-    G --> H[Deploy to Staging]
-    H --> I[E2E Tests]
-    I --> J[Manual Approval]
-    J --> K[Deploy to Prod]
-    K --> L[Monitoring]
-```
+![CI/CD Pipelines](diagrams/images/operations-and-reliability-ci-cd-pipelines-14.png)
+
 
 **Deployment Strategies:**
 
@@ -525,19 +397,8 @@ graph LR
 
 **Canary Deployment:**
 
-```mermaid
-graph TB
-    A[Load Balancer] --> B[90% Traffic]
-    A --> C[10% Traffic]
-    
-    B --> D[Stable Version v1.0<br/>10 Instances]
-    C --> E[Canary Version v1.1<br/>1 Instance]
-    
-    E --> F{Metrics OK?}
-    F -->|Yes| G[Increase to 50%]
-    F -->|No| H[Rollback to v1.0]
-    G --> I[100% Traffic to v1.1]
-```
+![CI/CD Pipelines](diagrams/images/operations-and-reliability-ci-cd-pipelines-15.png)
+
 
 **GitOps CI/CD Example:**
 
@@ -581,19 +442,8 @@ jobs:
 
 **Self-Healing Pattern:**
 
-```mermaid
-graph TD
-    A[Monitor] --> B{Issue Detected?}
-    B -->|No| A
-    B -->|Yes| C[Diagnose]
-    C --> D{Auto-Fixable?}
-    D -->|Yes| E[Execute Remediation]
-    D -->|No| F[Alert Human]
-    E --> G{Fixed?}
-    G -->|Yes| H[Log Resolution]
-    G -->|No| F
-    H --> A
-```
+![Auto-Remediation and Self-Healing](diagrams/images/operations-and-reliability-auto-remediation-and-self-healing-16.png)
+
 
 **Common Auto-Remediation Scenarios:**
 
@@ -628,18 +478,8 @@ if ($vm.StatusCode -eq "PowerState/deallocated") {
 
 Deliberately inject failures to test auto-remediation and system resilience.
 
-```mermaid
-graph LR
-    A[Steady State] --> B[Introduce Chaos]
-    B --> C[Random Pod Kill]
-    B --> D[Network Latency]
-    B --> E[CPU Spike]
-    C --> F{System Recovers?}
-    D --> F
-    E --> F
-    F -->|Yes| G[Resilient System]
-    F -->|No| H[Fix & Repeat]
-```
+![Triggered by Azure Monitor alert](diagrams/images/operations-and-reliability-triggered-by-azure-monitor-alert-17.png)
+
 
 **Chaos Engineering Tools:**
 
@@ -663,18 +503,8 @@ Disaster recovery ensures business continuity through backups, failover mechanis
 
 **RTO/RPO Trade-offs:**
 
-```mermaid
-graph TD
-    A[Business Requirements] --> B{RTO < 1 hour?}
-    B -->|Yes| C[Active-Active Multi-Region<br/>High Cost]
-    B -->|No| D{RTO < 4 hours?}
-    D -->|Yes| E[Hot Standby<br/>Medium Cost]
-    D -->|No| F[Backup & Restore<br/>Low Cost]
-    
-    G[Data Requirements] --> H{RPO < 5 minutes?}
-    H -->|Yes| I[Synchronous Replication]
-    H -->|No| J[Asynchronous Replication]
-```
+![RTO and RPO](diagrams/images/operations-and-reliability-rto-and-rpo-18.png)
+
 
 **Disaster Recovery Tiers:**
 
@@ -690,16 +520,8 @@ graph TD
 
 **3-2-1 Backup Rule:**
 
-```mermaid
-graph TB
-    A[Production Data] --> B[3 Copies]
-    B --> C[2 Different Media Types]
-    C --> D[1 Off-Site Copy]
-    
-    E[Example] --> F[Copy 1: Production DB]
-    E --> G[Copy 2: Local Backup<br/>Azure Managed Backup]
-    E --> H[Copy 3: Geo-Redundant<br/>Storage GRS]
-```
+![Backup Strategies](diagrams/images/operations-and-reliability-backup-strategies-19.png)
+
 
 **Backup Types:**
 
@@ -712,14 +534,8 @@ graph TB
 
 **Azure Backup Architecture:**
 
-```mermaid
-graph LR
-    A[VM/Database] --> B[Backup Agent]
-    B --> C[Recovery Services Vault]
-    C --> D[LRS Storage<br/>Local Redundancy]
-    C --> E[GRS Storage<br/>Geo-Redundant]
-    E --> F[Paired Region]
-```
+![Backup Strategies](diagrams/images/operations-and-reliability-backup-strategies-20.png)
+
 
 **Backup Retention Policy:**
 
@@ -737,26 +553,8 @@ graph LR
 
 **Multi-Region Failover:**
 
-```mermaid
-graph TB
-    subgraph "Primary Region: East US"
-        A[App Service]
-        B[SQL Database Primary]
-    end
-    
-    subgraph "Secondary Region: West US"
-        C[App Service Standby]
-        D[SQL Database Replica]
-    end
-    
-    E[Traffic Manager] --> A
-    A --> B
-    B -.Async Replication.-> D
-    
-    F[Failover Event] --> G[Traffic Manager]
-    G --> C
-    C --> D
-```
+![Failover and Failback](diagrams/images/operations-and-reliability-failover-and-failback-21.png)
+
 
 **Failover Strategies:**
 
@@ -769,18 +567,8 @@ graph TB
 
 **Active-Active Multi-Region:**
 
-```mermaid
-graph TB
-    A[Global Traffic Manager<br/>Azure Front Door / AWS Route53]
-    
-    A --> B[Region 1: East US]
-    A --> C[Region 2: West Europe]
-    A --> D[Region 3: Southeast Asia]
-    
-    B --> E[Cosmos DB<br/>Multi-Master]
-    C --> E
-    D --> E
-```
+![Failover and Failback](diagrams/images/operations-and-reliability-failover-and-failback-22.png)
+
 
 **Benefits:**
 
@@ -799,18 +587,8 @@ graph TB
 
 **Failback Procedure:**
 
-```mermaid
-graph LR
-    A[Disaster Occurs] --> B[Failover to DR]
-    B --> C[Run on DR Site]
-    C --> D[Primary Site Restored]
-    D --> E{Ready for Failback?}
-    E -->|Yes| F[Sync Data to Primary]
-    F --> G[Validate Data Integrity]
-    G --> H[Failback Traffic]
-    H --> I[Resume Normal Operations]
-    E -->|No| C
-```
+![Failover and Failback](diagrams/images/operations-and-reliability-failover-and-failback-23.png)
+
 
 ### Disaster Recovery Testing
 
@@ -853,17 +631,8 @@ A SaaS company conducts quarterly DR drills:
 
 **BCP Components:**
 
-```mermaid
-graph TB
-    A[Business Continuity Plan] --> B[Risk Assessment]
-    A --> C[Business Impact Analysis]
-    A --> D[Recovery Strategies]
-    A --> E[Communication Plan]
-    A --> F[Training & Testing]
-    
-    C --> G[Critical Business Functions]
-    G --> H[Recovery Priorities]
-```
+![Business Continuity Planning](diagrams/images/operations-and-reliability-business-continuity-planning-24.png)
+
 
 **Business Impact Analysis:**
 

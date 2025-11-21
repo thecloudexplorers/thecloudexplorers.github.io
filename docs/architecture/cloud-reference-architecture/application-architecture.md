@@ -2,18 +2,8 @@
 
 Application architecture defines how software is structured, deployed, and scaled. This section covers microservices, serverless, containers, and modern DevOps practices.
 
-```mermaid
-graph TB
-    A[Application Architecture] --> B[Microservices]
-    A --> C[Serverless]
-    A --> D[Containers]
-    A --> E[DevOps/CI/CD]
-    
-    B --> F[Service Decomposition]
-    C --> G[FaaS/BaaS]
-    D --> H[Kubernetes]
-    E --> I[Automation]
-```
+![Application Architecture](diagrams/images/application-architecture-application-architecture-1.png)
+
 
 ## Microservices Architecture
 
@@ -23,28 +13,13 @@ Microservices decompose applications into small, independent services that can b
 
 **Monolithic Architecture:**
 
-```mermaid
-graph TB
-    A[Single Application] --> B[UI Layer]
-    A --> C[Business Logic]
-    A --> D[Data Access]
-    A --> E[Shared Database]
-```
+![Monolithic vs Microservices](diagrams/images/application-architecture-monolithic-vs-microservices-2.png)
+
 
 **Microservices Architecture:**
 
-```mermaid
-graph TB
-    A[API Gateway] --> B[User Service]
-    A --> C[Order Service]
-    A --> D[Product Service]
-    A --> E[Payment Service]
-    
-    B --> F[User DB]
-    C --> G[Order DB]
-    D --> H[Product DB]
-    E --> I[Payment DB]
-```
+![Monolithic vs Microservices](diagrams/images/application-architecture-monolithic-vs-microservices-3.png)
+
 
 **Architecture Comparison:**
 
@@ -66,33 +41,13 @@ graph TB
 
 **Decomposition by Business Capability:**
 
-```mermaid
-graph TB
-    A[E-commerce Platform] --> B[Customer Management]
-    A --> C[Order Management]
-    A --> D[Inventory Management]
-    A --> E[Payment Processing]
-    A --> F[Shipping & Fulfillment]
-    
-    B --> G[Customer Service<br/>Customer DB]
-    C --> H[Order Service<br/>Order DB]
-    D --> I[Inventory Service<br/>Inventory DB]
-    E --> J[Payment Service<br/>Payment DB]
-    F --> K[Shipping Service<br/>Shipping DB]
-```
+![Service Decomposition Strategies](diagrams/images/application-architecture-service-decomposition-strategies-4.png)
+
 
 **Decomposition by Subdomain (DDD):**
 
-```mermaid
-graph TB
-    A[Domain Model] --> B[Core Domain<br/>Order Management]
-    A --> C[Supporting Domain<br/>Inventory]
-    A --> D[Generic Domain<br/>Authentication]
-    
-    B --> E[High business value<br/>Custom implementation]
-    C --> F[Supports core<br/>Custom or COTS]
-    D --> G[Common across industries<br/>Use SaaS/library]
-```
+![Service Decomposition Strategies](diagrams/images/application-architecture-service-decomposition-strategies-5.png)
+
 
 **Bounded Contexts:**
 
@@ -110,39 +65,13 @@ graph TB
 
 **Synchronous Communication:**
 
-```mermaid
-sequenceDiagram
-    participant API Gateway
-    participant Order Service
-    participant Inventory Service
-    participant Payment Service
-    
-    API Gateway->>Order Service: Create Order
-    Order Service->>Inventory Service: Check Stock (HTTP/gRPC)
-    Inventory Service-->>Order Service: Stock Available
-    Order Service->>Payment Service: Process Payment (HTTP/gRPC)
-    Payment Service-->>Order Service: Payment Success
-    Order Service-->>API Gateway: Order Created
-```
+![Communication Patterns](diagrams/images/application-architecture-communication-patterns-6.png)
+
 
 **Asynchronous Communication:**
 
-```mermaid
-sequenceDiagram
-    participant Order Service
-    participant Message Bus
-    participant Inventory Service
-    participant Payment Service
-    participant Shipping Service
-    
-    Order Service->>Message Bus: OrderCreated Event
-    Message Bus-->>Inventory Service: Notify
-    Message Bus-->>Payment Service: Notify
-    Inventory Service->>Message Bus: ItemsReserved Event
-    Payment Service->>Message Bus: PaymentProcessed Event
-    Message Bus-->>Shipping Service: Notify
-    Shipping Service->>Message Bus: ShipmentCreated Event
-```
+![Communication Patterns](diagrams/images/application-architecture-communication-patterns-7.png)
+
 
 **Communication Comparison:**
 
@@ -161,22 +90,8 @@ Service mesh manages service-to-service communication, providing observability, 
 
 **Service Mesh Architecture:**
 
-```mermaid
-graph TB
-    subgraph "Service Mesh (Istio/Linkerd)"
-        A[Service A] --> B[Sidecar Proxy]
-        C[Service B] --> D[Sidecar Proxy]
-        E[Service C] --> F[Sidecar Proxy]
-        
-        B <--> D
-        D <--> F
-        B <--> F
-        
-        G[Control Plane<br/>Istio/Linkerd] -.Configure.-> B
-        G -.Configure.-> D
-        G -.Configure.-> F
-    end
-```
+![Service Mesh](diagrams/images/application-architecture-service-mesh-8.png)
+
 
 **Service Mesh Features:**
 
@@ -205,18 +120,8 @@ graph TB
 
 **Architecture Layers:**
 
-```mermaid
-graph TB
-    A[External Clients] --> B[API Gateway<br/>Azure APIM, Kong]
-    B --> C[Service Mesh<br/>Istio, Linkerd]
-    
-    C --> D[Service A]
-    C --> E[Service B]
-    C --> F[Service C]
-    
-    D <-.Internal.-> E
-    E <-.Internal.-> F
-```
+![API Gateway vs Service Mesh](diagrams/images/application-architecture-api-gateway-vs-service-mesh-9.png)
+
 
 **Responsibility Comparison:**
 
@@ -265,19 +170,8 @@ Serverless enables running code without managing servers, with automatic scaling
 
 **Serverless Architecture:**
 
-```mermaid
-graph LR
-    A[HTTP Request] --> B[API Gateway]
-    B --> C[Azure Functions /<br/>AWS Lambda]
-    
-    D[Queue Message] --> C
-    E[Timer] --> C
-    F[Blob Upload] --> C
-    
-    C --> G[Database]
-    C --> H[Storage]
-    C --> I[External API]
-```
+![Function as a Service (FaaS)](diagrams/images/application-architecture-function-as-a-service-(faas)-10.png)
+
 
 **FaaS Platform Comparison:**
 
@@ -329,15 +223,8 @@ public static async Task<IActionResult> Run(
 
 **Cold Start Lifecycle:**
 
-```mermaid
-graph LR
-    A[Request Arrives] --> B[No Warm Instance]
-    B --> C[Provision Container<br/>500-1000ms]
-    C --> D[Load Runtime<br/>100-500ms]
-    D --> E[Load Code<br/>100-2000ms]
-    E --> F[Initialize Dependencies<br/>100-5000ms]
-    F --> G[Execute Handler<br/>10-1000ms]
-```
+![Cold Start Optimization](diagrams/images/application-architecture-cold-start-optimization-11.png)
+
 
 **Cold Start Mitigation:**
 
@@ -363,16 +250,8 @@ graph LR
 
 **BaaS Components:**
 
-```mermaid
-graph TB
-    A[Mobile/Web App] --> B[Firebase / Azure Mobile Apps]
-    
-    B --> C[Authentication<br/>OAuth, Social Login]
-    B --> D[Database<br/>Firestore, Cosmos DB]
-    B --> E[Storage<br/>Cloud Storage]
-    B --> F[Push Notifications<br/>FCM, APNS]
-    B --> G[Analytics]
-```
+![Backend as a Service (BaaS)](diagrams/images/application-architecture-backend-as-a-service-(baas)-12.png)
+
 
 **BaaS vs FaaS:**
 
@@ -417,26 +296,8 @@ Containers package applications with dependencies for consistent deployment acro
 
 **VM vs Container:**
 
-```mermaid
-graph TB
-    subgraph "Virtual Machines"
-        A1[App A] --> B1[Bins/Libs]
-        A2[App B] --> B2[Bins/Libs]
-        B1 --> C1[Guest OS]
-        B2 --> C2[Guest OS]
-        C1 --> D[Hypervisor]
-        C2 --> D
-        D --> E[Host OS]
-    end
-    
-    subgraph "Containers"
-        F1[App A] --> G1[Bins/Libs]
-        F2[App B] --> G2[Bins/Libs]
-        G1 --> H[Container Runtime]
-        G2 --> H
-        H --> I[Host OS]
-    end
-```
+![Container Basics](diagrams/images/application-architecture-container-basics-13.png)
+
 
 **Comparison:**
 
@@ -484,32 +345,8 @@ ENTRYPOINT ["dotnet", "MyApp.dll"]
 
 **Kubernetes Components:**
 
-```mermaid
-graph TB
-    subgraph "Control Plane"
-        A[API Server]
-        B[etcd<br/>Config Store]
-        C[Scheduler]
-        D[Controller Manager]
-    end
-    
-    subgraph "Worker Node 1"
-        E[Kubelet]
-        F[Container Runtime]
-        G[Pod: App 1]
-    end
-    
-    subgraph "Worker Node 2"
-        H[Kubelet]
-        I[Container Runtime]
-        J[Pod: App 2]
-    end
-    
-    A --> E
-    A --> H
-    E --> F
-    H --> I
-```
+![Kubernetes Architecture](diagrams/images/application-architecture-kubernetes-architecture-14.png)
+
 
 **Kubernetes Resources:**
 
@@ -615,16 +452,8 @@ spec:
 
 **Helm Architecture:**
 
-```mermaid
-graph LR
-    A[Developer] --> B[Helm Chart]
-    B --> C[helm install]
-    C --> D[Kubernetes API]
-    D --> E[Deployment]
-    D --> F[Service]
-    D --> G[ConfigMap]
-    D --> H[Secret]
-```
+![Helm and Package Management](diagrams/images/application-architecture-helm-and-package-management-15.png)
+
 
 **Helm Chart Structure:**
 
@@ -699,21 +528,8 @@ DevOps combines development and operations practices to deliver software faster 
 
 **Pipeline Stages:**
 
-```mermaid
-graph LR
-    A[Code Commit] --> B[Build]
-    B --> C[Unit Tests]
-    C --> D[Code Analysis]
-    D --> E[Build Artifact]
-    E --> F[Deploy to Dev]
-    F --> G[Integration Tests]
-    G --> H[Deploy to Staging]
-    H --> I[E2E Tests]
-    I --> J[Manual Approval]
-    J --> K[Deploy to Production]
-    K --> L[Smoke Tests]
-    L --> M[Monitor]
-```
+![CI/CD Pipeline](diagrams/images/application-architecture-ci-cd-pipeline-16.png)
+
 
 **CI/CD Tools:**
 
@@ -781,31 +597,13 @@ jobs:
 
 **Blue-Green Deployment:**
 
-```mermaid
-graph LR
-    A[Load Balancer] --> B[Blue Environment<br/>v1.0 - Active]
-    A -.Standby.-> C[Green Environment<br/>v1.1]
-    
-    D[Switch Traffic] --> E[Load Balancer]
-    E -.Old.-> B
-    E --> C[Green Environment<br/>v1.1 - Active]
-```
+![Deployment Strategies](diagrams/images/application-architecture-deployment-strategies-17.png)
+
 
 **Canary Deployment:**
 
-```mermaid
-graph TB
-    A[Load Balancer] --> B[95% Traffic]
-    A --> C[5% Traffic]
-    
-    B --> D[Stable v1.0<br/>19 Pods]
-    C --> E[Canary v1.1<br/>1 Pod]
-    
-    E --> F{Metrics OK?}
-    F -->|Yes| G[Increase to 50%]
-    F -->|No| H[Rollback]
-    G --> I[100% to v1.1]
-```
+![Deployment Strategies](diagrams/images/application-architecture-deployment-strategies-18.png)
+
 
 **Strategy Comparison:**
 
@@ -854,18 +652,8 @@ spec:
 
 **IaC Benefits:**
 
-```mermaid
-graph TB
-    A[Infrastructure as Code] --> B[Version Control]
-    A --> C[Repeatability]
-    A --> D[Automation]
-    A --> E[Documentation]
-    
-    B --> F[Track changes<br/>Audit trail]
-    C --> G[Consistent environments]
-    D --> H[CI/CD integration]
-    E --> I[Self-documenting]
-```
+![Infrastructure as Code (IaC)](diagrams/images/application-architecture-infrastructure-as-code-(iac)-19.png)
+
 
 **Terraform Example:**
 

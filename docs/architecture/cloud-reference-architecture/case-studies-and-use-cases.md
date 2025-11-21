@@ -2,17 +2,8 @@
 
 Real-world case studies demonstrate cloud architecture patterns in production environments across different industries and scenarios.
 
-```mermaid
-graph TB
-    A[Case Studies] --> B[Industry Examples]
-    A --> C[Common Scenarios]
-    A --> D[Migration Patterns]
-    
-    B --> E[Finance]
-    B --> F[Healthcare]
-    B --> G[Retail]
-    B --> H[Media]
-```
+![Case Studies and Use Cases](diagrams/images/case-studies-and-use-cases-case-studies-and-use-cases-1.png)
+
 
 ## Implementation Examples
 
@@ -32,46 +23,8 @@ graph TB
 
 **Architecture Overview:**
 
-```mermaid
-graph TB
-    subgraph "Global Edge"
-        A[Azure Front Door<br/>Global Load Balancer]
-        B[CDN<br/>Static Assets]
-    end
-    
-    subgraph "US East Region"
-        C[API Gateway]
-        D[Payment Service<br/>AKS Cluster]
-        E[Transaction DB<br/>Cosmos DB - Strong Consistency]
-        F[Event Hub<br/>Transaction Log]
-    end
-    
-    subgraph "EU West Region"
-        G[API Gateway]
-        H[Payment Service<br/>AKS Cluster]
-        I[Transaction DB<br/>Cosmos DB - Replica]
-        J[Event Hub<br/>Transaction Log]
-    end
-    
-    subgraph "Asia East Region"
-        K[API Gateway]
-        L[Payment Service<br/>AKS Cluster]
-        M[Transaction DB<br/>Cosmos DB - Replica]
-        N[Event Hub<br/>Transaction Log]
-    end
-    
-    A --> C
-    A --> G
-    A --> K
-    
-    D --> E
-    H --> I
-    L --> M
-    
-    F --> O[Analytics Pipeline<br/>Synapse]
-    J --> O
-    N --> O
-```
+![Case Study 1: Global Payment Processing Platform (Finance)](diagrams/images/case-studies-and-use-cases-case-study-1--global-payment-processing-platform-(-2.png)
+
 
 **Technology Stack:**
 
@@ -86,17 +39,8 @@ graph TB
 
 **1. Multi-Region Active-Active Architecture:**
 
-```mermaid
-graph LR
-    A[User Request] --> B{Geo-Routing}
-    B -->|US| C[US East Region]
-    B -->|EU| D[EU West Region]
-    B -->|Asia| E[Asia East Region]
-    
-    C --> F[Cosmos DB Global Replication]
-    D --> F
-    E --> F
-```
+![Case Study 1: Global Payment Processing Platform (Finance)](diagrams/images/case-studies-and-use-cases-case-study-1--global-payment-processing-platform-(-3.png)
+
 
 **Why**: Reduce latency for global users, achieve 99.99% SLA through regional redundancy.
 
@@ -133,15 +77,8 @@ All payment requests include idempotency keys to prevent duplicate charges durin
 
 **Security Implementation:**
 
-```mermaid
-graph TD
-    A[Payment Request] --> B[WAF<br/>OWASP Top 10]
-    B --> C[API Gateway<br/>OAuth 2.0]
-    C --> D[mTLS<br/>Service-to-Service]
-    D --> E[Payment Service]
-    E --> F[Key Vault<br/>Card Data Encryption]
-    F --> G[Cosmos DB<br/>Encryption at Rest]
-```
+![Case Study 1: Global Payment Processing Platform (Finance)](diagrams/images/case-studies-and-use-cases-case-study-1--global-payment-processing-platform-(-4.png)
+
 
 **Performance Optimizations:**
 
@@ -209,41 +146,8 @@ spec:
 
 **Architecture Overview:**
 
-```mermaid
-graph TB
-    subgraph "US Region"
-        A[API Gateway<br/>OAuth 2.0 + SMART on FHIR]
-        B[EHR Service<br/>AKS Cluster]
-        C[Patient DB<br/>SQL Database<br/>Always Encrypted]
-        D[Imaging Storage<br/>Blob + Private Link]
-    end
-    
-    subgraph "EU Region"
-        E[API Gateway<br/>OAuth 2.0 + SMART on FHIR]
-        F[EHR Service<br/>AKS Cluster]
-        G[Patient DB<br/>SQL Database<br/>Always Encrypted]
-        H[Imaging Storage<br/>Blob + Private Link]
-    end
-    
-    I[FHIR Server<br/>Azure API for FHIR]
-    J[Audit Logs<br/>Log Analytics<br/>Immutable Storage]
-    K[Backup<br/>Geo-Redundant<br/>7-Year Retention]
-    
-    A --> B
-    B --> C
-    B --> D
-    B --> I
-    B --> J
-    
-    E --> F
-    F --> G
-    F --> H
-    F --> I
-    F --> J
-    
-    C --> K
-    G --> K
-```
+![Case Study 2: Patient Data Management System (Healthcare)](diagrams/images/case-studies-and-use-cases-case-study-2--patient-data-management-system-(heal-5.png)
+
 
 **Technology Stack:**
 
@@ -257,24 +161,8 @@ graph TB
 
 **Security Architecture:**
 
-```mermaid
-graph TD
-    A[Healthcare Provider] --> B[MFA + Conditional Access]
-    B --> C[API Gateway<br/>Private Endpoint]
-    C --> D{RBAC Check}
-    D -->|Doctor| E[Full Access]
-    D -->|Nurse| F[Read/Write]
-    D -->|Admin| G[Admin Only]
-    
-    E --> H[EHR Service]
-    F --> H
-    G --> H
-    
-    H --> I[Always Encrypted SQL<br/>Column-Level Encryption]
-    H --> J[Audit Log<br/>Every Access Logged]
-    
-    K[Key Vault HSM<br/>Encryption Keys] --> I
-```
+![Case Study 2: Patient Data Management System (Healthcare)](diagrams/images/case-studies-and-use-cases-case-study-2--patient-data-management-system-(heal-6.png)
+
 
 **Key Design Decisions:**
 
@@ -333,21 +221,8 @@ public async Task<Patient> GetPatientAsync(int patientId, User currentUser)
 
 **4. Break-Glass Emergency Access:**
 
-```mermaid
-sequenceDiagram
-    participant Doctor
-    participant API
-    participant BreakGlass
-    participant AuditLog
-    participant SecurityTeam
-    
-    Doctor->>API: Emergency access request
-    API->>BreakGlass: Validate emergency
-    BreakGlass->>Doctor: Grant temporary access (1 hour)
-    Doctor->>API: Access patient record
-    API->>AuditLog: Log emergency access
-    AuditLog->>SecurityTeam: Alert for review
-```
+![Azure Policy: Enforce resource location](diagrams/images/case-studies-and-use-cases-azure-policy--enforce-resource-location-7.png)
+
 
 **FHIR Interoperability:**
 
@@ -434,33 +309,8 @@ sequenceDiagram
 
 **Architecture Overview:**
 
-```mermaid
-graph TB
-    A[Cloudflare CDN] --> B[Azure Front Door]
-    B --> C[API Gateway]
-    
-    C --> D[Product Catalog Service<br/>Read-Heavy]
-    C --> E[Order Service<br/>Write-Heavy]
-    C --> F[Recommendation Service<br/>ML-Powered]
-    
-    D --> G[Cosmos DB<br/>Product Catalog]
-    D --> H[Redis Cache<br/>99% Hit Rate]
-    
-    E --> I[SQL Database<br/>Orders]
-    E --> J[Service Bus<br/>Order Events]
-    
-    F --> K[Azure Machine Learning<br/>Recommendation Model]
-    
-    J --> L[Inventory Service]
-    J --> M[Payment Service]
-    J --> N[Shipping Service]
-    
-    O[Event Hubs] --> P[Azure Synapse<br/>Analytics]
-    
-    D --> O
-    E --> O
-    F --> O
-```
+![Case Study 3: E-Commerce Platform (Retail)](diagrams/images/case-studies-and-use-cases-case-study-3--e-commerce-platform-(retail)-8.png)
+
 
 **Technology Stack:**
 
@@ -475,40 +325,15 @@ graph TB
 
 **1. CQRS for Product Catalog:**
 
-```mermaid
-graph LR
-    A[Admin Portal] --> B[Command Side<br/>SQL Database<br/>Consistency]
-    B --> C[Event Bus]
-    C --> D[Query Side<br/>Cosmos DB<br/>Performance]
-    D --> E[Public Website]
-```
+![Case Study 3: E-Commerce Platform (Retail)](diagrams/images/case-studies-and-use-cases-case-study-3--e-commerce-platform-(retail)-9.png)
+
 
 **Why**: Admin updates require strong consistency (SQL), but public reads require low latency (Cosmos DB).
 
 **2. Event-Driven Order Processing:**
 
-```mermaid
-sequenceDiagram
-    participant User
-    participant Order Service
-    participant Service Bus
-    participant Inventory
-    participant Payment
-    participant Shipping
-    
-    User->>Order Service: Place Order
-    Order Service->>Service Bus: OrderCreated Event
-    Order Service-->>User: Order Confirmed (202 Accepted)
-    
-    Service Bus->>Inventory: Reserve Items
-    Inventory->>Service Bus: ItemsReserved Event
-    
-    Service Bus->>Payment: Charge Card
-    Payment->>Service Bus: PaymentSucceeded Event
-    
-    Service Bus->>Shipping: Create Shipment
-    Shipping->>Service Bus: ShipmentCreated Event
-```
+![Case Study 3: E-Commerce Platform (Retail)](diagrams/images/case-studies-and-use-cases-case-study-3--e-commerce-platform-(retail)-10.png)
+
 
 **Benefits**:
 
@@ -518,16 +343,8 @@ sequenceDiagram
 
 **3. Multi-Layer Caching:**
 
-```mermaid
-graph TD
-    A[User Request] --> B{CDN Cache?}
-    B -->|Hit| C[Return Static Assets<br/>5ms]
-    B -->|Miss| D{Redis Cache?}
-    D -->|Hit| E[Return Product Data<br/>10ms]
-    D -->|Miss| F{Cosmos DB Cache?}
-    F -->|Hit| G[Return from Database<br/>50ms]
-    F -->|Miss| H[Fetch & Populate Caches<br/>200ms]
-```
+![Case Study 3: E-Commerce Platform (Retail)](diagrams/images/case-studies-and-use-cases-case-study-3--e-commerce-platform-(retail)-11.png)
+
 
 **Caching Strategy:**
 
@@ -570,14 +387,8 @@ spec:
 
 **Black Friday Traffic Pattern:**
 
-```mermaid
-graph LR
-    A[Normal: 10 pods] --> B[12am: 50 pods<br/>5x traffic]
-    B --> C[9am: 300 pods<br/>30x traffic]
-    C --> D[12pm: 500 pods<br/>100x traffic]
-    D --> E[6pm: 100 pods<br/>10x traffic]
-    E --> F[12am: 20 pods<br/>2x traffic]
-```
+![AKS Horizontal Pod Autoscaler](diagrams/images/case-studies-and-use-cases-aks-horizontal-pod-autoscaler-12.png)
+
 
 **Recommendation Engine:**
 
@@ -649,13 +460,8 @@ public async Task<IActionResult> GetRecommendations(string userId)
 
 **Cost Optimization:**
 
-```mermaid
-graph TB
-    A[Cost Optimization] --> B[Reserved Instances<br/>50% savings]
-    A --> C[Spot Instances<br/>70% savings]
-    A --> D[Auto-Scaling<br/>Scale to zero off-peak]
-    A --> E[Blob Tiering<br/>Move old images to Cool tier]
-```
+![Train recommendation model](diagrams/images/case-studies-and-use-cases-train-recommendation-model-13.png)
+
 
 **Results:**
 
@@ -688,20 +494,8 @@ graph TB
 
 **Solution:**
 
-```mermaid
-graph TB
-    subgraph "On-Premises (Before)"
-        A[Load Balancer] --> B[IIS Web Servers]
-        B --> C[SQL Server]
-        B --> D[File Server]
-    end
-    
-    subgraph "Azure (After)"
-        E[Azure Load Balancer] --> F[Azure VMs<br/>IIS]
-        F --> G[Azure SQL Database]
-        F --> H[Azure Files]
-    end
-```
+![Scenario 1: Lift-and-Shift Migration](diagrams/images/case-studies-and-use-cases-scenario-1--lift-and-shift-migration-14.png)
+
 
 **Migration Steps:**
 
@@ -733,21 +527,8 @@ graph TB
 
 **Solution:**
 
-```mermaid
-graph TB
-    A[React SPA] --> B[Azure Static Web Apps]
-    B --> C[API Management]
-    C --> D[Microservices<br/>AKS]
-    D --> E[Cosmos DB]
-    D --> F[Service Bus]
-    D --> G[Blob Storage]
-    
-    H[CI/CD<br/>GitHub Actions] --> B
-    H --> D
-    
-    I[Azure Monitor] --> J[Application Insights]
-    I --> K[Log Analytics]
-```
+![Scenario 2: Cloud-Native Greenfield Application](diagrams/images/case-studies-and-use-cases-scenario-2--cloud-native-greenfield-application-15.png)
+
 
 **Technology Stack:**
 
@@ -777,21 +558,8 @@ graph TB
 
 **Solution:**
 
-```mermaid
-graph TB
-    A[Azure Traffic Manager<br/>Priority Routing] --> B[Primary: US East]
-    A --> C[Secondary: West Europe]
-    
-    B --> D[App Service<br/>Premium Tier]
-    D --> E[SQL Database<br/>Active Geo-Replication]
-    
-    C --> F[App Service<br/>Premium Tier]
-    F --> G[SQL Database<br/>Read Replica]
-    
-    H[Health Check] --> I{Primary Healthy?}
-    I -->|Yes| B
-    I -->|No| C
-```
+![Scenario 3: Multi-Region Deployment for High Availability](diagrams/images/case-studies-and-use-cases-scenario-3--multi-region-deployment-for-high-avail-16.png)
+
 
 **Failover Strategy:**
 
@@ -811,30 +579,8 @@ graph TB
 
 **Solution:**
 
-```mermaid
-graph TB
-    subgraph "On-Premises"
-        A[Legacy ERP<br/>SAP]
-        B[Database<br/>Oracle]
-    end
-    
-    subgraph "Azure"
-        C[ExpressRoute<br/>10 Gbps]
-        D[VPN Gateway<br/>Backup]
-        E[API Gateway]
-        F[Logic Apps]
-        G[Cloud Services]
-    end
-    
-    A <--> C
-    B <--> C
-    C <--> E
-    E <--> F
-    F <--> G
-    
-    A <-.-> D
-    D <-.-> E
-```
+![Scenario 4: Hybrid Cloud Integration](diagrams/images/case-studies-and-use-cases-scenario-4--hybrid-cloud-integration-17.png)
+
 
 **Integration Patterns:**
 
@@ -854,25 +600,8 @@ graph TB
 
 **Solution:**
 
-```mermaid
-graph TB
-    subgraph "Primary Site: US East"
-        A[Application] --> B[Database<br/>RTO: 1 hour<br/>RPO: 15 min]
-        A --> C[Blob Storage<br/>GRS]
-    end
-    
-    subgraph "DR Site: West US"
-        D[Standby Application<br/>Auto-start on failover]
-        E[Database Replica<br/>Geo-Replication]
-        F[Blob Storage<br/>Read Access]
-    end
-    
-    B --> E
-    C --> F
-    
-    G[Azure Site Recovery] --> H[Automated Failover]
-    H --> D
-```
+![Scenario 5: Disaster Recovery for Mission-Critical Applications](diagrams/images/case-studies-and-use-cases-scenario-5--disaster-recovery-for-mission-critical-18.png)
+
 
 **DR Testing Schedule:**
 
