@@ -1,0 +1,26 @@
+
+- name: Introduction
+  href: introduction.md
+- name: Architectural Overview
+  href: architectural-overview.md
+- name: Core Architectural Components
+  href: core-architectural-components.md
+- name: Security and Compliance
+  href: security-and-compliance.md
+- name: Operations and Reliability
+  href: operations-and-reliability.md
+- name: Integration and Data Flow
+  href: integration-and-data-flow.md
+- name: Application Architecture
+  href: application-architecture.md
+- name: Management and Governance
+  href: management-and-governance.md
+- name: Scalability and Performance
+  href: scalability-and-performance.md
+- name: Best Practices and Design Patterns
+  href: best-practices-and-design-patterns.md
+- name: Case Studies and Use Cases
+  href: case-studies-and-use-cases.md
+# - name: Appendices and Supporting Documents
+#   href: appendices-and-supporting-documents.md
+
