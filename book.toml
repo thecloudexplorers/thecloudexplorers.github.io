@@ -1,7 +1,0 @@
-[book]
-title = "The Cloud Explorers"
-authors = ["Wesley Camargo"]
-language = "en"
-
-[output.html]
-git-repository-url = "https://github.com/thecloudexplorers/thecloudexplorers.github.io"

@@ -1,0 +1,56 @@
+{
+  "metadata": [],
+  "build": {
+    "content": [
+      {
+        "files": [
+          "**.md",
+          "**.yml"
+        ],
+        "src": "docs",
+        "dest": "."
+      }
+    ],
+    "resource": [
+      {
+        "files": [
+          "images/**"
+        ],
+        "src": "docs"
+      }
+    ],
+
+    "template": [
+      "default",
+      "templates/singulinkfx",
+      "templates/custom"
+    ],
+    "globalMetadata": {
+      "_appTitle": "The Cloud Explorers",
+      "_appName": "The Cloud Explorers",
+      "_appLogoPath": "images/logo.png",
+      "_appFaviconPath": "images/favicon.png",
+      "_appFooter": "© 2025 The Cloud Explorers. All rights reserved.",
+      "_enableSearch": true,
+      "_gitContribute": {
+        "repo": "https://github.com/thecloudexplorers/thecloudexplorers.github.io",
+        "branch": "main"
+      }
+    },
+    "fileMetadata": {},
+    "dest": "_site",
+    "markdownEngineName": "markdig",
+    "markdownEngineProperties": {
+      "markdigExtensions": [
+        "attributes",
+        "customcontainers",
+        "emphasisextras",
+        "pipetables",
+        "listextras",
+        "footers",
+        "footnotes",
+        "tasklists"
+      ]
+    }
+  }
+}

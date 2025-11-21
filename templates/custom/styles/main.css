@@ -1,0 +1,96 @@
+/* Custom styles for The Cloud Explorers - Header with Logo */
+
+/* Top navbar styling - visible on all pages */
+.top-navbar {
+    background-color: var(--topbar-bg-color);
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border-bottom: 1px solid var(--separator-color);
+    position: sticky;
+    top: 0;
+    z-index: 1001;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Make logo visible and properly sized in the header */
+.top-navbar .brand {
+    display: flex !important;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    margin-left: 8px;
+}
+
+.top-navbar .brand .logomark {
+    display: inline-block !important;
+    height: 45px;
+    width: auto;
+    vertical-align: middle;
+}
+
+.top-navbar .brand .brand-title {
+    font-size: 1.4em;
+    font-weight: 500;
+    color: var(--appname-color);
+    vertical-align: middle;
+    display: inline-block;
+    letter-spacing: 0.5px;
+}
+
+/* Sidebar logo (keep existing styling) */
+.mobile-hide .brand .logomark {
+    display: inline-block !important;
+    height: 40px;
+    width: auto;
+    margin-right: 12px;
+    vertical-align: middle;
+}
+
+.mobile-hide .brand .brand-title {
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.mobile-hide .brand {
+    display: flex !important;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Burger icon styling */
+.burger-icon {
+    cursor: pointer;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    color: var(--button-color);
+    transition: color 0.2s;
+}
+
+.burger-icon:hover {
+    color: var(--link-hover-color);
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+    .top-navbar .brand .logomark {
+        height: 36px;
+    }
+    
+    .top-navbar .brand .brand-title {
+        font-size: 1.2em;
+    }
+    
+    .top-navbar {
+        padding: 10px 16px;
+    }
+}
+
+/* Desktop - hide burger icon on larger screens */
+@media (min-width: 769px) {
+    .burger-icon {
+        display: none !important;
+    }
+}
