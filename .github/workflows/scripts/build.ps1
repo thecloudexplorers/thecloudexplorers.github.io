@@ -217,6 +217,18 @@ foreach ($toc in $tocs) {
         $tempFiles = @()
 
         try {
+            # Set Puppeteer executable path for mmdc (mermaid-cli)
+            # This ensures mmdc can find Chromium on different systems
+            if ($env:PUPPETEER_EXECUTABLE_PATH) {
+                Write-Host "   Using Puppeteer executable: $env:PUPPETEER_EXECUTABLE_PATH" -ForegroundColor DarkGray
+            } elseif (Test-Path "/usr/bin/chromium-browser") {
+                $env:PUPPETEER_EXECUTABLE_PATH = "/usr/bin/chromium-browser"
+                Write-Host "   Set Puppeteer executable to: /usr/bin/chromium-browser" -ForegroundColor DarkGray
+            } elseif (Test-Path "/usr/bin/chromium") {
+                $env:PUPPETEER_EXECUTABLE_PATH = "/usr/bin/chromium"
+                Write-Host "   Set Puppeteer executable to: /usr/bin/chromium" -ForegroundColor DarkGray
+            }
+            
             # Create mermaid images directory
             $mermaidImagesDir = Join-Path $tempDir "mermaid-images"
             New-Item -ItemType Directory -Force -Path $mermaidImagesDir | Out-Null
