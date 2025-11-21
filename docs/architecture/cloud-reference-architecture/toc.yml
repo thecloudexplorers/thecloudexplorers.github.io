@@ -22,6 +22,10 @@ items:
     href: best-practices-and-design-patterns.md
   - name: Case Studies and Use Cases
     href: case-studies-and-use-cases.md
+  - name: Download Word Version
+    href: cloud-reference-architecture.docx
+  - name: Download PDF Version
+    href: cloud-reference-architecture.pdf
   # - name: Appendices and Supporting Documents
   #   href: appendices-and-supporting-documents.md
 
