@@ -217,7 +217,27 @@ foreach ($toc in $tocs) {
         $tempFiles = @()
 
         try {
+            # Set Puppeteer executable path for mmdc (mermaid-cli)
+            # This ensures mmdc can find Chromium on different systems
+            if ($env:PUPPETEER_EXECUTABLE_PATH) {
+                Write-Host "   Using Puppeteer executable: $env:PUPPETEER_EXECUTABLE_PATH" -ForegroundColor DarkGray
+            } elseif (Test-Path "/usr/bin/chromium-browser") {
+                $env:PUPPETEER_EXECUTABLE_PATH = "/usr/bin/chromium-browser"
+                Write-Host "   Set Puppeteer executable to: /usr/bin/chromium-browser" -ForegroundColor DarkGray
+            } elseif (Test-Path "/usr/bin/chromium") {
+                $env:PUPPETEER_EXECUTABLE_PATH = "/usr/bin/chromium"
+                Write-Host "   Set Puppeteer executable to: /usr/bin/chromium" -ForegroundColor DarkGray
+            }
+            
+            # Create mermaid images directory
+            $mermaidImagesDir = Join-Path $tempDir "mermaid-images"
+            New-Item -ItemType Directory -Force -Path $mermaidImagesDir | Out-Null
+            
+            # Counter for Mermaid diagrams
+            $mermaidCounter = 0
+            
             # Process each markdown file to convert relative image paths to absolute paths
+            # and convert Mermaid diagrams to images
             foreach ($mdFile in $orderedFiles) {
                 $content = Get-Content $mdFile -Raw
                 $basePath = Split-Path $mdFile -Parent
@@ -233,6 +253,48 @@ foreach ($toc in $tocs) {
                     # Convert backslashes to forward slashes for Pandoc/wkhtmltopdf
                     $absolutePath = $absolutePath -replace '\\', '/'
                     "![$altText](file:///$absolutePath)"
+                })
+                
+                # Process Mermaid code blocks
+                # Match: ```mermaid ... ```
+                $mermaidPattern = '(?s)```mermaid\s*\n(.*?)\n```'
+                $content = [regex]::Replace($content, $mermaidPattern, {
+                    param($match)
+                    $mermaidCode = $match.Groups[1].Value
+                    $mermaidCounter++
+                    
+                    # Create temp mermaid file
+                    $mermaidFile = Join-Path $tempDir "mermaid-$mermaidCounter.mmd"
+                    $mermaidCode | Out-File -FilePath $mermaidFile -Encoding UTF8 -NoNewline
+                    
+                    # Output image path
+                    $mermaidImage = Join-Path $mermaidImagesDir "mermaid-diagram-$mermaidCounter.png"
+                    
+                    # Check if mmdc is available
+                    $mmdcCmd = Get-Command "mmdc" -ErrorAction SilentlyContinue
+                    if ($mmdcCmd) {
+                        try {
+                            # Convert Mermaid to PNG
+                            & mmdc -i $mermaidFile -o $mermaidImage -b transparent 2>&1 | Out-Null
+                            
+                            if (Test-Path $mermaidImage) {
+                                # Convert to forward slashes for Pandoc
+                                $imagePathForPandoc = $mermaidImage -replace '\\', '/'
+                                Write-Host "      ✔ Converted Mermaid diagram $mermaidCounter" -ForegroundColor Green
+                                # Return image markdown
+                                return "![Mermaid Diagram](file:///$imagePathForPandoc)"
+                            } else {
+                                Write-Host "      ✘ Failed to generate Mermaid diagram $mermaidCounter" -ForegroundColor Red
+                                return $match.Value
+                            }
+                        } catch {
+                            Write-Host "      ✘ Error converting Mermaid diagram $mermaidCounter : $_" -ForegroundColor Red
+                            return $match.Value
+                        }
+                    } else {
+                        Write-Host "      ⚠ mmdc not found, keeping Mermaid code block $mermaidCounter" -ForegroundColor Yellow
+                        return $match.Value
+                    }
                 })
                 
                 # Save to temp file
