@@ -29,6 +29,9 @@ jobs:
       - name: Install DocFX
         run: dotnet tool install -g docfx
 
+      - name: Install Pandoc
+        run: sudo apt-get update && sudo apt-get install -y pandoc
+
       - name: Build with DocFX
         run: docfx build docfx.json
 
