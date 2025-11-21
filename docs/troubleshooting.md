@@ -127,7 +127,7 @@ If you see something like this:
 
 > `OpenTelemetry trace error occurred. Exporter otlp encountered the following error(s): the grpc server returns error (The system is not in a state required for the operation's execution): , detailed error message: TRACE_TOO_LARGE: max size of trace (5000000) exceeded while adding 86725 bytes to trace a657b63f6ca0415eb70b6734f20f82cf for tenant single-tenant`
 
-Then you'l need to tweak the maximum trace size in your OTLP receiver. In Grafana Tempo you can add the following keys
+Then you'll need to tweak the maximum trace size in your OTLP receiver. In Grafana Tempo you can add the following keys
 to your `tempo.yaml`, in this example we're setting it to 20MiB:
 
 ```yaml

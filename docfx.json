@@ -5,8 +5,7 @@
       {
         "files": [
           "**.md",
-          "**.yml",
-          "toc.yml"
+          "**.yml"
         ],
         "src": "docs",
         "dest": "."
