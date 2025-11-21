@@ -94,3 +94,61 @@
         display: none !important;
     }
 }
+
+/* Collapsible Sidebar Menu Items */
+
+/* Show expand-stub for level1 items that have children */
+ul.level1 > li > .expand-stub {
+    display: block !important;
+}
+
+/* Ensure all nested lists are hidden by default (collapsed state) */
+.sidetoc li > ul {
+    display: none;
+}
+
+/* Show nested lists when parent has 'in' class (expanded state) */
+li.in > ul {
+    display: block;
+}
+
+/* Improve expand-stub positioning and visibility for all levels */
+.expand-stub {
+    cursor: pointer;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: -10px;
+    top: 4px;
+}
+
+/* Arrow styling for collapsed state (pointing right) */
+.toc .nav > li > .expand-stub::before {
+    content: " ";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    top: 6px;
+    left: 6px;
+    transform: rotate(-90deg);
+    background-repeat: no-repeat;
+    background: url(down-arrow.svg);
+    transition: transform 0.2s ease;
+}
+
+/* Arrow styling for expanded state (pointing down) */
+.toc .nav > li.in > .expand-stub::before {
+    transform: rotate(0deg);
+}
+
+/* Ensure level2 and level3 expand-stubs are also visible and styled */
+ul.level2 > li > .expand-stub,
+ul.level3 > li > .expand-stub {
+    display: block;
+    top: 1px;
+}
+
+/* Smooth transition for expanding/collapsing */
+.toc .nav > li > ul {
+    transition: max-height 0.3s ease-out;
+}
