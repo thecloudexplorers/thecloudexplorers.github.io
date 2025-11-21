@@ -50,27 +50,12 @@ This document is organized into the following sections:
 
 ## High-Level Cloud Architecture
 
-```mermaid
-graph TD
-    Governance[Governance] --> Security[Security]
-    Governance --> Scalability[Scalability]
-    Governance --> Operations[Operations]
-    Security --> Scalability
-    Security --> Operations
-    Scalability --> Operations
-    Operations --> Improvement[Continuous Improvement]
-```
+![High-Level Cloud Architecture](diagrams/images/high-level-cloud-architecture.png)
 
 This diagram illustrates the interconnected components of a cloud reference architecture, emphasizing governance as the overarching layer influencing security, scalability, and operations.
 
 ## Cloud Adoption Phases
 
-```mermaid
-graph LR
-    Plan[Plan: Define Strategy] --> Build[Build: Deploy Resources]
-    Build --> Operate[Operate: Manage Workloads]
-    Operate --> Optimize[Optimize: Improve Efficiency]
-    Optimize --> Plan
-```
+![Cloud Adoption Phases](diagrams/images/cloud-adoption-phases.png)
 
 This flow diagram represents the iterative phases of cloud adoption, inspired by the Microsoft Cloud Adoption Framework, with a feedback loop for continuous improvement.

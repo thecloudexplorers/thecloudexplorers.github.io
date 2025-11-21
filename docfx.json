@@ -14,7 +14,8 @@
     "resource": [
       {
         "files": [
-          "images/**"
+          "images/**",
+          "**/diagrams/images/**"
         ],
         "src": "docs"
       }
