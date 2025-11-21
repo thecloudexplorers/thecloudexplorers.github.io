@@ -2,7 +2,7 @@
 
 Operational excellence ensures systems run smoothly, scale effectively, and recover quickly from failures. This section covers SRE principles, monitoring, incident response, and business continuity strategies.
 
-![Operations and Reliability](diagrams/images/operations-and-reliability-operations-and-reliability-1.png)
+![](diagrams/images/operations-and-reliability-1.png)
 
 
 ## Resource Provisioning and Management
@@ -11,7 +11,7 @@ Infrastructure as Code (IaC) enables consistent, repeatable, and version-control
 
 ### Infrastructure as Code
 
-![Infrastructure as Code](diagrams/images/operations-and-reliability-infrastructure-as-code-2.png)
+![](diagrams/images/operations-and-reliability-2.png)
 
 
 **IaC Tools Comparison:**
@@ -26,7 +26,7 @@ Infrastructure as Code (IaC) enables consistent, repeatable, and version-control
 
 **Terraform Workflow:**
 
-![Infrastructure as Code](diagrams/images/operations-and-reliability-infrastructure-as-code-3.png)
+![](diagrams/images/operations-and-reliability-3.png)
 
 
 **Example: Azure Resources with Terraform:**
@@ -67,7 +67,7 @@ resource "azurerm_kubernetes_cluster" "example" {
 3. **Automated Delivery**: Tools sync Git state to cluster
 4. **Continuous Reconciliation**: Detect and correct drift
 
-![GitOps and Configuration Management](diagrams/images/operations-and-reliability-gitops-and-configuration-management-4.png)
+![](diagrams/images/operations-and-reliability-4.png)
 
 
 **GitOps Tools:**
@@ -96,7 +96,7 @@ A fintech company uses ArgoCD with:
 
 **Drift Detection Pattern:**
 
-![Configuration Drift Detection](diagrams/images/operations-and-reliability-configuration-drift-detection-5.png)
+![](diagrams/images/operations-and-reliability-5.png)
 
 
 **Drift Detection Tools:**
@@ -141,7 +141,7 @@ Observability provides visibility into system health through metrics, logs, and 
 
 ### The Three Pillars of Observability
 
-![The Three Pillars of Observability](diagrams/images/operations-and-reliability-the-three-pillars-of-observability-6.png)
+![](diagrams/images/operations-and-reliability-6.png)
 
 
 **Pillar Comparison:**
@@ -165,7 +165,7 @@ Observability provides visibility into system health through metrics, logs, and 
 
 **Metrics Architecture:**
 
-![Metrics and Alerting](diagrams/images/operations-and-reliability-metrics-and-alerting-7.png)
+![](diagrams/images/operations-and-reliability-7.png)
 
 
 **Alerting Best Practices:**
@@ -177,7 +177,7 @@ Observability provides visibility into system health through metrics, logs, and 
 
 **Alert Fatigue Prevention:**
 
-![Metrics and Alerting](diagrams/images/operations-and-reliability-metrics-and-alerting-8.png)
+![](diagrams/images/operations-and-reliability-8.png)
 
 
 > [!CAUTION]
@@ -259,7 +259,7 @@ Observability provides visibility into system health through metrics, logs, and 
 
 **Log Aggregation Architecture:**
 
-![Logging Strategy](diagrams/images/operations-and-reliability-logging-strategy-9.png)
+![](diagrams/images/operations-and-reliability-9.png)
 
 
 **Log Retention Strategy:**
@@ -280,7 +280,7 @@ Distributed tracing tracks requests across microservices, identifying bottleneck
 
 **Trace Anatomy:**
 
-![Distributed Tracing](diagrams/images/operations-and-reliability-distributed-tracing-10.png)
+![](diagrams/images/operations-and-reliability-10.png)
 
 
 **OpenTelemetry Trace:**
@@ -296,7 +296,7 @@ TraceID: abc123
 
 **Trace Context Propagation:**
 
-![Distributed Tracing](diagrams/images/operations-and-reliability-distributed-tracing-11.png)
+![](diagrams/images/operations-and-reliability-11.png)
 
 
 **Tracing Tools:**
@@ -335,7 +335,7 @@ An e-commerce platform uses Application Insights to discover:
 
 **Operations Dashboard Example:**
 
-![Dashboards and Visualization](diagrams/images/operations-and-reliability-dashboards-and-visualization-12.png)
+![](diagrams/images/operations-and-reliability-12.png)
 
 
 **Dashboard Best Practices:**
@@ -361,7 +361,7 @@ Work that is manual, repetitive, automatable, tactical, no enduring value, scale
 
 **Toil Quadrant:**
 
-![Reducing Toil](diagrams/images/operations-and-reliability-reducing-toil-13.png)
+![](diagrams/images/operations-and-reliability-13.png)
 
 
 **Toil Reduction Strategies:**
@@ -383,7 +383,7 @@ Work that is manual, repetitive, automatable, tactical, no enduring value, scale
 
 **CI/CD Stages:**
 
-![CI/CD Pipelines](diagrams/images/operations-and-reliability-ci-cd-pipelines-14.png)
+![](diagrams/images/operations-and-reliability-14.png)
 
 
 **Deployment Strategies:**
@@ -397,7 +397,7 @@ Work that is manual, repetitive, automatable, tactical, no enduring value, scale
 
 **Canary Deployment:**
 
-![CI/CD Pipelines](diagrams/images/operations-and-reliability-ci-cd-pipelines-15.png)
+![](diagrams/images/operations-and-reliability-15.png)
 
 
 **GitOps CI/CD Example:**
@@ -442,7 +442,7 @@ jobs:
 
 **Self-Healing Pattern:**
 
-![Auto-Remediation and Self-Healing](diagrams/images/operations-and-reliability-auto-remediation-and-self-healing-16.png)
+![](diagrams/images/operations-and-reliability-16.png)
 
 
 **Common Auto-Remediation Scenarios:**
@@ -478,7 +478,7 @@ if ($vm.StatusCode -eq "PowerState/deallocated") {
 
 Deliberately inject failures to test auto-remediation and system resilience.
 
-![Triggered by Azure Monitor alert](diagrams/images/operations-and-reliability-triggered-by-azure-monitor-alert-17.png)
+![](diagrams/images/operations-and-reliability-17.png)
 
 
 **Chaos Engineering Tools:**
@@ -503,7 +503,7 @@ Disaster recovery ensures business continuity through backups, failover mechanis
 
 **RTO/RPO Trade-offs:**
 
-![RTO and RPO](diagrams/images/operations-and-reliability-rto-and-rpo-18.png)
+![](diagrams/images/operations-and-reliability-18.png)
 
 
 **Disaster Recovery Tiers:**
@@ -520,7 +520,7 @@ Disaster recovery ensures business continuity through backups, failover mechanis
 
 **3-2-1 Backup Rule:**
 
-![Backup Strategies](diagrams/images/operations-and-reliability-backup-strategies-19.png)
+![](diagrams/images/operations-and-reliability-19.png)
 
 
 **Backup Types:**
@@ -534,7 +534,7 @@ Disaster recovery ensures business continuity through backups, failover mechanis
 
 **Azure Backup Architecture:**
 
-![Backup Strategies](diagrams/images/operations-and-reliability-backup-strategies-20.png)
+![](diagrams/images/operations-and-reliability-20.png)
 
 
 **Backup Retention Policy:**
@@ -553,7 +553,7 @@ Disaster recovery ensures business continuity through backups, failover mechanis
 
 **Multi-Region Failover:**
 
-![Failover and Failback](diagrams/images/operations-and-reliability-failover-and-failback-21.png)
+![](diagrams/images/operations-and-reliability-21.png)
 
 
 **Failover Strategies:**
@@ -567,7 +567,7 @@ Disaster recovery ensures business continuity through backups, failover mechanis
 
 **Active-Active Multi-Region:**
 
-![Failover and Failback](diagrams/images/operations-and-reliability-failover-and-failback-22.png)
+![](diagrams/images/operations-and-reliability-22.png)
 
 
 **Benefits:**
@@ -587,7 +587,7 @@ Disaster recovery ensures business continuity through backups, failover mechanis
 
 **Failback Procedure:**
 
-![Failover and Failback](diagrams/images/operations-and-reliability-failover-and-failback-23.png)
+![](diagrams/images/operations-and-reliability-23.png)
 
 
 ### Disaster Recovery Testing
@@ -631,7 +631,7 @@ A SaaS company conducts quarterly DR drills:
 
 **BCP Components:**
 
-![Business Continuity Planning](diagrams/images/operations-and-reliability-business-continuity-planning-24.png)
+![](diagrams/images/operations-and-reliability-24.png)
 
 
 **Business Impact Analysis:**

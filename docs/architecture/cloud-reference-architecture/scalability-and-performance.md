@@ -2,7 +2,7 @@
 
 Scalability ensures systems handle growing demand while maintaining performance. This section covers scaling strategies, load balancing, caching, and performance optimization techniques.
 
-![Scalability and Performance](diagrams/images/scalability-and-performance-scalability-and-performance-1.png)
+![](diagrams/images/scalability-and-performance-1.png)
 
 
 ## Elasticity and Scalability Patterns
@@ -11,7 +11,7 @@ Elasticity is the ability to automatically scale resources based on demand, whil
 
 ### Vertical vs Horizontal Scaling
 
-![Vertical vs Horizontal Scaling](diagrams/images/scalability-and-performance-vertical-vs-horizontal-scaling-2.png)
+![](diagrams/images/scalability-and-performance-2.png)
 
 
 **Scaling Comparison:**
@@ -32,7 +32,7 @@ Elasticity is the ability to automatically scale resources based on demand, whil
 
 **Auto-Scaling Architecture:**
 
-![Auto-Scaling Patterns](diagrams/images/scalability-and-performance-auto-scaling-patterns-3.png)
+![](diagrams/images/scalability-and-performance-3.png)
 
 
 **Scaling Triggers:**
@@ -85,7 +85,7 @@ TargetTrackingScaling:
 
 **Scaling Best Practices:**
 
-![Auto-Scaling Patterns](diagrams/images/scalability-and-performance-auto-scaling-patterns-4.png)
+![](diagrams/images/scalability-and-performance-4.png)
 
 
 1. **Stateless Applications**: Store session state in Redis/DynamoDB, not in-memory
@@ -118,12 +118,12 @@ An e-commerce site uses predictive auto-scaling:
 
 **Read Replica Architecture:**
 
-![Scaling Database Tier](diagrams/images/scalability-and-performance-scaling-database-tier-5.png)
+![](diagrams/images/scalability-and-performance-5.png)
 
 
 **Sharding (Horizontal Partitioning):**
 
-![Scaling Database Tier](diagrams/images/scalability-and-performance-scaling-database-tier-6.png)
+![](diagrams/images/scalability-and-performance-6.png)
 
 
 **Sharding Challenges:**
@@ -138,7 +138,7 @@ An e-commerce site uses predictive auto-scaling:
 
 **Cosmos DB Global Distribution:**
 
-![Scaling Database Tier](diagrams/images/scalability-and-performance-scaling-database-tier-7.png)
+![](diagrams/images/scalability-and-performance-7.png)
 
 
 **Benefits:**
@@ -157,7 +157,7 @@ Serverless platforms automatically scale from zero to thousands of concurrent ex
 
 **Serverless Auto-Scaling:**
 
-![Serverless Scaling](diagrams/images/scalability-and-performance-serverless-scaling-8.png)
+![](diagrams/images/scalability-and-performance-8.png)
 
 
 **Serverless Scaling Limits:**
@@ -199,7 +199,7 @@ Load balancers distribute traffic across multiple servers, improving availabilit
 
 ### Load Balancer Types
 
-![Load Balancer Types](diagrams/images/scalability-and-performance-load-balancer-types-9.png)
+![](diagrams/images/scalability-and-performance-9.png)
 
 
 **Load Balancer Comparison:**
@@ -225,12 +225,12 @@ Load balancers distribute traffic across multiple servers, improving availabilit
 
 **Round Robin:**
 
-![Load Balancing Algorithms](diagrams/images/scalability-and-performance-load-balancing-algorithms-10.png)
+![](diagrams/images/scalability-and-performance-10.png)
 
 
 **Least Connections:**
 
-![Load Balancing Algorithms](diagrams/images/scalability-and-performance-load-balancing-algorithms-11.png)
+![](diagrams/images/scalability-and-performance-11.png)
 
 
 > [!NOTE]
@@ -248,7 +248,7 @@ Load balancers distribute traffic across multiple servers, improving availabilit
 
 **Health Check Endpoint:**
 
-![Health Checks and Failover](diagrams/images/scalability-and-performance-health-checks-and-failover-12.png)
+![](diagrams/images/scalability-and-performance-12.png)
 
 
 **Example Health Check Implementation:**
@@ -295,7 +295,7 @@ services.AddHealthChecks()
 
 **Session Affinity (Sticky Sessions):**
 
-![Session Persistence](diagrams/images/scalability-and-performance-session-persistence-13.png)
+![](diagrams/images/scalability-and-performance-13.png)
 
 
 **Session Storage Options:**
@@ -309,7 +309,7 @@ services.AddHealthChecks()
 
 **Redis Session Architecture:**
 
-![Session Persistence](diagrams/images/scalability-and-performance-session-persistence-14.png)
+![](diagrams/images/scalability-and-performance-14.png)
 
 
 > [!TIP]
@@ -319,7 +319,7 @@ services.AddHealthChecks()
 
 **Traffic Splitting:**
 
-![Traffic Splitting and Canary Deployments](diagrams/images/scalability-and-performance-traffic-splitting-and-canary-deployments-15.png)
+![](diagrams/images/scalability-and-performance-15.png)
 
 
 **Azure Application Gateway URL Routing:**
@@ -368,7 +368,7 @@ Caching dramatically improves performance by serving frequently accessed data fr
 
 **How It Works:**
 
-![Cache-Aside Pattern](diagrams/images/scalability-and-performance-cache-aside-pattern-16.png)
+![](diagrams/images/scalability-and-performance-16.png)
 
 
 **Cache-Aside Implementation:**
@@ -414,12 +414,12 @@ public async Task<Product> GetProductAsync(int productId)
 
 **Write-Through Cache:**
 
-![Write Strategies](diagrams/images/scalability-and-performance-write-strategies-17.png)
+![](diagrams/images/scalability-and-performance-17.png)
 
 
 **Write-Behind (Write-Back) Cache:**
 
-![Write Strategies](diagrams/images/scalability-and-performance-write-strategies-18.png)
+![](diagrams/images/scalability-and-performance-18.png)
 
 
 **Cache Strategy Comparison:**
@@ -448,7 +448,7 @@ public async Task<Product> GetProductAsync(int productId)
 
 **LRU Cache Behavior:**
 
-![Cache Eviction Policies](diagrams/images/scalability-and-performance-cache-eviction-policies-19.png)
+![](diagrams/images/scalability-and-performance-19.png)
 
 
 > [!NOTE]
@@ -458,7 +458,7 @@ public async Task<Product> GetProductAsync(int productId)
 
 **Redis Architecture:**
 
-![Distributed Caching](diagrams/images/scalability-and-performance-distributed-caching-20.png)
+![](diagrams/images/scalability-and-performance-20.png)
 
 
 **Redis vs Memcached:**
@@ -500,7 +500,7 @@ A media site uses Redis for:
 
 **Event-Based Invalidation:**
 
-![Cache Invalidation](diagrams/images/scalability-and-performance-cache-invalidation-21.png)
+![](diagrams/images/scalability-and-performance-21.png)
 
 
 **Example: Event-Driven Cache Invalidation:**
@@ -533,7 +533,7 @@ CDNs cache static content at edge locations worldwide, reducing latency and orig
 
 ### CDN Architecture
 
-![CDN Architecture](diagrams/images/scalability-and-performance-cdn-architecture-22.png)
+![](diagrams/images/scalability-and-performance-22.png)
 
 
 **CDN Benefits:**
@@ -609,7 +609,7 @@ CDNs cache static content at edge locations worldwide, reducing latency and orig
 
 **Cache-Control Directives:**
 
-![Cache Control Headers](diagrams/images/scalability-and-performance-cache-control-headers-23.png)
+![](diagrams/images/scalability-and-performance-23.png)
 
 
 **Best Practices by Content Type:**
@@ -693,7 +693,7 @@ Modern CDNs support code execution at edge locations for dynamic content.
 
 **Use Cases:**
 
-![Edge Computing](diagrams/images/scalability-and-performance-edge-computing-24.png)
+![](diagrams/images/scalability-and-performance-24.png)
 
 
 **Example: Cloudflare Worker for A/B Testing:**

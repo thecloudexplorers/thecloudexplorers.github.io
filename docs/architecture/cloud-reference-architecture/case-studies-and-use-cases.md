@@ -2,7 +2,7 @@
 
 Real-world case studies demonstrate cloud architecture patterns in production environments across different industries and scenarios.
 
-![Case Studies and Use Cases](diagrams/images/case-studies-and-use-cases-case-studies-and-use-cases-1.png)
+![](diagrams/images/case-studies-and-use-cases-1.png)
 
 
 ## Implementation Examples
@@ -23,7 +23,7 @@ Real-world case studies demonstrate cloud architecture patterns in production en
 
 **Architecture Overview:**
 
-![Case Study 1: Global Payment Processing Platform (Finance)](diagrams/images/case-studies-and-use-cases-case-study-1--global-payment-processing-platform---2.png)
+![](diagrams/images/case-studies-and-use-cases-2.png)
 
 
 **Technology Stack:**
@@ -39,7 +39,7 @@ Real-world case studies demonstrate cloud architecture patterns in production en
 
 **1. Multi-Region Active-Active Architecture:**
 
-![Case Study 1: Global Payment Processing Platform (Finance)](diagrams/images/case-studies-and-use-cases-case-study-1--global-payment-processing-platform---3.png)
+![](diagrams/images/case-studies-and-use-cases-3.png)
 
 
 **Why**: Reduce latency for global users, achieve 99.99% SLA through regional redundancy.
@@ -77,7 +77,7 @@ All payment requests include idempotency keys to prevent duplicate charges durin
 
 **Security Implementation:**
 
-![Case Study 1: Global Payment Processing Platform (Finance)](diagrams/images/case-studies-and-use-cases-case-study-1--global-payment-processing-platform---4.png)
+![](diagrams/images/case-studies-and-use-cases-4.png)
 
 
 **Performance Optimizations:**
@@ -146,7 +146,7 @@ spec:
 
 **Architecture Overview:**
 
-![Case Study 2: Patient Data Management System (Healthcare)](diagrams/images/case-studies-and-use-cases-case-study-2--patient-data-management-system--heal-5.png)
+![](diagrams/images/case-studies-and-use-cases-5.png)
 
 
 **Technology Stack:**
@@ -161,7 +161,7 @@ spec:
 
 **Security Architecture:**
 
-![Case Study 2: Patient Data Management System (Healthcare)](diagrams/images/case-studies-and-use-cases-case-study-2--patient-data-management-system--heal-6.png)
+![](diagrams/images/case-studies-and-use-cases-6.png)
 
 
 **Key Design Decisions:**
@@ -221,7 +221,7 @@ public async Task<Patient> GetPatientAsync(int patientId, User currentUser)
 
 **4. Break-Glass Emergency Access:**
 
-![Azure Policy: Enforce resource location](diagrams/images/case-studies-and-use-cases-azure-policy--enforce-resource-location-7.png)
+![](diagrams/images/case-studies-and-use-cases-7.png)
 
 
 **FHIR Interoperability:**
@@ -309,7 +309,7 @@ public async Task<Patient> GetPatientAsync(int patientId, User currentUser)
 
 **Architecture Overview:**
 
-![Case Study 3: E-Commerce Platform (Retail)](diagrams/images/case-studies-and-use-cases-case-study-3--e-commerce-platform--retail--8.png)
+![](diagrams/images/case-studies-and-use-cases-8.png)
 
 
 **Technology Stack:**
@@ -325,14 +325,14 @@ public async Task<Patient> GetPatientAsync(int patientId, User currentUser)
 
 **1. CQRS for Product Catalog:**
 
-![Case Study 3: E-Commerce Platform (Retail)](diagrams/images/case-studies-and-use-cases-case-study-3--e-commerce-platform--retail--9.png)
+![](diagrams/images/case-studies-and-use-cases-9.png)
 
 
 **Why**: Admin updates require strong consistency (SQL), but public reads require low latency (Cosmos DB).
 
 **2. Event-Driven Order Processing:**
 
-![Case Study 3: E-Commerce Platform (Retail)](diagrams/images/case-studies-and-use-cases-case-study-3--e-commerce-platform--retail--10.png)
+![](diagrams/images/case-studies-and-use-cases-10.png)
 
 
 **Benefits**:
@@ -343,7 +343,7 @@ public async Task<Patient> GetPatientAsync(int patientId, User currentUser)
 
 **3. Multi-Layer Caching:**
 
-![Case Study 3: E-Commerce Platform (Retail)](diagrams/images/case-studies-and-use-cases-case-study-3--e-commerce-platform--retail--11.png)
+![](diagrams/images/case-studies-and-use-cases-11.png)
 
 
 **Caching Strategy:**
@@ -387,7 +387,7 @@ spec:
 
 **Black Friday Traffic Pattern:**
 
-![AKS Horizontal Pod Autoscaler](diagrams/images/case-studies-and-use-cases-aks-horizontal-pod-autoscaler-12.png)
+![](diagrams/images/case-studies-and-use-cases-12.png)
 
 
 **Recommendation Engine:**
@@ -460,7 +460,7 @@ public async Task<IActionResult> GetRecommendations(string userId)
 
 **Cost Optimization:**
 
-![Train recommendation model](diagrams/images/case-studies-and-use-cases-train-recommendation-model-13.png)
+![](diagrams/images/case-studies-and-use-cases-13.png)
 
 
 **Results:**
@@ -494,7 +494,7 @@ public async Task<IActionResult> GetRecommendations(string userId)
 
 **Solution:**
 
-![Scenario 1: Lift-and-Shift Migration](diagrams/images/case-studies-and-use-cases-scenario-1--lift-and-shift-migration-14.png)
+![](diagrams/images/case-studies-and-use-cases-14.png)
 
 
 **Migration Steps:**
@@ -527,7 +527,7 @@ public async Task<IActionResult> GetRecommendations(string userId)
 
 **Solution:**
 
-![Scenario 2: Cloud-Native Greenfield Application](diagrams/images/case-studies-and-use-cases-scenario-2--cloud-native-greenfield-application-15.png)
+![](diagrams/images/case-studies-and-use-cases-15.png)
 
 
 **Technology Stack:**
@@ -558,7 +558,7 @@ public async Task<IActionResult> GetRecommendations(string userId)
 
 **Solution:**
 
-![Scenario 3: Multi-Region Deployment for High Availability](diagrams/images/case-studies-and-use-cases-scenario-3--multi-region-deployment-for-high-avail-16.png)
+![](diagrams/images/case-studies-and-use-cases-16.png)
 
 
 **Failover Strategy:**
@@ -579,7 +579,7 @@ public async Task<IActionResult> GetRecommendations(string userId)
 
 **Solution:**
 
-![Scenario 4: Hybrid Cloud Integration](diagrams/images/case-studies-and-use-cases-scenario-4--hybrid-cloud-integration-17.png)
+![](diagrams/images/case-studies-and-use-cases-17.png)
 
 
 **Integration Patterns:**
@@ -600,7 +600,7 @@ public async Task<IActionResult> GetRecommendations(string userId)
 
 **Solution:**
 
-![Scenario 5: Disaster Recovery for Mission-Critical Applications](diagrams/images/case-studies-and-use-cases-scenario-5--disaster-recovery-for-mission-critical-18.png)
+![](diagrams/images/case-studies-and-use-cases-18.png)
 
 
 **DR Testing Schedule:**

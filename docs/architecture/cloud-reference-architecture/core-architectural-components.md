@@ -2,7 +2,7 @@
 
 This section details the fundamental building blocks of cloud architecture that form the foundation of any cloud solution.
 
-![Core Architectural Components](diagrams/images/core-architectural-components-core-architectural-components-1.png)
+![](diagrams/images/core-architectural-components-1.png)
 
 
 ## Computing Resources
@@ -31,7 +31,7 @@ Virtual machines provide Infrastructure as a Service (IaaS) with full control ov
 
 **Architecture Pattern:**
 
-![Virtual Machines (VMs)](diagrams/images/core-architectural-components-virtual-machines--vms--2.png)
+![](diagrams/images/core-architectural-components-2.png)
 
 
 **Real-World Example:**
@@ -55,7 +55,7 @@ Containers provide lightweight, portable application packaging that includes dep
 
 **Kubernetes Architecture:**
 
-![Containers](diagrams/images/core-architectural-components-containers-3.png)
+![](diagrams/images/core-architectural-components-3.png)
 
 
 **Real-World Example:**
@@ -79,7 +79,7 @@ Serverless computing allows you to run code without managing infrastructure, pay
 
 **Serverless Architecture Pattern:**
 
-![Serverless Computing](diagrams/images/core-architectural-components-serverless-computing-4.png)
+![](diagrams/images/core-architectural-components-4.png)
 
 
 **Cost Comparison Example:**
@@ -101,7 +101,7 @@ An image processing service uses AWS Lambda triggered by S3 uploads to generate 
 
 Cloud storage services provide scalable, durable, and highly available data storage for various use cases.
 
-![Storage Services](diagrams/images/core-architectural-components-storage-services-5.png)
+![](diagrams/images/core-architectural-components-5.png)
 
 
 ### Object Storage
@@ -126,7 +126,7 @@ Object storage is designed for unstructured data with unlimited scalability and 
 
 **Object Storage Architecture:**
 
-![Object Storage](diagrams/images/core-architectural-components-object-storage-6.png)
+![](diagrams/images/core-architectural-components-6.png)
 
 
 **Real-World Example:**
@@ -171,7 +171,7 @@ File storage provides fully managed file shares accessible via SMB/NFS protocols
 
 **File Storage Architecture:**
 
-![File Storage](diagrams/images/core-architectural-components-file-storage-7.png)
+![](diagrams/images/core-architectural-components-7.png)
 
 
 **Real-World Example:**
@@ -182,7 +182,7 @@ An enterprise uses Azure Files Premium with Azure File Sync to enable hybrid fil
 
 Cloud networking enables secure, reliable connectivity between resources, users, and on-premises infrastructure.
 
-![Networking](diagrams/images/core-architectural-components-networking-8.png)
+![](diagrams/images/core-architectural-components-8.png)
 
 
 ### Virtual Networks (VNet/VPC)
@@ -200,7 +200,7 @@ Virtual networks provide isolated network environments in the cloud with customi
 
 **Network Segmentation Example:**
 
-![Virtual Networks (VNet/VPC)](diagrams/images/core-architectural-components-virtual-networks--vnet-vpc--9.png)
+![](diagrams/images/core-architectural-components-9.png)
 
 
 **Best Practices:**
@@ -227,7 +227,7 @@ Load balancers distribute traffic across multiple instances for high availabilit
 
 **Load Balancing Architecture:**
 
-![Load Balancing](diagrams/images/core-architectural-components-load-balancing-10.png)
+![](diagrams/images/core-architectural-components-10.png)
 
 
 > [!TIP]
@@ -248,7 +248,7 @@ CDNs cache content at edge locations globally, reducing latency and improving us
 
 **CDN Architecture:**
 
-![Content Delivery Network (CDN)](diagrams/images/core-architectural-components-content-delivery-network--cdn--11.png)
+![](diagrams/images/core-architectural-components-11.png)
 
 
 **Real-World Example:**
@@ -269,7 +269,7 @@ Hybrid connectivity options enable secure connections between on-premises infras
 
 **Hybrid Network Architecture:**
 
-![Hybrid Connectivity](diagrams/images/core-architectural-components-hybrid-connectivity-12.png)
+![](diagrams/images/core-architectural-components-12.png)
 
 
 > [!IMPORTANT]
@@ -279,7 +279,7 @@ Hybrid connectivity options enable secure connections between on-premises infras
 
 IAM controls who can access resources and what actions they can perform, forming the foundation of cloud security.
 
-![Identity and Access Management (IAM)](diagrams/images/core-architectural-components-identity-and-access-management--iam--13.png)
+![](diagrams/images/core-architectural-components-13.png)
 
 
 ### Identity Providers
@@ -296,7 +296,7 @@ IAM controls who can access resources and what actions they can perform, forming
 
 **Multi-Factor Authentication (MFA):**
 
-![Authentication Methods](diagrams/images/core-architectural-components-authentication-methods-14.png)
+![](diagrams/images/core-architectural-components-14.png)
 
 
 **Supported MFA Methods:**
@@ -321,7 +321,7 @@ IAM controls who can access resources and what actions they can perform, forming
 
 **RBAC Assignment Pattern:**
 
-![Authorization Models](diagrams/images/core-architectural-components-authorization-models-15.png)
+![](diagrams/images/core-architectural-components-15.png)
 
 
 **Best Practices:**
@@ -338,7 +338,7 @@ IAM controls who can access resources and what actions they can perform, forming
 
 **Managed Identities (Azure) / IAM Roles (AWS):**
 
-![Service Identities](diagrams/images/core-architectural-components-service-identities-16.png)
+![](diagrams/images/core-architectural-components-16.png)
 
 
 **Types:**
@@ -357,7 +357,7 @@ An Azure Function uses system-assigned managed identity to access Azure Key Vaul
 
 Cloud providers offer a wide range of managed database services for relational, NoSQL, and specialized workloads.
 
-![Database Services](diagrams/images/core-architectural-components-database-services-17.png)
+![](diagrams/images/core-architectural-components-17.png)
 
 
 ### Relational Databases
@@ -373,7 +373,7 @@ Cloud providers offer a wide range of managed database services for relational, 
 
 **High Availability Architecture:**
 
-![Relational Databases](diagrams/images/core-architectural-components-relational-databases-18.png)
+![](diagrams/images/core-architectural-components-18.png)
 
 
 **Real-World Example:**
@@ -395,7 +395,7 @@ An e-commerce platform uses Azure SQL Database with zone-redundant configuration
 
 **Cosmos DB Multi-Model:**
 
-![NoSQL Databases](diagrams/images/core-architectural-components-nosql-databases-19.png)
+![](diagrams/images/core-architectural-components-19.png)
 
 
 **Use Cases by Data Model:**
@@ -420,7 +420,7 @@ An e-commerce platform uses Azure SQL Database with zone-redundant configuration
 
 **Caching Architecture Pattern:**
 
-![Caching Services](diagrams/images/core-architectural-components-caching-services-20.png)
+![](diagrams/images/core-architectural-components-20.png)
 
 
 **Real-World Example:**
@@ -431,7 +431,7 @@ A news website uses Azure Cache for Redis to store article content and user sess
 
 The control plane provides unified management, monitoring, and governance across all cloud resources.
 
-![Control Plane](diagrams/images/core-architectural-components-control-plane-21.png)
+![](diagrams/images/core-architectural-components-21.png)
 
 
 ### Management Tools
@@ -460,7 +460,7 @@ The control plane provides unified management, monitoring, and governance across
 
 **IaC Workflow:**
 
-![Infrastructure as Code (IaC)](diagrams/images/core-architectural-components-infrastructure-as-code--iac--22.png)
+![](diagrams/images/core-architectural-components-22.png)
 
 
 > [!IMPORTANT]
@@ -478,7 +478,7 @@ The control plane provides unified management, monitoring, and governance across
 
 **Observability Stack:**
 
-![Monitoring and Observability](diagrams/images/core-architectural-components-monitoring-and-observability-23.png)
+![](diagrams/images/core-architectural-components-23.png)
 
 
 **Key Metrics to Monitor:**

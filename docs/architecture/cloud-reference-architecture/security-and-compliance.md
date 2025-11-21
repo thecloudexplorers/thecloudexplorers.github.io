@@ -2,7 +2,7 @@
 
 Security and compliance form the foundation of trust in cloud environments. This section covers essential security controls, data protection strategies, and regulatory compliance frameworks.
 
-![Security and Compliance](diagrams/images/security-and-compliance-security-and-compliance-1.png)
+![](diagrams/images/security-and-compliance-1.png)
 
 
 ## Security Baseline
@@ -13,7 +13,7 @@ A security baseline establishes the minimum security controls required for cloud
 
 Defense in depth implements multiple layers of security controls to protect against various attack vectors.
 
-![Defense in Depth](diagrams/images/security-and-compliance-defense-in-depth-2.png)
+![](diagrams/images/security-and-compliance-2.png)
 
 
 **Security Layers:**
@@ -48,7 +48,7 @@ Zero Trust assumes no implicit trust and verifies every access request regardles
 2. **Use Least Privilege Access**: Limit user access with Just-In-Time and Just-Enough-Access (JIT/JEA)
 3. **Assume Breach**: Minimize blast radius and segment access
 
-![Zero Trust Architecture](diagrams/images/security-and-compliance-zero-trust-architecture-3.png)
+![](diagrams/images/security-and-compliance-3.png)
 
 
 **Zero Trust Implementation:**
@@ -63,7 +63,7 @@ Zero Trust assumes no implicit trust and verifies every access request regardles
 
 **Conditional Access Policy Example:**
 
-![Zero Trust Architecture](diagrams/images/security-and-compliance-zero-trust-architecture-4.png)
+![](diagrams/images/security-and-compliance-4.png)
 
 
 > [!TIP]
@@ -102,7 +102,7 @@ Data protection ensures confidentiality, integrity, and availability of sensitiv
 
 ### Data Classification
 
-![Data Classification](diagrams/images/security-and-compliance-data-classification-5.png)
+![](diagrams/images/security-and-compliance-5.png)
 
 
 **Classification Levels:**
@@ -127,7 +127,7 @@ Data protection ensures confidentiality, integrity, and availability of sensitiv
 
 **Encryption States:**
 
-![Encryption](diagrams/images/security-and-compliance-encryption-6.png)
+![](diagrams/images/security-and-compliance-6.png)
 
 
 **Encryption at Rest:**
@@ -141,7 +141,7 @@ Data protection ensures confidentiality, integrity, and availability of sensitiv
 
 **Key Management Hierarchy:**
 
-![Encryption](diagrams/images/security-and-compliance-encryption-7.png)
+![](diagrams/images/security-and-compliance-7.png)
 
 
 **Customer-Managed Keys (CMK) vs Platform-Managed Keys (PMK):**
@@ -183,7 +183,7 @@ DLP policies prevent unauthorized data exfiltration and enforce compliance requi
 
 **DLP Policy Workflow:**
 
-![Data Loss Prevention (DLP)](diagrams/images/security-and-compliance-data-loss-prevention--dlp--8.png)
+![](diagrams/images/security-and-compliance-8.png)
 
 
 **DLP Scenarios:**
@@ -204,7 +204,7 @@ Cloud environments must comply with various regulatory frameworks depending on i
 
 ### Major Compliance Frameworks
 
-![Major Compliance Frameworks](diagrams/images/security-and-compliance-major-compliance-frameworks-9.png)
+![](diagrams/images/security-and-compliance-9.png)
 
 
 **Framework Comparison:**
@@ -232,7 +232,7 @@ Cloud environments must comply with various regulatory frameworks depending on i
 
 **GDPR Architecture Pattern:**
 
-![GDPR Compliance](diagrams/images/security-and-compliance-gdpr-compliance-10.png)
+![](diagrams/images/security-and-compliance-10.png)
 
 
 **GDPR-Compliant Data Handling:**
@@ -259,7 +259,7 @@ Cloud environments must comply with various regulatory frameworks depending on i
 
 **HIPAA-Compliant Architecture:**
 
-![HIPAA Compliance](diagrams/images/security-and-compliance-hipaa-compliance-11.png)
+![](diagrams/images/security-and-compliance-11.png)
 
 
 **HIPAA Controls Mapping:**
@@ -294,7 +294,7 @@ Cloud environments must comply with various regulatory frameworks depending on i
 
 **PCI DSS Network Segmentation:**
 
-![PCI DSS Compliance](diagrams/images/security-and-compliance-pci-dss-compliance-12.png)
+![](diagrams/images/security-and-compliance-12.png)
 
 
 **Tokenization vs Encryption:**
@@ -324,7 +324,7 @@ Identity and access management (IAM) controls who can access resources and what 
 
 **Identity Architecture:**
 
-![Identity Management](diagrams/images/security-and-compliance-identity-management-13.png)
+![](diagrams/images/security-and-compliance-13.png)
 
 
 **Identity Types:**
@@ -338,7 +338,7 @@ Identity and access management (IAM) controls who can access resources and what 
 
 **Passwordless Authentication:**
 
-![Identity Management](diagrams/images/security-and-compliance-identity-management-14.png)
+![](diagrams/images/security-and-compliance-14.png)
 
 
 **Benefits of Passwordless:**
@@ -361,7 +361,7 @@ Identity and access management (IAM) controls who can access resources and what 
 
 **RBAC Assignment:**
 
-![Access Control Models](diagrams/images/security-and-compliance-access-control-models-15.png)
+![](diagrams/images/security-and-compliance-15.png)
 
 
 **Common Cloud Roles:**
@@ -375,7 +375,7 @@ Identity and access management (IAM) controls who can access resources and what 
 
 **Principle of Least Privilege:**
 
-![Access Control Models](diagrams/images/security-and-compliance-access-control-models-16.png)
+![](diagrams/images/security-and-compliance-16.png)
 
 
 > [!IMPORTANT]
@@ -394,7 +394,7 @@ Identity and access management (IAM) controls who can access resources and what 
 
 **PIM Workflow:**
 
-![Privileged Access Management](diagrams/images/security-and-compliance-privileged-access-management-17.png)
+![](diagrams/images/security-and-compliance-17.png)
 
 
 **Real-World Example:**
@@ -412,7 +412,7 @@ A company implements Azure PIM requiring:
 
 **Managed Identity Benefits:**
 
-![Service Accounts and Managed Identities](diagrams/images/security-and-compliance-service-accounts-and-managed-identities-18.png)
+![](diagrams/images/security-and-compliance-18.png)
 
 
 **Managed Identity Types:**
@@ -424,7 +424,7 @@ A company implements Azure PIM requiring:
 
 **Example: Azure Function accessing Key Vault:**
 
-![Service Accounts and Managed Identities](diagrams/images/security-and-compliance-service-accounts-and-managed-identities-19.png)
+![](diagrams/images/security-and-compliance-19.png)
 
 
 **No Credentials Required:**

@@ -2,7 +2,7 @@
 
 Integration and data flow patterns enable communication between services, systems, and data sources. This section covers API design, messaging, event-driven architectures, and data pipelines.
 
-![Integration and Data Flow](diagrams/images/integration-and-data-flow-integration-and-data-flow-1.png)
+![](diagrams/images/integration-and-data-flow-1.png)
 
 
 ## Data Integration Patterns
@@ -13,12 +13,12 @@ Data integration moves data between systems for analytics, synchronization, and 
 
 **ETL (Extract, Transform, Load):**
 
-![ETL vs ELT](diagrams/images/integration-and-data-flow-etl-vs-elt-2.png)
+![](diagrams/images/integration-and-data-flow-2.png)
 
 
 **ELT (Extract, Load, Transform):**
 
-![ETL vs ELT](diagrams/images/integration-and-data-flow-etl-vs-elt-3.png)
+![](diagrams/images/integration-and-data-flow-3.png)
 
 
 **ETL vs ELT Comparison:**
@@ -92,7 +92,7 @@ CDC tracks and replicates data changes from source to target systems in real-tim
 
 **CDC Architecture:**
 
-![Change Data Capture (CDC)](diagrams/images/integration-and-data-flow-change-data-capture--cdc--4.png)
+![](diagrams/images/integration-and-data-flow-4.png)
 
 
 **CDC vs Batch:**
@@ -130,7 +130,7 @@ An e-commerce platform uses Debezium for CDC:
 
 **Replication Patterns:**
 
-![Data Replication Strategies](diagrams/images/integration-and-data-flow-data-replication-strategies-5.png)
+![](diagrams/images/integration-and-data-flow-5.png)
 
 
 **Replication Comparison:**
@@ -152,7 +152,7 @@ Service integration enables communication between microservices and external sys
 
 **Common Patterns:**
 
-![Integration Patterns](diagrams/images/integration-and-data-flow-integration-patterns-6.png)
+![](diagrams/images/integration-and-data-flow-6.png)
 
 
 **Pattern Comparison:**
@@ -168,7 +168,7 @@ Service integration enables communication between microservices and external sys
 
 **Queue vs Topic:**
 
-![Messaging Patterns](diagrams/images/integration-and-data-flow-messaging-patterns-7.png)
+![](diagrams/images/integration-and-data-flow-7.png)
 
 
 **Messaging Services:**
@@ -196,7 +196,7 @@ Service integration enables communication between microservices and external sys
 
 **Queue Processing Pattern:**
 
-![Messaging Patterns](diagrams/images/integration-and-data-flow-messaging-patterns-8.png)
+![](diagrams/images/integration-and-data-flow-8.png)
 
 
 **Example: Azure Service Bus Consumer:**
@@ -237,7 +237,7 @@ Dead letter queues handle messages that fail processing after multiple retries.
 
 **DLQ Pattern:**
 
-![Dead Letter Queues](diagrams/images/integration-and-data-flow-dead-letter-queues-9.png)
+![](diagrams/images/integration-and-data-flow-9.png)
 
 
 **DLQ Configuration:**
@@ -258,12 +258,12 @@ Sagas manage distributed transactions across microservices using compensating tr
 
 **Choreography-Based Saga:**
 
-![Saga Pattern](diagrams/images/integration-and-data-flow-saga-pattern-10.png)
+![](diagrams/images/integration-and-data-flow-10.png)
 
 
 **Compensation (Rollback) Flow:**
 
-![Saga Pattern](diagrams/images/integration-and-data-flow-saga-pattern-11.png)
+![](diagrams/images/integration-and-data-flow-11.png)
 
 
 **Saga Orchestration vs Choreography:**
@@ -284,7 +284,7 @@ API management provides a gateway for securing, monitoring, and scaling APIs.
 
 **Gateway Responsibilities:**
 
-![API Gateway Pattern](diagrams/images/integration-and-data-flow-api-gateway-pattern-12.png)
+![](diagrams/images/integration-and-data-flow-12.png)
 
 
 **API Gateway Products:**
@@ -299,7 +299,7 @@ API management provides a gateway for securing, monitoring, and scaling APIs.
 
 **API Management Architecture:**
 
-![API Gateway Pattern](diagrams/images/integration-and-data-flow-api-gateway-pattern-13.png)
+![](diagrams/images/integration-and-data-flow-13.png)
 
 
 ### API Security
@@ -315,7 +315,7 @@ API management provides a gateway for securing, monitoring, and scaling APIs.
 
 **OAuth 2.0 Flow:**
 
-![API Security](diagrams/images/integration-and-data-flow-api-security-14.png)
+![](diagrams/images/integration-and-data-flow-14.png)
 
 
 **Azure API Management Policy:**
@@ -369,7 +369,7 @@ API management provides a gateway for securing, monitoring, and scaling APIs.
 
 **Token Bucket Algorithm:**
 
-![Rate Limiting and Throttling](diagrams/images/integration-and-data-flow-rate-limiting-and-throttling-15.png)
+![](diagrams/images/integration-and-data-flow-15.png)
 
 
 **Rate Limit Headers:**
@@ -430,7 +430,7 @@ Event sourcing stores state as a sequence of events rather than current state.
 
 **Traditional vs Event Sourcing:**
 
-![Event Sourcing](diagrams/images/integration-and-data-flow-event-sourcing-16.png)
+![](diagrams/images/integration-and-data-flow-16.png)
 
 
 **Event Sourcing Benefits:**
@@ -445,7 +445,7 @@ Event sourcing stores state as a sequence of events rather than current state.
 
 **Event Store:**
 
-![Event Sourcing](diagrams/images/integration-and-data-flow-event-sourcing-17.png)
+![](diagrams/images/integration-and-data-flow-17.png)
 
 
 **Example: Bank Account Events:**
@@ -507,7 +507,7 @@ CQRS separates read and write models for optimized performance and scalability.
 
 **CQRS Architecture:**
 
-![CQRS (Command Query Responsibility Segregation)](diagrams/images/integration-and-data-flow-cqrs--command-query-responsibility-segregation--18.png)
+![](diagrams/images/integration-and-data-flow-18.png)
 
 
 **CQRS Benefits:**
@@ -594,7 +594,7 @@ public async Task<ProductReadModel> GetProduct(string productId)
 
 **Kafka Architecture:**
 
-![Event Streaming Platforms](diagrams/images/integration-and-data-flow-event-streaming-platforms-19.png)
+![](diagrams/images/integration-and-data-flow-19.png)
 
 
 **Kafka vs Azure Event Hubs:**
@@ -625,7 +625,7 @@ Netflix uses Kafka for:
 
 **Schema Registry:**
 
-![Event Schema Evolution](diagrams/images/integration-and-data-flow-event-schema-evolution-20.png)
+![](diagrams/images/integration-and-data-flow-20.png)
 
 
 **Schema Evolution Rules:**

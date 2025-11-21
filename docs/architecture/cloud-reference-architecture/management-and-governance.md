@@ -2,7 +2,7 @@
 
 Cloud governance establishes policies, controls, and practices to manage cloud resources effectively while ensuring compliance, security, and cost optimization.
 
-![Management and Governance](diagrams/images/management-and-governance-management-and-governance-1.png)
+![](diagrams/images/management-and-governance-1.png)
 
 
 ## Cost Management and Optimization
@@ -15,7 +15,7 @@ Financial Operations (FinOps) is a cultural practice that brings financial accou
 
 **FinOps Lifecycle:**
 
-![FinOps Framework](diagrams/images/management-and-governance-finops-framework-2.png)
+![](diagrams/images/management-and-governance-2.png)
 
 
 **FinOps Principles:**
@@ -36,12 +36,12 @@ Financial Operations (FinOps) is a cultural practice that brings financial accou
 
 **Cost Allocation Hierarchy:**
 
-![Cost Visibility and Allocation](diagrams/images/management-and-governance-cost-visibility-and-allocation-3.png)
+![](diagrams/images/management-and-governance-3.png)
 
 
 **Azure Cost Management Dashboard:**
 
-![Cost Visibility and Allocation](diagrams/images/management-and-governance-cost-visibility-and-allocation-4.png)
+![](diagrams/images/management-and-governance-4.png)
 
 
 **Cost Allocation Tags:**
@@ -72,7 +72,7 @@ Financial Operations (FinOps) is a cultural practice that brings financial accou
 
 **Reserved Instance Example:**
 
-![Cost Optimization Strategies](diagrams/images/management-and-governance-cost-optimization-strategies-5.png)
+![](diagrams/images/management-and-governance-5.png)
 
 
 **Azure Reserved VM Instances:**
@@ -90,7 +90,7 @@ az reservations reservation-order purchase \
 
 **Spot Instance Architecture:**
 
-![Purchase 3-year RI for Standard_D4s_v3 in East US](diagrams/images/management-and-governance-purchase-3-year-ri-for-standard-d4s-v3-in-east-us-6.png)
+![](diagrams/images/management-and-governance-6.png)
 
 
 **AKS Spot Node Pool:**
@@ -158,7 +158,7 @@ az aks nodepool add \
 
 **Database Optimization:**
 
-![Purchase 3-year RI for Standard_D4s_v3 in East US](diagrams/images/management-and-governance-purchase-3-year-ri-for-standard-d4s-v3-in-east-us-7.png)
+![](diagrams/images/management-and-governance-7.png)
 
 
 > [!TIP]
@@ -179,7 +179,7 @@ A company reduced cloud costs by 45% through:
 
 **Anomaly Detection:**
 
-![Cost Anomaly Detection](diagrams/images/management-and-governance-cost-anomaly-detection-8.png)
+![](diagrams/images/management-and-governance-8.png)
 
 
 **Azure Cost Anomaly Alert:**
@@ -213,7 +213,7 @@ Resource organization enables governance, cost allocation, and automation.
 
 **Tag Taxonomy:**
 
-![Tagging Strategy](diagrams/images/management-and-governance-tagging-strategy-9.png)
+![](diagrams/images/management-and-governance-9.png)
 
 
 **Required Tags:**
@@ -294,7 +294,7 @@ Resource organization enables governance, cost allocation, and automation.
 
 **Azure Management Group Hierarchy:**
 
-![Management Groups](diagrams/images/management-and-governance-management-groups-10.png)
+![](diagrams/images/management-and-governance-10.png)
 
 
 **Management Group Benefits:**
@@ -308,7 +308,7 @@ Resource organization enables governance, cost allocation, and automation.
 
 **AWS Organization Structure:**
 
-![Management Groups](diagrams/images/management-and-governance-management-groups-11.png)
+![](diagrams/images/management-and-governance-11.png)
 
 
 **Service Control Policies (SCP):**
@@ -359,7 +359,7 @@ Cloud policies enforce organizational standards for security, compliance, and co
 
 **Policy Assignment Scope:**
 
-![Azure Policy](diagrams/images/management-and-governance-azure-policy-12.png)
+![](diagrams/images/management-and-governance-12.png)
 
 
 **Example Policies:**
@@ -596,7 +596,7 @@ A governance framework defines roles, responsibilities, and processes for cloud 
 
 **Governance Structure:**
 
-![Cloud Governance Model](diagrams/images/management-and-governance-cloud-governance-model-13.png)
+![](diagrams/images/management-and-governance-13.png)
 
 
 **Governance Disciplines:**
@@ -613,7 +613,7 @@ A governance framework defines roles, responsibilities, and processes for cloud 
 
 **Microsoft Cloud Adoption Framework Phases:**
 
-![Cloud Adoption Framework](diagrams/images/management-and-governance-cloud-adoption-framework-14.png)
+![](diagrams/images/management-and-governance-14.png)
 
 
 **CAF Governance Pillars:**
@@ -644,7 +644,7 @@ A governance framework defines roles, responsibilities, and processes for cloud 
 
 **Azure Landing Zone Architecture:**
 
-![Landing Zones](diagrams/images/management-and-governance-landing-zones-15.png)
+![](diagrams/images/management-and-governance-15.png)
 
 
 **Landing Zone Components:**
@@ -668,7 +668,7 @@ Audit and compliance reporting demonstrates adherence to regulatory requirements
 
 **Regulatory Requirements:**
 
-![Compliance Frameworks](diagrams/images/management-and-governance-compliance-frameworks-16.png)
+![](diagrams/images/management-and-governance-16.png)
 
 
 **Cloud Provider Compliance:**
@@ -689,7 +689,7 @@ Audit and compliance reporting demonstrates adherence to regulatory requirements
 
 **Azure Activity Log:**
 
-![Audit Logging](diagrams/images/management-and-governance-audit-logging-17.png)
+![](diagrams/images/management-and-governance-17.png)
 
 
 **Critical Events to Log:**
@@ -746,7 +746,7 @@ AzureActivity
 
 **Azure Compliance Dashboard:**
 
-![Compliance Dashboards](diagrams/images/management-and-governance-compliance-dashboards-18.png)
+![](diagrams/images/management-and-governance-18.png)
 
 
 **Compliance Report Structure:**

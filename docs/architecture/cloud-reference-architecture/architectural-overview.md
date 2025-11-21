@@ -4,7 +4,7 @@
 
 Cloud service models define the level of control and responsibility shared between the cloud provider and the customer. Understanding these models is crucial for selecting the right services for your workloads.
 
-![Cloud Service Models (IaaS, PaaS, SaaS)](diagrams/images/architectural-overview-cloud-service-models--iaas--paas--saas--1.png)
+![](diagrams/images/architectural-overview-1.png)
 
 
 ### Infrastructure as a Service (IaaS)
@@ -28,7 +28,7 @@ IaaS provides virtualized computing resources over the internet, offering the hi
 | **AWS** | S3 (Simple Storage Service) | Scalable object storage for data lakes and content distribution |
 
 **Real-World Scenario:**
-![Infrastructure as a Service (IaaS)](diagrams/images/architectural-overview-infrastructure-as-a-service--iaas--2.png)
+![](diagrams/images/architectural-overview-2.png)
 
 
 A financial services company migrates its legacy trading platform to Azure Virtual Machines, maintaining full control over the application stack while benefiting from cloud elasticity and disaster recovery capabilities.
@@ -58,7 +58,7 @@ PaaS provides a complete development and deployment environment in the cloud, el
 | **Azure** | Container Apps | Serverless containers with built-in scaling and networking |
 
 **Architecture Pattern:**
-![Platform as a Service (PaaS)](diagrams/images/architectural-overview-platform-as-a-service--paas--3.png)
+![](diagrams/images/architectural-overview-3.png)
 
 
 **Real-World Scenario:**
@@ -91,7 +91,7 @@ SaaS delivers fully functional software applications over the internet on a subs
 | **Marketing** | HubSpot | Marketing automation and CRM |
 
 **SaaS Architecture:**
-![Software as a Service (SaaS)](diagrams/images/architectural-overview-software-as-a-service--saas--4.png)
+![](diagrams/images/architectural-overview-4.png)
 
 
 **Real-World Scenario:**
@@ -103,7 +103,7 @@ A mid-sized company adopts Microsoft 365 for all employees, providing email, Sha
 
 ### Comparison Matrix
 
-![Comparison Matrix](diagrams/images/architectural-overview-comparison-matrix-5.png)
+![](diagrams/images/architectural-overview-5.png)
 
 
 | Aspect | IaaS | PaaS | SaaS |
@@ -119,7 +119,7 @@ A mid-sized company adopts Microsoft 365 for all employees, providing email, Sha
 
 Cloud deployment models define where cloud infrastructure is deployed and who manages it. The choice impacts security, compliance, cost, and operational complexity.
 
-![Cloud Deployment Models (Public, Private, Hybrid, Multi-cloud)](diagrams/images/architectural-overview-cloud-deployment-models--public--private--hybrid---6.png)
+![](diagrams/images/architectural-overview-6.png)
 
 
 ### Public Cloud
@@ -144,7 +144,7 @@ Public cloud services are delivered over the public internet and shared across m
 | **IBM Cloud** | 60+ datacenters | Watson AI, Cloud Foundry, Bare Metal |
 
 **Architecture Example:**
-![Public Cloud](diagrams/images/architectural-overview-public-cloud-7.png)
+![](diagrams/images/architectural-overview-7.png)
 
 
 **Real-World Scenario:**
@@ -174,7 +174,7 @@ Private cloud infrastructure is dedicated to a single organization, either hoste
 | **Virtual Private Cloud** | Isolated section of public cloud | Azure VNet, AWS VPC, Google VPC |
 
 **Architecture Example:**
-![Private Cloud](diagrams/images/architectural-overview-private-cloud-8.png)
+![](diagrams/images/architectural-overview-8.png)
 
 
 **Real-World Scenario:**
@@ -205,7 +205,7 @@ Hybrid cloud combines public and private clouds with orchestration between them,
 | **VMware Cloud** | Hybrid cloud infrastructure | Seamless workload migration between environments |
 
 **Hybrid Architecture Pattern:**
-![Hybrid Cloud](diagrams/images/architectural-overview-hybrid-cloud-9.png)
+![](diagrams/images/architectural-overview-9.png)
 
 
 **Real-World Scenario:**
@@ -234,7 +234,7 @@ Multi-cloud strategy involves using services from multiple public cloud provider
 - Requires cloud-agnostic tools and practices
 
 **Multi-cloud Architecture:**
-![Multi-cloud](diagrams/images/architectural-overview-multi-cloud-10.png)
+![](diagrams/images/architectural-overview-10.png)
 
 
 **Multi-cloud Strategy Examples:**
@@ -273,7 +273,7 @@ This approach lets them leverage AWS's CDN capabilities, Google's data analytics
 
 ### Deployment Model Comparison
 
-![Deployment Model Comparison](diagrams/images/architectural-overview-deployment-model-comparison-11.png)
+![](diagrams/images/architectural-overview-11.png)
 
 
 | Criteria | Public Cloud | Private Cloud | Hybrid Cloud | Multi-cloud |

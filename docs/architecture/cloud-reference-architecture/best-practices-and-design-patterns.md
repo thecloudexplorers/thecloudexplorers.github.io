@@ -2,7 +2,7 @@
 
 Best practices and design patterns are proven solutions to common cloud architecture challenges, improving reliability, performance, and maintainability.
 
-![Best Practices and Design Patterns](diagrams/images/best-practices-and-design-patterns-best-practices-and-design-patterns-1.png)
+![](diagrams/images/best-practices-and-design-patterns-1.png)
 
 
 ## Architectural Best Practices
@@ -78,7 +78,7 @@ spec:
 
 **CAP Theorem:**
 
-![Cloud Architecture Principles](diagrams/images/best-practices-and-design-patterns-cloud-architecture-principles-2.png)
+![](diagrams/images/best-practices-and-design-patterns-2.png)
 
 
 **CAP Trade-offs:**
@@ -96,7 +96,7 @@ spec:
 
 **Failure Assumption:**
 
-![Design for Failure](diagrams/images/best-practices-and-design-patterns-design-for-failure-3.png)
+![](diagrams/images/best-practices-and-design-patterns-3.png)
 
 
 **Resilience Patterns:**
@@ -111,7 +111,7 @@ spec:
 
 **Circuit Breaker State Machine:**
 
-![Design for Failure](diagrams/images/best-practices-and-design-patterns-design-for-failure-4.png)
+![](diagrams/images/best-practices-and-design-patterns-4.png)
 
 
 **Circuit Breaker Implementation (Polly):**
@@ -171,7 +171,7 @@ Idempotency ensures operations can be safely retried without unintended side eff
 
 **Idempotency Key Pattern:**
 
-![Idempotency](diagrams/images/best-practices-and-design-patterns-idempotency-5.png)
+![](diagrams/images/best-practices-and-design-patterns-5.png)
 
 
 **Idempotency Implementation:**
@@ -215,7 +215,7 @@ Cloud design patterns solve recurring problems in cloud architecture.
 
 **1. Queue-Based Load Leveling:**
 
-![Scalability Patterns](diagrams/images/best-practices-and-design-patterns-scalability-patterns-6.png)
+![](diagrams/images/best-practices-and-design-patterns-6.png)
 
 
 **Use Case**: Decouple front-end from back-end to handle traffic spikes.
@@ -224,7 +224,7 @@ Cloud design patterns solve recurring problems in cloud architecture.
 
 **2. Throttling Pattern:**
 
-![Scalability Patterns](diagrams/images/best-practices-and-design-patterns-scalability-patterns-7.png)
+![](diagrams/images/best-practices-and-design-patterns-7.png)
 
 
 **Implementation**:
@@ -247,7 +247,7 @@ services.AddRateLimiter(options =>
 
 **3. Competing Consumers Pattern:**
 
-![Scalability Patterns](diagrams/images/best-practices-and-design-patterns-scalability-patterns-8.png)
+![](diagrams/images/best-practices-and-design-patterns-8.png)
 
 
 **Use Case**: Process messages in parallel for higher throughput.
@@ -256,7 +256,7 @@ services.AddRateLimiter(options =>
 
 **4. Sharding Pattern:**
 
-![Scalability Patterns](diagrams/images/best-practices-and-design-patterns-scalability-patterns-9.png)
+![](diagrams/images/best-practices-and-design-patterns-9.png)
 
 
 **Use Case**: Distribute data across multiple databases for horizontal scaling.
@@ -267,7 +267,7 @@ services.AddRateLimiter(options =>
 
 **1. Valet Key Pattern:**
 
-![Security Patterns](diagrams/images/best-practices-and-design-patterns-security-patterns-10.png)
+![](diagrams/images/best-practices-and-design-patterns-10.png)
 
 
 **Benefits**:
@@ -303,7 +303,7 @@ public string GenerateUploadUrl(string blobName)
 
 **2. Gatekeeper Pattern:**
 
-![Security Patterns](diagrams/images/best-practices-and-design-patterns-security-patterns-11.png)
+![](diagrams/images/best-practices-and-design-patterns-11.png)
 
 
 **Use Case**: Minimize attack surface by validating requests before reaching internal services.
@@ -312,7 +312,7 @@ public string GenerateUploadUrl(string blobName)
 
 **3. Federated Identity Pattern:**
 
-![Security Patterns](diagrams/images/best-practices-and-design-patterns-security-patterns-12.png)
+![](diagrams/images/best-practices-and-design-patterns-12.png)
 
 
 **Benefits**:
@@ -324,7 +324,7 @@ public string GenerateUploadUrl(string blobName)
 
 **4. Claim Check Pattern:**
 
-![Security Patterns](diagrams/images/best-practices-and-design-patterns-security-patterns-13.png)
+![](diagrams/images/best-practices-and-design-patterns-13.png)
 
 
 **Use Case**: Send large messages through message queues with size limits.
@@ -335,7 +335,7 @@ public string GenerateUploadUrl(string blobName)
 
 **1. Health Endpoint Monitoring:**
 
-![High Availability Patterns](diagrams/images/best-practices-and-design-patterns-high-availability-patterns-14.png)
+![](diagrams/images/best-practices-and-design-patterns-14.png)
 
 
 **Health Check Implementation:**
@@ -370,7 +370,7 @@ public class HealthCheckController : ControllerBase
 
 **2. Retry Pattern with Exponential Backoff:**
 
-![High Availability Patterns](diagrams/images/best-practices-and-design-patterns-high-availability-patterns-15.png)
+![](diagrams/images/best-practices-and-design-patterns-15.png)
 
 
 **Exponential Backoff Formula:**
@@ -383,7 +383,7 @@ wait_time = base_delay * (2 ^ attempt) + random_jitter
 
 **3. Bulkhead Pattern:**
 
-![High Availability Patterns](diagrams/images/best-practices-and-design-patterns-high-availability-patterns-16.png)
+![](diagrams/images/best-practices-and-design-patterns-16.png)
 
 
 **Use Case**: Isolate resources so failure in one area doesn't cascade.
@@ -392,7 +392,7 @@ wait_time = base_delay * (2 ^ attempt) + random_jitter
 
 **4. Compensating Transaction Pattern:**
 
-![High Availability Patterns](diagrams/images/best-practices-and-design-patterns-high-availability-patterns-17.png)
+![](diagrams/images/best-practices-and-design-patterns-17.png)
 
 
 **Use Case**: Undo completed operations when later steps fail in distributed transactions.
@@ -401,7 +401,7 @@ wait_time = base_delay * (2 ^ attempt) + random_jitter
 
 **5. Cache-Aside Pattern:**
 
-![High Availability Patterns](diagrams/images/best-practices-and-design-patterns-high-availability-patterns-18.png)
+![](diagrams/images/best-practices-and-design-patterns-18.png)
 
 
 **Implementation**:
@@ -434,7 +434,7 @@ public async Task<Product> GetProductAsync(int id)
 
 **6. Strangler Fig Pattern:**
 
-![Cloud-Native Patterns](diagrams/images/best-practices-and-design-patterns-cloud-native-patterns-19.png)
+![](diagrams/images/best-practices-and-design-patterns-19.png)
 
 
 **Use Case**: Gradually migrate from legacy system to new architecture without big-bang rewrite.
@@ -443,7 +443,7 @@ public async Task<Product> GetProductAsync(int id)
 
 **7. Sidecar Pattern:**
 
-![Cloud-Native Patterns](diagrams/images/best-practices-and-design-patterns-cloud-native-patterns-20.png)
+![](diagrams/images/best-practices-and-design-patterns-20.png)
 
 
 **Use Cases**:
@@ -455,7 +455,7 @@ public async Task<Product> GetProductAsync(int id)
 
 **8. Ambassador Pattern:**
 
-![Cloud-Native Patterns](diagrams/images/best-practices-and-design-patterns-cloud-native-patterns-21.png)
+![](diagrams/images/best-practices-and-design-patterns-21.png)
 
 
 **Use Case**: Offload network-related concerns to separate container.
@@ -464,7 +464,7 @@ public async Task<Product> GetProductAsync(int id)
 
 **9. Anti-Corruption Layer:**
 
-![Cloud-Native Patterns](diagrams/images/best-practices-and-design-patterns-cloud-native-patterns-22.png)
+![](diagrams/images/best-practices-and-design-patterns-22.png)
 
 
 **Use Case**: Protect new system from complexity of legacy system during migration.
@@ -481,7 +481,7 @@ Anti-patterns are common but ineffective solutions that create more problems tha
 
 **Problem**: No clear architecture, everything is tightly coupled.
 
-![Architecture Anti-Patterns](diagrams/images/best-practices-and-design-patterns-architecture-anti-patterns-23.png)
+![](diagrams/images/best-practices-and-design-patterns-23.png)
 
 
 **Symptoms**:
@@ -497,7 +497,7 @@ Anti-patterns are common but ineffective solutions that create more problems tha
 
 **Problem**: Microservices architecture but with tight coupling.
 
-![Architecture Anti-Patterns](diagrams/images/best-practices-and-design-patterns-architecture-anti-patterns-24.png)
+![](diagrams/images/best-practices-and-design-patterns-24.png)
 
 
 **Symptoms**:
@@ -513,7 +513,7 @@ Anti-patterns are common but ineffective solutions that create more problems tha
 
 **Problem**: Too many small, frequent calls to external services.
 
-![Architecture Anti-Patterns](diagrams/images/best-practices-and-design-patterns-architecture-anti-patterns-25.png)
+![](diagrams/images/best-practices-and-design-patterns-25.png)
 
 
 **Symptoms**:
@@ -533,7 +533,7 @@ Anti-patterns are common but ineffective solutions that create more problems tha
 
 **Problem**: One tenant/workload consumes excessive resources, affecting others.
 
-![Architecture Anti-Patterns](diagrams/images/best-practices-and-design-patterns-architecture-anti-patterns-26.png)
+![](diagrams/images/best-practices-and-design-patterns-26.png)
 
 
 **Symptoms**:
@@ -553,7 +553,7 @@ Anti-patterns are common but ineffective solutions that create more problems tha
 
 **Problem**: Multiple clients retry failed requests simultaneously, overwhelming system.
 
-![Architecture Anti-Patterns](diagrams/images/best-practices-and-design-patterns-architecture-anti-patterns-27.png)
+![](diagrams/images/best-practices-and-design-patterns-27.png)
 
 
 **Symptoms**:
@@ -573,7 +573,7 @@ Anti-patterns are common but ineffective solutions that create more problems tha
 
 **Problem**: One service handles too many responsibilities.
 
-![Architecture Anti-Patterns](diagrams/images/best-practices-and-design-patterns-architecture-anti-patterns-28.png)
+![](diagrams/images/best-practices-and-design-patterns-28.png)
 
 
 **Symptoms**:

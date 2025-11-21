@@ -2,7 +2,7 @@
 
 Application architecture defines how software is structured, deployed, and scaled. This section covers microservices, serverless, containers, and modern DevOps practices.
 
-![Application Architecture](diagrams/images/application-architecture-application-architecture-1.png)
+![](diagrams/images/application-architecture-1.png)
 
 
 ## Microservices Architecture
@@ -13,12 +13,12 @@ Microservices decompose applications into small, independent services that can b
 
 **Monolithic Architecture:**
 
-![Monolithic vs Microservices](diagrams/images/application-architecture-monolithic-vs-microservices-2.png)
+![](diagrams/images/application-architecture-2.png)
 
 
 **Microservices Architecture:**
 
-![Monolithic vs Microservices](diagrams/images/application-architecture-monolithic-vs-microservices-3.png)
+![](diagrams/images/application-architecture-3.png)
 
 
 **Architecture Comparison:**
@@ -41,12 +41,12 @@ Microservices decompose applications into small, independent services that can b
 
 **Decomposition by Business Capability:**
 
-![Service Decomposition Strategies](diagrams/images/application-architecture-service-decomposition-strategies-4.png)
+![](diagrams/images/application-architecture-4.png)
 
 
 **Decomposition by Subdomain (DDD):**
 
-![Service Decomposition Strategies](diagrams/images/application-architecture-service-decomposition-strategies-5.png)
+![](diagrams/images/application-architecture-5.png)
 
 
 **Bounded Contexts:**
@@ -65,12 +65,12 @@ Microservices decompose applications into small, independent services that can b
 
 **Synchronous Communication:**
 
-![Communication Patterns](diagrams/images/application-architecture-communication-patterns-6.png)
+![](diagrams/images/application-architecture-6.png)
 
 
 **Asynchronous Communication:**
 
-![Communication Patterns](diagrams/images/application-architecture-communication-patterns-7.png)
+![](diagrams/images/application-architecture-7.png)
 
 
 **Communication Comparison:**
@@ -90,7 +90,7 @@ Service mesh manages service-to-service communication, providing observability, 
 
 **Service Mesh Architecture:**
 
-![Service Mesh](diagrams/images/application-architecture-service-mesh-8.png)
+![](diagrams/images/application-architecture-8.png)
 
 
 **Service Mesh Features:**
@@ -120,7 +120,7 @@ Service mesh manages service-to-service communication, providing observability, 
 
 **Architecture Layers:**
 
-![API Gateway vs Service Mesh](diagrams/images/application-architecture-api-gateway-vs-service-mesh-9.png)
+![](diagrams/images/application-architecture-9.png)
 
 
 **Responsibility Comparison:**
@@ -170,7 +170,7 @@ Serverless enables running code without managing servers, with automatic scaling
 
 **Serverless Architecture:**
 
-![Function as a Service (FaaS)](diagrams/images/application-architecture-function-as-a-service--faas--10.png)
+![](diagrams/images/application-architecture-10.png)
 
 
 **FaaS Platform Comparison:**
@@ -223,7 +223,7 @@ public static async Task<IActionResult> Run(
 
 **Cold Start Lifecycle:**
 
-![Cold Start Optimization](diagrams/images/application-architecture-cold-start-optimization-11.png)
+![](diagrams/images/application-architecture-11.png)
 
 
 **Cold Start Mitigation:**
@@ -250,7 +250,7 @@ public static async Task<IActionResult> Run(
 
 **BaaS Components:**
 
-![Backend as a Service (BaaS)](diagrams/images/application-architecture-backend-as-a-service--baas--12.png)
+![](diagrams/images/application-architecture-12.png)
 
 
 **BaaS vs FaaS:**
@@ -296,7 +296,7 @@ Containers package applications with dependencies for consistent deployment acro
 
 **VM vs Container:**
 
-![Container Basics](diagrams/images/application-architecture-container-basics-13.png)
+![](diagrams/images/application-architecture-13.png)
 
 
 **Comparison:**
@@ -345,7 +345,7 @@ ENTRYPOINT ["dotnet", "MyApp.dll"]
 
 **Kubernetes Components:**
 
-![Kubernetes Architecture](diagrams/images/application-architecture-kubernetes-architecture-14.png)
+![](diagrams/images/application-architecture-14.png)
 
 
 **Kubernetes Resources:**
@@ -452,7 +452,7 @@ spec:
 
 **Helm Architecture:**
 
-![Helm and Package Management](diagrams/images/application-architecture-helm-and-package-management-15.png)
+![](diagrams/images/application-architecture-15.png)
 
 
 **Helm Chart Structure:**
@@ -528,7 +528,7 @@ DevOps combines development and operations practices to deliver software faster 
 
 **Pipeline Stages:**
 
-![CI/CD Pipeline](diagrams/images/application-architecture-ci-cd-pipeline-16.png)
+![](diagrams/images/application-architecture-16.png)
 
 
 **CI/CD Tools:**
@@ -597,12 +597,12 @@ jobs:
 
 **Blue-Green Deployment:**
 
-![Deployment Strategies](diagrams/images/application-architecture-deployment-strategies-17.png)
+![](diagrams/images/application-architecture-17.png)
 
 
 **Canary Deployment:**
 
-![Deployment Strategies](diagrams/images/application-architecture-deployment-strategies-18.png)
+![](diagrams/images/application-architecture-18.png)
 
 
 **Strategy Comparison:**
@@ -652,7 +652,7 @@ spec:
 
 **IaC Benefits:**
 
-![Infrastructure as Code (IaC)](diagrams/images/application-architecture-infrastructure-as-code--iac--19.png)
+![](diagrams/images/application-architecture-19.png)
 
 
 **Terraform Example:**
