@@ -1,4 +1,10 @@
+- name: Overview
+  href: architecture-overview.md
+  
+
 - name: Cloud Reference Architecture
   href: cloud-reference-architecture/toc.yml
+  expanded: true
+  
 - name: Cloud Center of Excellence
   href: cloud-center-of-excellence/toc.yml

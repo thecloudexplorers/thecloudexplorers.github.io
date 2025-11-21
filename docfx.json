@@ -33,9 +33,10 @@
       "_appFooter": "© 2025 The Cloud Explorers. All rights reserved.",
       "_enableSearch": true,
       "_gitContribute": {
-        "repo": "https://github.com/thecloudexplorers/thecloudexplorers.github.io",
+        "repo": "https://github.com/thecloudexplorers",
         "branch": "main"
-      }
+      },
+      "pdf": true
     },
     "fileMetadata": {},
     "dest": "_site",
