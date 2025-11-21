@@ -43,6 +43,7 @@
     "markdownEngineName": "markdig",
     "markdownEngineProperties": {
       "markdigExtensions": [
+        "abbreviations",
         "attributes",
         "customcontainers",
         "emphasisextras",
@@ -50,8 +51,14 @@
         "listextras",
         "footers",
         "footnotes",
-        "tasklists"
-      ]
+        "tasklists",
+        "medialinks"
+      ],
+      "alerts": {
+        "TODO": "alert alert-secondary",
+        "SUCCESS": "alert alert-success",
+        "ERROR": "alert alert-danger"
+      }
     }
   },
   "pdf": {

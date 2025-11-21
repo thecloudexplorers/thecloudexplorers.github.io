@@ -11,3 +11,25 @@
 <script type="text/javascript" src="{{_rel}}styles/docfx.js"></script>
 <script type="text/javascript" src="{{_rel}}styles/main.js"></script>
 <script type="text/javascript" src="{{_rel}}styles/singulink.js"></script>
+<script type="text/javascript">
+  // Initialize Mermaid and render diagrams
+  if (typeof mermaid !== 'undefined') {
+    mermaid.initialize({ 
+      startOnLoad: false,
+      theme: 'default',
+      securityLevel: 'loose'
+    });
+    
+    // Convert code blocks to mermaid divs
+    document.querySelectorAll('pre code.lang-mermaid').forEach(function(codeBlock) {
+      var pre = codeBlock.parentElement;
+      var mermaidDiv = document.createElement('div');
+      mermaidDiv.className = 'mermaid';
+      mermaidDiv.textContent = codeBlock.textContent;
+      pre.parentElement.replaceChild(mermaidDiv, pre);
+    });
+    
+    // Render all mermaid diagrams
+    mermaid.init(undefined, document.querySelectorAll('.mermaid'));
+  }
+</script>
