@@ -2,6 +2,10 @@ pdf: true
 items:
   - name: Introduction
     href: introduction.md
+  - name: Business Context
+    href: business-context.md
+  - name: Requirements and Constraints
+    href: requirements-and-constraints.md
   - name: Architectural Overview
     href: architectural-overview.md
   - name: Core Architectural Components
