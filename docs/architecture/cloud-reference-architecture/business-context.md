@@ -1,12 +1,12 @@
 # Business Context
 
-## Doelstellingen
+## Business Goals
 
-- Doelstelling 1
-- Doelstelling 2
-- Doelstelling 3
+- Goal 1
+- Goal 2
+- Goal 3
 
-## Stakeholders en rollen
+## Stakeholders and roles
 
 | Role                        | Name / Team        | Responsibility                           |
 |-----------------------------|--------------------|-------------------------------------------|
