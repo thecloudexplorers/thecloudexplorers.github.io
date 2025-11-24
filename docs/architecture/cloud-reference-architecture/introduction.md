@@ -25,6 +25,9 @@ The purpose of this document is to provide a comprehensive cloud reference archi
 - Network topology (Hub-Spoke,vWan)
 - Core Services (Compute, Storage, Identity, Networking, Monitoring)
 - Connectivity to On-Premise / Other Clouds
+- Enrollment Management
+- DevOps Organization Management
+
 
 #### Out of scope
 
