@@ -4,6 +4,33 @@
 
 The purpose of this document is to provide a comprehensive cloud reference architecture that serves as a blueprint for designing, implementing, and managing cloud solutions. This architecture is designed to be industry-agnostic and aligns with established frameworks such as the Microsoft Cloud Adoption Framework, NIST SP 500-291, and ISO/IEC 17788. It addresses key aspects such as scalability, security, governance, and operational excellence.
 
+### Document Control
+
+| Item            | Value                                                         |
+|-----------------|---------------------------------------------------------------|
+| Document Title  | \<Solution / Platform Name\> – Azure Reference Architecture  |
+| Version         | 0.1 (Draft)                                                   |
+| Date            | \<YYYY-MM-DD\>                                                |
+| Author(s)       | \<Name(s)\>                                                   |
+| Reviewer(s)     | \<Name(s)\>                                                   |
+| Approved by     | \<Name / Role\>                                               |
+
+---
+
+### Scope
+
+#### In Scope
+
+- Azure Landing Zone(s) and subscriptions
+- Network topology (Hub-Spoke,vWan)
+- Core Services (Compute, Storage, Identity, Networking, Monitoring)
+- Connectivity to On-Premise / Other Clouds
+
+#### Out of scope
+
+- Application code-level design
+- Business Workflow details
+
 ### Examples
 
 - **Scalability**: Leveraging auto-scaling groups to handle variable workloads, as recommended in the Microsoft Cloud Adoption Framework.
