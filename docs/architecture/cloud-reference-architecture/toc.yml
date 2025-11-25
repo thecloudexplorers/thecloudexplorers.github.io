@@ -1,32 +1,32 @@
 pdf: true
 items:
-  - name: Introduction
+  - name: 📖 Introduction
     href: introduction.md
-  - name: Business Context
+  - name: 📖 Business Context
     href: business-context.md
-  - name: Requirements and Constraints
+  - name: 📖 Requirements and Constraints
     href: requirements-and-constraints.md
-  - name: Architectural Overview
+  - name: 📖 Architectural Overview
     href: architectural-overview.md
-  - name: Core Architectural Components
+  - name: 📖 Core Architectural Components
     href: core-architectural-components.md
-  - name: Security and Compliance
+  - name: 📖 Security and Compliance
     href: security-and-compliance.md
-  - name: Operations and Reliability
+  - name: 📖 Operations and Reliability
     href: operations-and-reliability.md
-  - name: Integration and Data Flow
+  - name: 📖 Integration and Data Flow
     href: integration-and-data-flow.md
-  - name: Application Architecture
+  - name: 📖 Application Architecture
     href: application-architecture.md
-  - name: Management and Governance
+  - name: 📖 Management and Governance
     href: management-and-governance.md
-  - name: Scalability and Performance
+  - name: 📖 Scalability and Performance
     href: scalability-and-performance.md
-  - name: Best Practices and Design Patterns
+  - name: 📖 Best Practices and Design Patterns
     href: best-practices-and-design-patterns.md
-  - name: Case Studies and Use Cases
+  - name: 📖 Case Studies and Use Cases
     href: case-studies-and-use-cases.md
-  - name: Download Word Version
+  - name: 📥 Download Word Version
     href: cloud-reference-architecture.docx
-  - name: Download PDF Version
+  - name: 📥 Download PDF Version
     href: cloud-reference-architecture.pdf
