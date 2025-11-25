@@ -59,6 +59,44 @@ To add or modify documentation:
 
 The site will automatically rebuild and deploy via GitHub Actions.
 
+### Adding Diagrams
+
+To include diagrams in your documentation:
+
+1. **Place Draw.io files** in the `diagrams` directory within your documentation section
+   - Example: `docs/architecture/cloud-reference-architecture/diagrams/cloud-reference-architecture.drawio`
+
+   ![Draw.io file location](docs/images/drawio-and-images-location.png)
+
+2. **Build process** - The build script automatically:
+   - Detects `.drawio` files in the `diagrams` directory
+   - Creates an `images` folder within the same `diagrams` directory
+   - Generates PNG images from your Draw.io diagrams
+   - **Image names are based on Draw.io tab names**: Each tab in your Draw.io file becomes a separate PNG image with the tab name as the filename (converted to lowercase with spaces replaced by hyphens)
+
+   ![drawio Tab Name](docs/images/drawio-tab-name.png)
+
+3. **Reference in markdown** - Add the diagram to your markdown file using the relative path: `diagrams/images/<tab-name>.png`
+   
+   ![drawio Tab Name](docs/images/drawio-file-name.png)
+
+**Example:**
+
+For a page at `docs/architecture/cloud-reference-architecture/introduction.md`:
+
+1. Create your diagram in `docs/architecture/cloud-reference-architecture/diagrams/cloud-reference-architecture.drawio`
+2. Add a tab in Draw.io named "Cloud Adoption Phases"
+3. The build script generates: `docs/architecture/cloud-reference-architecture/diagrams/images/cloud-adoption-phases.png`
+4. Reference it in your markdown:
+
+```markdown
+![Cloud Adoption Phases](diagrams/images/cloud-adoption-phases.png)
+```
+
+**Note:** 
+- The `diagrams/images/` folder is auto-generated during the build process—you don't need to create it manually
+- Each tab in your Draw.io file generates a separate PNG image with the tab name as the filename
+
 ## License
 
 © 2025 The Cloud Explorers. All rights reserved.
