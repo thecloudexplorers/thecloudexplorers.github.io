@@ -7,7 +7,7 @@ items:
     expanded: true
 
   - name: GitHub Repository
-    href: https://github.com/thecloudexplorers/
+    href: https://github.com/thecloudexplorers/thecloudexplorers.github.io
 
   - name: Contribution Guide
     href: contribution-guide.md
