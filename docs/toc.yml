@@ -4,7 +4,10 @@ items:
   - name: Architecture
     href: architecture/
     topicHref: architecture/README.md
-
     expanded: true
+
   - name: GitHub Repository
     href: https://github.com/thecloudexplorers/
+
+  - name: Contribution Guide
+    href: contribution-guide.md
